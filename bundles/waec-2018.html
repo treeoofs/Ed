@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAEC 2018 Bundle | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.pq-card{background:#fff;border-radius:14px;padding:28px;margin-bottom:20px;box-shadow:var(--shadow);border-left:5px solid var(--primary);}
+.pq-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.pq-card .tag{background:#eef4ff;color:var(--primary);padding:4px 12px;border-radius:50px;font-size:.8rem;font-weight:600;}
+.pq-card .tag.year{background:#fef3c7;color:#92400e;}
+.pq-card h3{font-size:1.15rem;margin-bottom:14px;line-height:1.5;}
+.pq-options{display:flex;flex-direction:column;gap:8px;margin:14px 0;list-style:none;padding:0;}
+.pq-options li{padding:10px 14px;background:#f9fafb;border-radius:8px;}
+.pq-options li.correct{background:#dcfce7;border-left:3px solid #16a34a;font-weight:600;}
+.toggle-sol{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;}
+.solution-block{display:none;margin-top:16px;padding:20px;background:#f0f9ff;border-radius:10px;border-left:4px solid var(--primary);}
+.solution-block.show{display:block;}
+.solution-block ol{padding-left:20px;}
+.solution-block .ans{background:#16a34a;color:#fff;padding:8px 14px;border-radius:8px;display:inline-block;margin-top:10px;font-weight:700;}
+.subject-section{margin-bottom:40px;}
+.subject-section h2{color:var(--primary);border-bottom:3px solid var(--primary);padding-bottom:10px;margin-bottom:20px;}
+.action-bar{background:#fff;padding:20px;border-radius:14px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow);}
+.action-bar button{padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+.action-bar .btn-pdf{background:#16a34a;color:#fff;}
+.action-bar .btn-show-all{background:var(--primary);color:#fff;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../bundles.html" class="active">Bundles</a></li>
+      <li><a href="../mock-exam.html">Mock Exam</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-box-open"></i> WAEC 2018 — Complete Bundle</h1>
+  <p>Classic questions for cumulative practice</p>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="action-bar">
+      <div><strong>📅 WAEC 2018 Edition</strong></div>
+      <div>
+        <button class="btn-show-all" onclick="expandAll()"><i class="fas fa-eye"></i> Show All Solutions</button>
+        <button class="btn-pdf" onclick="downloadPDF('bundle-2018')"><i class="fas fa-file-pdf"></i> Download Full PDF</button>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-square-root-alt"></i> Math (2018)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2018</span></div>
+        <h3>1. Mode of: 4,5,5,6,7,5,8,9,5:</h3>
+        <ul class="pq-options">
+          <li>A) 4</li>
+          <li class="correct">B) 5</li>
+          <li>C) 6</li>
+          <li>D) 7</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>5 appears 4 times - most frequent</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2018</span></div>
+        <h3>2. Express 0.45 as %:</h3>
+        <ul class="pq-options">
+          <li>A) 4.5%</li>
+          <li class="correct">B) 45%</li>
+          <li>C) 0.45%</li>
+          <li>D) 450%</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>0.45 × 100 = 45%</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2018</span></div>
+        <h3>3. Share ₦240 in 3:5. Smaller part:</h3>
+        <ul class="pq-options">
+          <li class="correct">A) ₦90</li>
+          <li>B) ₦120</li>
+          <li>C) ₦150</li>
+          <li>D) ₦180</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>(3/8) × 240 = ₦90</li></ol><span class="ans">✅ A</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2018</span></div>
+        <h3>4. Simplify (x²−4)/(x−2):</h3>
+        <ul class="pq-options">
+          <li>A) x−2</li>
+          <li class="correct">B) x+2</li>
+          <li>C) x²−2</li>
+          <li>D) x</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>(x-2)(x+2)/(x-2) = x+2</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2018</span></div>
+        <h3>5. Surface area of sphere r=7 (π=22/7):</h3>
+        <ul class="pq-options">
+          <li>A) 154</li>
+          <li>B) 308</li>
+          <li class="correct">C) 616</li>
+          <li>D) 1232</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>4πr² = 4×22/7×49 = 616 cm²</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2018</span></div>
+        <h3>6. Rationalize 3/(√5−√2):</h3>
+        <ul class="pq-options">
+          <li>A) √5+√2</li>
+          <li class="correct">B) √5+√2</li>
+          <li>C) 3(√5−√2)</li>
+          <li>D) √5−√2</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Multiply by (√5+√2)/(√5+√2) = √5+√2</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-atom"></i> Physics (2018)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2018</span></div>
+        <h3>7. Convex mirror always forms:</h3>
+        <ul class="pq-options">
+          <li>A) Real</li>
+          <li class="correct">B) Virtual</li>
+          <li>C) Inverted</li>
+          <li>D) Magnified</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Convex mirror always virtual, erect, diminished</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2018</span></div>
+        <h3>8. SI unit of pressure:</h3>
+        <ul class="pq-options">
+          <li>A) Newton</li>
+          <li class="correct">B) Pascal</li>
+          <li>C) Joule</li>
+          <li>D) Watt</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Pa = N/m²</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2018</span></div>
+        <h3>9. Kinetic theory: gas pressure due to:</h3>
+        <ul class="pq-options">
+          <li>A) Mass</li>
+          <li class="correct">B) Molecular collisions</li>
+          <li>C) Volume</li>
+          <li>D) Density</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Particles colliding with container walls</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-flask"></i> Chemistry (2018)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2018</span></div>
+        <h3>10. NOT metal property:</h3>
+        <ul class="pq-options">
+          <li>A) Conductor</li>
+          <li>B) Malleable</li>
+          <li class="correct">C) Brittle</li>
+          <li>D) Lustrous</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Brittleness is non-metallic</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2018</span></div>
+        <h3>11. Universal solvent:</h3>
+        <ul class="pq-options">
+          <li>A) Petrol</li>
+          <li class="correct">B) Water</li>
+          <li>C) Alcohol</li>
+          <li>D) Acid</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Water dissolves more substances than any other</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2018</span></div>
+        <h3>12. Avogadro's number:</h3>
+        <ul class="pq-options">
+          <li>A) 6.02×10²²</li>
+          <li class="correct">B) 6.02×10²³</li>
+          <li>C) 6.02×10²⁴</li>
+          <li>D) 6.02×10²⁵</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>6.02 × 10²³ particles per mole</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-dna"></i> Biology (2018)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2018</span></div>
+        <h3>13. Universal blood donor:</h3>
+        <ul class="pq-options">
+          <li>A) A</li>
+          <li>B) B</li>
+          <li>C) AB</li>
+          <li class="correct">D) O</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>O has no antigens — donor to all</li></ol><span class="ans">✅ D</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2018</span></div>
+        <h3>14. DNA full form:</h3>
+        <ul class="pq-options">
+          <li class="correct">A) Deoxyribose Nucleic Acid</li>
+          <li>B) Dinitric Acid</li>
+          <li>C) Diribose Nucleic Acid</li>
+          <li>D) Dual Nucleic Acid</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Deoxyribose Nucleic Acid</li></ol><span class="ans">✅ A</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-book-open"></i> English (2018)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2018</span></div>
+        <h3>15. Antonym of 'transparent':</h3>
+        <ul class="pq-options">
+          <li>A) Clear</li>
+          <li class="correct">B) Opaque</li>
+          <li>C) Glassy</li>
+          <li>D) Honest</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Opposite of transparent = opaque</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2018</span></div>
+        <h3>16. Past tense of 'lay':</h3>
+        <ul class="pq-options">
+          <li>A) Lain</li>
+          <li>B) Layed</li>
+          <li class="correct">C) Laid</li>
+          <li>D) Laying</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Lay → Laid → Laid</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-chart-line"></i> Economics (2018)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Economics</span><span class="tag year">2018</span></div>
+        <h3>17. Producer goods are:</h3>
+        <ul class="pq-options">
+          <li>A) Final goods</li>
+          <li class="correct">B) Capital goods</li>
+          <li>C) Luxury goods</li>
+          <li>D) Free goods</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Used to produce other goods</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-landmark"></i> Government (2018)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2018</span></div>
+        <h3>18. Father of Nigerian Constitution:</h3>
+        <ul class="pq-options">
+          <li>A) Macpherson</li>
+          <li>B) Lyttleton</li>
+          <li class="correct">C) Richards</li>
+          <li>D) Clifford</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Sir Arthur Richards (1946 Constitution)</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../bundles.html">Bundles</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>
+function toggleSol(btn){const s=btn.nextElementSibling;s.classList.toggle('show');btn.innerHTML=s.classList.contains('show')?'<i class="fas fa-eye-slash"></i> Hide Solution':'<i class="fas fa-eye"></i> Show Solution';}
+function expandAll(){document.querySelectorAll('.solution-block').forEach(s=>s.classList.add('show'));document.querySelectorAll('.toggle-sol').forEach(b=>b.innerHTML='<i class="fas fa-eye-slash"></i> Hide');}
+if(window.location.hash==='#pdf'){setTimeout(()=>downloadPDF('bundle-2018'),500);}
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports | Admin</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="logo"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div>
+    <ul style="margin-top:14px;">
+      <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="users.html"><i class="fas fa-users"></i> Manage Users</a></li>
+      <li><a href="content.html"><i class="fas fa-book"></i> Content</a></li>
+      <li><a href="questions.html"><i class="fas fa-question-circle"></i> Question Bank</a></li>
+      <li><a href="reports.html" class="active"><i class="fas fa-chart-bar"></i> Reports</a></li>
+      <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+      <li><a href="#" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-header">
+      <div><h1><i class="fas fa-chart-bar"></i> Reports & Analytics</h1><p style="color:#6b7280;">Performance insights across subjects.</p></div>
+      <button class="btn-primary"><i class="fas fa-download"></i> Export PDF</button>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="label">Tests Taken (Month)</div><div class="value">38,912</div><div class="change"><i class="fas fa-arrow-up"></i> +22%</div></div>
+      <div class="stat-card"><div class="label">Avg. Score</div><div class="value">73%</div><div class="change"><i class="fas fa-arrow-up"></i> +4 pts</div></div>
+      <div class="stat-card"><div class="label">Most Studied</div><div class="value" style="font-size:1.4rem;">Mathematics</div><div class="change">42% of activity</div></div>
+      <div class="stat-card"><div class="label">Top Performer</div><div class="value" style="font-size:1.4rem;">Fatima S.</div><div class="change">96% avg score</div></div>
+    </div>
+
+    <div style="background:#fff;padding:30px;border-radius:14px;">
+      <h3 style="margin-bottom:20px;">Subject Performance Breakdown</h3>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:6px;"><strong>Mathematics</strong><span>78%</span></div><div style="height:10px;background:#e5e7eb;border-radius:50px;"><div style="width:78%;height:100%;background:linear-gradient(90deg,#0b5ed7,#7c3aed);border-radius:50px;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:6px;"><strong>English Language</strong><span>74%</span></div><div style="height:10px;background:#e5e7eb;border-radius:50px;"><div style="width:74%;height:100%;background:linear-gradient(90deg,#0b5ed7,#7c3aed);border-radius:50px;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:6px;"><strong>Physics</strong><span>69%</span></div><div style="height:10px;background:#e5e7eb;border-radius:50px;"><div style="width:69%;height:100%;background:linear-gradient(90deg,#0b5ed7,#7c3aed);border-radius:50px;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:6px;"><strong>Chemistry</strong><span>71%</span></div><div style="height:10px;background:#e5e7eb;border-radius:50px;"><div style="width:71%;height:100%;background:linear-gradient(90deg,#0b5ed7,#7c3aed);border-radius:50px;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:6px;"><strong>Biology</strong><span>76%</span></div><div style="height:10px;background:#e5e7eb;border-radius:50px;"><div style="width:76%;height:100%;background:linear-gradient(90deg,#0b5ed7,#7c3aed);border-radius:50px;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:6px;"><strong>Economics</strong><span>72%</span></div><div style="height:10px;background:#e5e7eb;border-radius:50px;"><div style="width:72%;height:100%;background:linear-gradient(90deg,#0b5ed7,#7c3aed);border-radius:50px;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:6px;"><strong>Further Math</strong><span>64%</span></div><div style="height:10px;background:#e5e7eb;border-radius:50px;"><div style="width:64%;height:100%;background:linear-gradient(90deg,#0b5ed7,#7c3aed);border-radius:50px;"></div></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

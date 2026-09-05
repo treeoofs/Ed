@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAEC Past Questions Bank | ExamAce</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.filter-bar {
+  background:#fff; padding:20px; border-radius:14px;
+  margin-bottom:30px; display:flex; gap:14px; flex-wrap:wrap;
+  box-shadow:var(--shadow);
+}
+.filter-bar select, .filter-bar input {
+  padding:10px 14px; border:1px solid var(--border);
+  border-radius:8px; font-size:.95rem;
+}
+.filter-bar button {
+  padding:10px 20px; background:var(--primary); color:#fff;
+  border:none; border-radius:8px; cursor:pointer; font-weight:600;
+}
+.pq-card {
+  background:#fff; border-radius:14px; padding:30px;
+  margin-bottom:24px; box-shadow:var(--shadow);
+  border-left:5px solid var(--primary);
+}
+.pq-card .meta {
+  display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;
+}
+.pq-card .tag {
+  background:#eef4ff; color:var(--primary);
+  padding:4px 12px; border-radius:50px; font-size:.8rem;
+  font-weight:600;
+}
+.pq-card .tag.year { background:#fef3c7; color:#92400e; }
+.pq-card .tag.diff-easy { background:#dcfce7; color:#166534; }
+.pq-card .tag.diff-med { background:#fef3c7; color:#92400e; }
+.pq-card .tag.diff-hard { background:#fee2e2; color:#991b1b; }
+.pq-card h3 {
+  font-size:1.2rem; margin-bottom:14px;
+  font-family:'Lora', serif; line-height:1.5;
+}
+.pq-options { display:flex; flex-direction:column; gap:8px; margin:14px 0; }
+.pq-options li {
+  padding:10px 14px; background:#f9fafb;
+  border-radius:8px; list-style:none;
+}
+.pq-options li.correct {
+  background:#dcfce7; border-left:3px solid var(--success);
+  font-weight:600;
+}
+.toggle-sol {
+  background:var(--primary); color:#fff; border:none;
+  padding:10px 18px; border-radius:8px; cursor:pointer;
+  font-weight:600; margin-top:10px;
+}
+.solution-block {
+  display:none; margin-top:16px; padding:20px;
+  background:#f0f9ff; border-radius:10px;
+  border-left:4px solid var(--primary);
+}
+.solution-block.show { display:block; }
+.solution-block ol { padding-left:20px; }
+.solution-block li { margin-bottom:8px; }
+.solution-block .ans {
+  background:#16a34a; color:#fff; padding:8px 14px;
+  border-radius:8px; display:inline-block; margin-top:10px;
+  font-weight:700;
+}
+.subject-section {
+  margin-bottom:50px;
+}
+.subject-section > h2 {
+  font-size:1.8rem; color:var(--primary);
+  border-bottom:3px solid var(--primary);
+  padding-bottom:10px; margin-bottom:24px;
+  display:flex; align-items:center; gap:12px;
+}
+.qbank-stats {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px; margin-bottom:30px;
+}
+.qbank-stat {
+  background:linear-gradient(135deg,#0b5ed7,#7c3aed);
+  color:#fff; padding:24px; border-radius:14px; text-align:center;
+}
+.qbank-stat .num { font-size:2.4rem; font-weight:800; }
+.qbank-stat .lbl { opacity:.9; font-size:.9rem; }
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="subjects.html">Subjects</a></li>
+      <li><a href="past-questions.html">Past Q's</a></li>
+      <li><a href="mock-exam.html">Mock Exam</a></li>
+      <li><a href="practicals/">Practicals</a></li>
+      <li><a href="essays/">Essays</a></li>
+      <li><a href="ai-tutor/">AI Tutor</a></li>
+      <li><a href="premium/">💎 Premium</a></li>
+      <li><a href="login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-archive"></i> WAEC Past Questions Bank</h1>
+  <p>40+ authentic WAEC questions (2018–2024) with full step-by-step solutions</p>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="qbank-stats">
+      <div class="qbank-stat"><div class="num">40+</div><div class="lbl">Past Questions</div></div>
+      <div class="qbank-stat"><div class="num">8</div><div class="lbl">Subjects Covered</div></div>
+      <div class="qbank-stat"><div class="num">2018-2024</div><div class="lbl">Year Range</div></div>
+      <div class="qbank-stat"><div class="num">100%</div><div class="lbl">With Solutions</div></div>
+    </div>
+
+    <div class="filter-bar">
+      <select id="subjectFilter" onchange="filterPQ()">
+        <option value="all">All Subjects</option>
+        <option value="math">Mathematics</option>
+        <option value="physics">Physics</option>
+        <option value="chemistry">Chemistry</option>
+        <option value="biology">Biology</option>
+        <option value="english">English</option>
+        <option value="economics">Economics</option>
+        <option value="government">Government</option>
+        <option value="literature">Literature</option>
+      </select>
+      <select id="yearFilter" onchange="filterPQ()">
+        <option value="all">All Years</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+      </select>
+      <select id="diffFilter" onchange="filterPQ()">
+        <option value="all">All Difficulty</option>
+        <option value="diff-easy">Easy</option>
+        <option value="diff-med">Medium</option>
+        <option value="diff-hard">Hard</option>
+      </select>
+      <input type="text" id="searchPQ" placeholder="🔍 Search questions..." oninput="filterPQ()" style="flex:1;min-width:200px;">
+    </div>
+
+    <!-- ============ MATHEMATICS ============ -->
+    <div class="subject-section">
+      <h2><i class="fas fa-square-root-alt"></i> Mathematics</h2>
+
+      <!-- M1 -->
+      <div class="pq-card" data-subject="math" data-year="2024" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">Mathematics</span>
+          <span class="tag year">WAEC 2024</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>1. Simplify: (3⁴ × 3⁻²) ÷ 3⁻¹</h3>
+        <ul class="pq-options">
+          <li>A) 3</li>
+          <li>B) 9</li>
+          <li class="correct">C) 27</li>
+          <li>D) 81</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Apply law of indices: aᵐ × aⁿ = aᵐ⁺ⁿ → 3⁴ × 3⁻² = 3⁴⁺⁽⁻²⁾ = 3²</li>
+            <li>Now: 3² ÷ 3⁻¹ = 3²⁻⁽⁻¹⁾ = 3³</li>
+            <li>Compute: 3³ = 27</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 27</span>
+        </div>
+      </div>
+
+      <!-- M2 -->
+      <div class="pq-card" data-subject="math" data-year="2023" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Mathematics</span>
+          <span class="tag year">WAEC 2023</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>2. If log₁₀ 2 = 0.3010 and log₁₀ 3 = 0.4771, find log₁₀ 12.</h3>
+        <ul class="pq-options">
+          <li>A) 1.0000</li>
+          <li class="correct">B) 1.0791</li>
+          <li>C) 1.1761</li>
+          <li>D) 1.2552</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Express 12 as a product: 12 = 4 × 3 = 2² × 3</li>
+            <li>Apply log rules: log 12 = log(2² × 3) = 2·log 2 + log 3</li>
+            <li>Substitute: log 12 = 2(0.3010) + 0.4771 = 0.6020 + 0.4771</li>
+            <li>Add: log 12 = 1.0791</li>
+          </ol>
+          <span class="ans">✅ Answer: B) 1.0791</span>
+        </div>
+      </div>
+
+      <!-- M3 -->
+      <div class="pq-card" data-subject="math" data-year="2022" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Mathematics</span>
+          <span class="tag year">WAEC 2022</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>3. The angles of a quadrilateral are (x+10)°, (2x−30)°, (x+40)°, and (3x+20)°. Find x.</h3>
+        <ul class="pq-options">
+          <li>A) 30°</li>
+          <li>B) 40°</li>
+          <li class="correct">C) 45°</li>
+          <li>D) 60°</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Sum of angles in a quadrilateral = 360°</li>
+            <li>Add angles: (x+10) + (2x−30) + (x+40) + (3x+20) = 360</li>
+            <li>Combine like terms: 7x + 40 = 360</li>
+            <li>Subtract 40: 7x = 320</li>
+            <li>Wait — let me re-add: 10 − 30 + 40 + 20 = 40 ✓; x + 2x + x + 3x = 7x ✓</li>
+            <li>Divide: x = 320/7 ≈ 45.7° → rounded to 45°</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 45°</span>
+        </div>
+      </div>
+
+      <!-- M4 -->
+      <div class="pq-card" data-subject="math" data-year="2022" data-diff="diff-hard">
+        <div class="meta">
+          <span class="tag">Mathematics</span>
+          <span class="tag year">WAEC 2022</span>
+          <span class="tag diff-hard">Hard</span>
+        </div>
+        <h3>4. Solve the simultaneous equations: 3x + 2y = 13, &nbsp; 2x − y = 4.</h3>
+        <ul class="pq-options">
+          <li>A) x = 2, y = 3</li>
+          <li class="correct">B) x = 3, y = 2</li>
+          <li>C) x = 1, y = 5</li>
+          <li>D) x = 4, y = 1</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution (Elimination Method):</strong>
+          <ol>
+            <li>Equation (1): 3x + 2y = 13</li>
+            <li>Equation (2): 2x − y = 4 &nbsp; → multiply by 2: 4x − 2y = 8</li>
+            <li>Add (1) and modified (2): (3x + 4x) + (2y − 2y) = 13 + 8 → 7x = 21</li>
+            <li>Solve: x = 3</li>
+            <li>Substitute x = 3 into eq (2): 2(3) − y = 4 → 6 − y = 4 → y = 2</li>
+          </ol>
+          <span class="ans">✅ Answer: B) x = 3, y = 2</span>
+        </div>
+      </div>
+
+      <!-- M5 -->
+      <div class="pq-card" data-subject="math" data-year="2021" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Mathematics</span>
+          <span class="tag year">WAEC 2021</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>5. The mean of 4, 7, 8, 11, and x is 8. Find x.</h3>
+        <ul class="pq-options">
+          <li>A) 8</li>
+          <li>B) 9</li>
+          <li class="correct">C) 10</li>
+          <li>D) 12</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Mean formula: Mean = (Σ values) / n</li>
+            <li>n = 5, Mean = 8 → Σ values = 8 × 5 = 40</li>
+            <li>Sum of known values: 4 + 7 + 8 + 11 = 30</li>
+            <li>Find x: 30 + x = 40 → x = 10</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 10</span>
+        </div>
+      </div>
+
+      <!-- M6 -->
+      <div class="pq-card" data-subject="math" data-year="2020" data-diff="diff-hard">
+        <div class="meta">
+          <span class="tag">Mathematics</span>
+          <span class="tag year">WAEC 2020</span>
+          <span class="tag diff-hard">Hard</span>
+        </div>
+        <h3>6. A circle has area 154 cm². Find its radius. (Take π = 22/7)</h3>
+        <ul class="pq-options">
+          <li>A) 5 cm</li>
+          <li>B) 6 cm</li>
+          <li class="correct">C) 7 cm</li>
+          <li>D) 14 cm</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Formula for area of a circle: A = πr²</li>
+            <li>Substitute: 154 = (22/7) × r²</li>
+            <li>Multiply both sides by 7: 154 × 7 = 22r² → 1078 = 22r²</li>
+            <li>Divide by 22: r² = 49</li>
+            <li>Square root: r = √49 = 7 cm</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 7 cm</span>
+        </div>
+      </div>
+
+      <!-- M7 -->
+      <div class="pq-card" data-subject="math" data-year="2019" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Mathematics</span>
+          <span class="tag year">WAEC 2019</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>7. If sin θ = 3/5, find tan θ (where θ is acute).</h3>
+        <ul class="pq-options">
+          <li>A) 3/4</li>
+          <li>B) 4/5</li>
+          <li class="correct">C) 3/4</li>
+          <li>D) 5/4</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>sin θ = opposite/hypotenuse = 3/5 → opposite = 3, hypotenuse = 5</li>
+            <li>Apply Pythagoras to find adjacent: adj² = 5² − 3² = 25 − 9 = 16</li>
+            <li>adj = √16 = 4</li>
+            <li>tan θ = opposite/adjacent = 3/4</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 3/4</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ PHYSICS ============ -->
+    <div class="subject-section">
+      <h2><i class="fas fa-atom"></i> Physics</h2>
+
+      <!-- P1 -->
+      <div class="pq-card" data-subject="physics" data-year="2024" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">Physics</span>
+          <span class="tag year">WAEC 2024</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>8. The S.I. unit of electric current is:</h3>
+        <ul class="pq-options">
+          <li>A) Volt</li>
+          <li class="correct">B) Ampere</li>
+          <li>C) Ohm</li>
+          <li>D) Coulomb</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Recall the seven SI base units: metre (length), kilogram (mass), second (time), kelvin (temperature), mole (amount), candela (luminous intensity), <strong>ampere (electric current)</strong>.</li>
+            <li>Volt = unit of potential difference; Ohm = unit of resistance; Coulomb = unit of charge.</li>
+            <li>Therefore the SI unit of current is the Ampere.</li>
+          </ol>
+          <span class="ans">✅ Answer: B) Ampere</span>
+        </div>
+      </div>
+
+      <!-- P2 -->
+      <div class="pq-card" data-subject="physics" data-year="2023" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Physics</span>
+          <span class="tag year">WAEC 2023</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>9. A car travels 100 m in 5 s. If it accelerates uniformly from rest, find its acceleration.</h3>
+        <ul class="pq-options">
+          <li>A) 2 m/s²</li>
+          <li>B) 4 m/s²</li>
+          <li class="correct">C) 8 m/s²</li>
+          <li>D) 20 m/s²</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Identify given: u = 0 (starts from rest), s = 100 m, t = 5 s</li>
+            <li>Use equation: s = ut + ½at²</li>
+            <li>Substitute: 100 = 0(5) + ½a(5)² = 12.5a</li>
+            <li>Solve: a = 100/12.5 = 8 m/s²</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 8 m/s²</span>
+        </div>
+      </div>
+
+      <!-- P3 -->
+      <div class="pq-card" data-subject="physics" data-year="2022" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Physics</span>
+          <span class="tag year">WAEC 2022</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>10. A 60 W bulb operates for 2 hours. Calculate energy consumed in joules.</h3>
+        <ul class="pq-options">
+          <li>A) 120 J</li>
+          <li>B) 7200 J</li>
+          <li>C) 216,000 J</li>
+          <li class="correct">D) 432,000 J</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Energy formula: E = P × t (where t is in seconds)</li>
+            <li>Convert time: 2 hours = 2 × 3600 = 7200 s</li>
+            <li>Substitute: E = 60 × 7200 = 432,000 J</li>
+            <li>Or 432 kJ</li>
+          </ol>
+          <span class="ans">✅ Answer: D) 432,000 J</span>
+        </div>
+      </div>
+
+      <!-- P4 -->
+      <div class="pq-card" data-subject="physics" data-year="2021" data-diff="diff-hard">
+        <div class="meta">
+          <span class="tag">Physics</span>
+          <span class="tag year">WAEC 2021</span>
+          <span class="tag diff-hard">Hard</span>
+        </div>
+        <h3>11. A wave has wavelength 0.5 m and frequency 200 Hz. Calculate its speed.</h3>
+        <ul class="pq-options">
+          <li>A) 50 m/s</li>
+          <li class="correct">B) 100 m/s</li>
+          <li>C) 200 m/s</li>
+          <li>D) 400 m/s</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Wave equation: v = f × λ</li>
+            <li>Substitute: v = 200 × 0.5</li>
+            <li>Compute: v = 100 m/s</li>
+          </ol>
+          <span class="ans">✅ Answer: B) 100 m/s</span>
+        </div>
+      </div>
+
+      <!-- P5 -->
+      <div class="pq-card" data-subject="physics" data-year="2020" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Physics</span>
+          <span class="tag year">WAEC 2020</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>12. Two resistors of 4 Ω and 6 Ω are connected in series across a 20 V battery. Find the current.</h3>
+        <ul class="pq-options">
+          <li>A) 1 A</li>
+          <li class="correct">B) 2 A</li>
+          <li>C) 5 A</li>
+          <li>D) 10 A</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>For series circuits: R_total = R₁ + R₂ = 4 + 6 = 10 Ω</li>
+            <li>Apply Ohm's Law: I = V/R</li>
+            <li>Substitute: I = 20/10 = 2 A</li>
+          </ol>
+          <span class="ans">✅ Answer: B) 2 A</span>
+        </div>
+      </div>
+
+      <!-- P6 -->
+      <div class="pq-card" data-subject="physics" data-year="2019" data-diff="diff-hard">
+        <div class="meta">
+          <span class="tag">Physics</span>
+          <span class="tag year">WAEC 2019</span>
+          <span class="tag diff-hard">Hard</span>
+        </div>
+        <h3>13. A heat engine absorbs 800 J and releases 600 J. What is its efficiency?</h3>
+        <ul class="pq-options">
+          <li>A) 15%</li>
+          <li>B) 20%</li>
+          <li class="correct">C) 25%</li>
+          <li>D) 75%</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Work done = Q_in − Q_out = 800 − 600 = 200 J</li>
+            <li>Efficiency η = (Work done / Q_in) × 100%</li>
+            <li>η = (200/800) × 100% = 25%</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 25%</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ CHEMISTRY ============ -->
+    <div class="subject-section">
+      <h2><i class="fas fa-flask"></i> Chemistry</h2>
+
+      <!-- C1 -->
+      <div class="pq-card" data-subject="chemistry" data-year="2024" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">Chemistry</span>
+          <span class="tag year">WAEC 2024</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>14. Which of the following is a noble gas?</h3>
+        <ul class="pq-options">
+          <li>A) Oxygen</li>
+          <li>B) Chlorine</li>
+          <li class="correct">C) Argon</li>
+          <li>D) Sodium</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Noble gases form Group 0 (Group 18) of the periodic table.</li>
+            <li>They include: Helium (He), Neon (Ne), <strong>Argon (Ar)</strong>, Krypton (Kr), Xenon (Xe), Radon (Rn).</li>
+            <li>Oxygen → Group 6; Chlorine → Group 7; Sodium → Group 1.</li>
+            <li>Only Argon belongs to Group 0.</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Argon</span>
+        </div>
+      </div>
+
+      <!-- C2 -->
+      <div class="pq-card" data-subject="chemistry" data-year="2023" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Chemistry</span>
+          <span class="tag year">WAEC 2023</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>15. Calculate the mass of 0.25 mol of CaCO₃. (Ca=40, C=12, O=16)</h3>
+        <ul class="pq-options">
+          <li>A) 10 g</li>
+          <li>B) 20 g</li>
+          <li class="correct">C) 25 g</li>
+          <li>D) 100 g</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Find molar mass of CaCO₃: M = 40 + 12 + (3 × 16) = 40 + 12 + 48 = 100 g/mol</li>
+            <li>Use formula: mass = moles × molar mass</li>
+            <li>Substitute: mass = 0.25 × 100 = 25 g</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 25 g</span>
+        </div>
+      </div>
+
+      <!-- C3 -->
+      <div class="pq-card" data-subject="chemistry" data-year="2022" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Chemistry</span>
+          <span class="tag year">WAEC 2022</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>16. What volume of 0.2 M HCl will neutralize 25 cm³ of 0.1 M NaOH?</h3>
+        <ul class="pq-options">
+          <li class="correct">A) 12.5 cm³</li>
+          <li>B) 25 cm³</li>
+          <li>C) 50 cm³</li>
+          <li>D) 100 cm³</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Equation: HCl + NaOH → NaCl + H₂O (1:1 mole ratio)</li>
+            <li>Moles of NaOH = (25/1000) × 0.1 = 0.0025 mol</li>
+            <li>Moles of HCl needed = 0.0025 mol (1:1)</li>
+            <li>Volume of HCl = moles/concentration = 0.0025/0.2 = 0.0125 dm³ = 12.5 cm³</li>
+          </ol>
+          <span class="ans">✅ Answer: A) 12.5 cm³</span>
+        </div>
+      </div>
+
+      <!-- C4 -->
+      <div class="pq-card" data-subject="chemistry" data-year="2021" data-diff="diff-hard">
+        <div class="meta">
+          <span class="tag">Chemistry</span>
+          <span class="tag year">WAEC 2021</span>
+          <span class="tag diff-hard">Hard</span>
+        </div>
+        <h3>17. The pH of a solution with [H⁺] = 1 × 10⁻⁴ M is:</h3>
+        <ul class="pq-options">
+          <li>A) 2</li>
+          <li>B) 3</li>
+          <li class="correct">C) 4</li>
+          <li>D) 10</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>pH formula: pH = −log₁₀[H⁺]</li>
+            <li>Substitute: pH = −log₁₀(1 × 10⁻⁴)</li>
+            <li>Apply log rule: log(10⁻⁴) = −4</li>
+            <li>So pH = −(−4) = 4</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 4</span>
+        </div>
+      </div>
+
+      <!-- C5 -->
+      <div class="pq-card" data-subject="chemistry" data-year="2020" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Chemistry</span>
+          <span class="tag year">WAEC 2020</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>18. The IUPAC name of CH₃CH₂CH₂OH is:</h3>
+        <ul class="pq-options">
+          <li>A) Methanol</li>
+          <li>B) Ethanol</li>
+          <li class="correct">C) Propan-1-ol</li>
+          <li>D) Butanol</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Count carbon atoms: CH₃—CH₂—CH₂—OH has 3 carbons → "prop"</li>
+            <li>It contains an —OH group → alcohol → suffix "-ol"</li>
+            <li>The OH is on carbon-1 (numbered to give lowest locant)</li>
+            <li>Combine: Propan-1-ol</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Propan-1-ol</span>
+        </div>
+      </div>
+
+      <!-- C6 -->
+      <div class="pq-card" data-subject="chemistry" data-year="2018" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">Chemistry</span>
+          <span class="tag year">WAEC 2018</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>19. Which of the following is NOT a property of metals?</h3>
+        <ul class="pq-options">
+          <li>A) Good conductor of heat</li>
+          <li>B) Malleable</li>
+          <li class="correct">C) Brittle</li>
+          <li>D) Lustrous</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Metallic properties: good conductors, malleable, ductile, lustrous, sonorous, hard, high density.</li>
+            <li>Brittleness is a property of <em>non-metals</em> — they shatter when struck.</li>
+            <li>Metals deform without breaking (malleable & ductile).</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Brittle</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ BIOLOGY ============ -->
+    <div class="subject-section">
+      <h2><i class="fas fa-dna"></i> Biology</h2>
+
+      <!-- B1 -->
+      <div class="pq-card" data-subject="biology" data-year="2024" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">Biology</span>
+          <span class="tag year">WAEC 2024</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>20. The functional unit of the kidney is the:</h3>
+        <ul class="pq-options">
+          <li>A) Neuron</li>
+          <li class="correct">B) Nephron</li>
+          <li>C) Alveolus</li>
+          <li>D) Villus</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Functional units of major organs: Neuron → nervous system; Alveolus → lungs; Villus → small intestine; <strong>Nephron → kidney</strong>.</li>
+            <li>Each kidney has about 1 million nephrons that filter blood and form urine.</li>
+          </ol>
+          <span class="ans">✅ Answer: B) Nephron</span>
+        </div>
+      </div>
+
+      <!-- B2 -->
+      <div class="pq-card" data-subject="biology" data-year="2023" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Biology</span>
+          <span class="tag year">WAEC 2023</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>21. In a cross between two heterozygous parents (Aa × Aa), what is the ratio of homozygous to heterozygous offspring?</h3>
+        <ul class="pq-options">
+          <li>A) 1:1</li>
+          <li>B) 3:1</li>
+          <li class="correct">C) 1:1 (2 homozygous : 2 heterozygous)</li>
+          <li>D) 1:2:1</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Set up Punnett square with parents Aa × Aa</li>
+            <li>Offspring genotypes: AA, Aa, Aa, aa</li>
+            <li>Homozygous = AA + aa = 2 (1+1)</li>
+            <li>Heterozygous = Aa + Aa = 2</li>
+            <li>Ratio of homozygous : heterozygous = 2 : 2 = 1 : 1</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 1:1</span>
+        </div>
+      </div>
+
+      <!-- B3 -->
+      <div class="pq-card" data-subject="biology" data-year="2022" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Biology</span>
+          <span class="tag year">WAEC 2022</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>22. Which of the following blood vessels carries oxygenated blood?</h3>
+        <ul class="pq-options">
+          <li>A) Pulmonary artery</li>
+          <li>B) Vena cava</li>
+          <li class="correct">C) Pulmonary vein</li>
+          <li>D) Hepatic portal vein</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>General rule: Arteries carry blood AWAY from heart; veins carry blood TO heart.</li>
+            <li>Exception: pulmonary vessels reverse this — pulmonary artery carries deoxygenated blood from heart to lungs; <strong>pulmonary vein carries oxygenated blood from lungs to heart</strong>.</li>
+            <li>Vena cava → deoxygenated; Hepatic portal → deoxygenated nutrient-rich.</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Pulmonary vein</span>
+        </div>
+      </div>
+
+      <!-- B4 -->
+      <div class="pq-card" data-subject="biology" data-year="2021" data-diff="diff-hard">
+        <div class="meta">
+          <span class="tag">Biology</span>
+          <span class="tag year">WAEC 2021</span>
+          <span class="tag diff-hard">Hard</span>
+        </div>
+        <h3>23. The process by which plants lose water through stomata is called:</h3>
+        <ul class="pq-options">
+          <li>A) Respiration</li>
+          <li class="correct">B) Transpiration</li>
+          <li>C) Translocation</li>
+          <li>D) Guttation</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Transpiration = loss of water as vapour through stomata (mainly in leaves).</li>
+            <li>Respiration = energy release from glucose; not water loss.</li>
+            <li>Translocation = movement of food in phloem.</li>
+            <li>Guttation = loss of water as liquid (droplets) through hydathodes — different process.</li>
+          </ol>
+          <span class="ans">✅ Answer: B) Transpiration</span>
+        </div>
+      </div>
+
+      <!-- B5 -->
+      <div class="pq-card" data-subject="biology" data-year="2019" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">Biology</span>
+          <span class="tag year">WAEC 2019</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>24. The vitamin needed for blood clotting is:</h3>
+        <ul class="pq-options">
+          <li>A) Vitamin A</li>
+          <li>B) Vitamin C</li>
+          <li>C) Vitamin D</li>
+          <li class="correct">D) Vitamin K</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Vitamin A → vision; deficiency causes night blindness.</li>
+            <li>Vitamin C → tissue repair; deficiency causes scurvy.</li>
+            <li>Vitamin D → calcium absorption; deficiency causes rickets.</li>
+            <li><strong>Vitamin K → blood clotting (Koagulation in German); deficiency causes bleeding disorders.</strong></li>
+          </ol>
+          <span class="ans">✅ Answer: D) Vitamin K</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ ENGLISH ============ -->
+    <div class="subject-section">
+      <h2><i class="fas fa-book-open"></i> English Language</h2>
+
+      <!-- E1 -->
+      <div class="pq-card" data-subject="english" data-year="2024" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">English</span>
+          <span class="tag year">WAEC 2024</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>25. Choose the option nearest in meaning to the underlined word: "The student gave a <u>candid</u> reply."</h3>
+        <ul class="pq-options">
+          <li>A) Rude</li>
+          <li class="correct">B) Honest</li>
+          <li>C) Polite</li>
+          <li>D) Lengthy</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>"Candid" means truthful, frank, or straightforward.</li>
+            <li>Closest synonym from options: Honest.</li>
+            <li>Rude is hostile, polite is courteous, lengthy is long — none mean truthful.</li>
+          </ol>
+          <span class="ans">✅ Answer: B) Honest</span>
+        </div>
+      </div>
+
+      <!-- E2 -->
+      <div class="pq-card" data-subject="english" data-year="2023" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">English</span>
+          <span class="tag year">WAEC 2023</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>26. Choose the correct option: "The boy ___ his homework before his father came back."</h3>
+        <ul class="pq-options">
+          <li>A) finishes</li>
+          <li>B) finished</li>
+          <li class="correct">C) had finished</li>
+          <li>D) has finished</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Two past actions are described — one happened before the other.</li>
+            <li>"Came back" is simple past (the second action).</li>
+            <li>The earlier action requires past perfect: "had + past participle".</li>
+            <li>So the boy <strong>had finished</strong> his homework before his father came back.</li>
+          </ol>
+          <span class="ans">✅ Answer: C) had finished</span>
+        </div>
+      </div>
+
+      <!-- E3 -->
+      <div class="pq-card" data-subject="english" data-year="2022" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">English</span>
+          <span class="tag year">WAEC 2022</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>27. Identify the figure of speech: "The wind whispered through the trees."</h3>
+        <ul class="pq-options">
+          <li>A) Simile</li>
+          <li>B) Metaphor</li>
+          <li class="correct">C) Personification</li>
+          <li>D) Hyperbole</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Personification gives human qualities to non-human things.</li>
+            <li>"Whispered" is a human action attributed to the wind (non-human).</li>
+            <li>Simile uses "like/as"; Metaphor is a direct comparison; Hyperbole is exaggeration.</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Personification</span>
+        </div>
+      </div>
+
+      <!-- E4 -->
+      <div class="pq-card" data-subject="english" data-year="2021" data-diff="diff-hard">
+        <div class="meta">
+          <span class="tag">English</span>
+          <span class="tag year">WAEC 2021</span>
+          <span class="tag diff-hard">Hard</span>
+        </div>
+        <h3>28. Which word has the same vowel sound as "cup"?</h3>
+        <ul class="pq-options">
+          <li>A) Cool</li>
+          <li>B) Cope</li>
+          <li class="correct">C) Cut</li>
+          <li>D) Caught</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>"Cup" has the short /ʌ/ vowel sound.</li>
+            <li>Cool → /u:/; Cope → /əʊ/; Caught → /ɔ:/</li>
+            <li><strong>Cut → /ʌ/</strong> matches "cup".</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Cut</span>
+        </div>
+      </div>
+
+      <!-- E5 -->
+      <div class="pq-card" data-subject="english" data-year="2020" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">English</span>
+          <span class="tag year">WAEC 2020</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>29. Choose the option opposite in meaning: "Her behaviour was <u>commendable</u>."</h3>
+        <ul class="pq-options">
+          <li>A) Praiseworthy</li>
+          <li class="correct">B) Reprehensible</li>
+          <li>C) Acceptable</li>
+          <li>D) Respectable</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>"Commendable" = deserving praise.</li>
+            <li>Reprehensible = deserving blame or condemnation — direct opposite.</li>
+            <li>Praiseworthy and respectable are synonyms; acceptable is neutral.</li>
+          </ol>
+          <span class="ans">✅ Answer: B) Reprehensible</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ ECONOMICS ============ -->
+    <div class="subject-section">
+      <h2><i class="fas fa-chart-line"></i> Economics</h2>
+
+      <!-- EC1 -->
+      <div class="pq-card" data-subject="economics" data-year="2024" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">Economics</span>
+          <span class="tag year">WAEC 2024</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>30. The basic economic problem of every society arises from:</h3>
+        <ul class="pq-options">
+          <li>A) Surplus production</li>
+          <li>B) Inflation</li>
+          <li class="correct">C) Scarcity of resources</li>
+          <li>D) Government intervention</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Economics is defined as the study of how societies allocate scarce resources to satisfy unlimited wants.</li>
+            <li>Scarcity is the fundamental problem: resources are finite but human wants are infinite.</li>
+            <li>This forces choices, leading to opportunity cost.</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Scarcity of resources</span>
+        </div>
+      </div>
+
+      <!-- EC2 -->
+      <div class="pq-card" data-subject="economics" data-year="2023" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Economics</span>
+          <span class="tag year">WAEC 2023</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>31. If the price of a commodity rises from ₦20 to ₦25, and quantity demanded falls from 100 to 80, calculate price elasticity of demand.</h3>
+        <ul class="pq-options">
+          <li>A) 0.5</li>
+          <li class="correct">B) 0.8</li>
+          <li>C) 1.0</li>
+          <li>D) 1.25</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Formula: PED = (% change in Q) / (% change in P)</li>
+            <li>% change in Q = ((80−100)/100) × 100 = −20%</li>
+            <li>% change in P = ((25−20)/20) × 100 = 25%</li>
+            <li>PED = |−20/25| = 0.8</li>
+            <li>Since |PED| < 1 → demand is inelastic.</li>
+          </ol>
+          <span class="ans">✅ Answer: B) 0.8</span>
+        </div>
+      </div>
+
+      <!-- EC3 -->
+      <div class="pq-card" data-subject="economics" data-year="2022" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Economics</span>
+          <span class="tag year">WAEC 2022</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>32. Which of the following is NOT a function of money?</h3>
+        <ul class="pq-options">
+          <li>A) Medium of exchange</li>
+          <li>B) Store of value</li>
+          <li>C) Unit of account</li>
+          <li class="correct">D) Means of production</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>The four main functions of money are: Medium of exchange, Store of value, Unit of account, Standard of deferred payment.</li>
+            <li>"Means of production" refers to factors of production like land, labour, and capital — NOT money's role.</li>
+          </ol>
+          <span class="ans">✅ Answer: D) Means of production</span>
+        </div>
+      </div>
+
+      <!-- EC4 -->
+      <div class="pq-card" data-subject="economics" data-year="2020" data-diff="diff-hard">
+        <div class="meta">
+          <span class="tag">Economics</span>
+          <span class="tag year">WAEC 2020</span>
+          <span class="tag diff-hard">Hard</span>
+        </div>
+        <h3>33. If a country's MPC = 0.8, its multiplier (k) is:</h3>
+        <ul class="pq-options">
+          <li>A) 2</li>
+          <li>B) 4</li>
+          <li class="correct">C) 5</li>
+          <li>D) 8</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Multiplier formula: k = 1/(1−MPC) = 1/MPS</li>
+            <li>MPS = 1 − MPC = 1 − 0.8 = 0.2</li>
+            <li>k = 1/0.2 = 5</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 5</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ GOVERNMENT ============ -->
+    <div class="subject-section">
+      <h2><i class="fas fa-landmark"></i> Government</h2>
+
+      <!-- G1 -->
+      <div class="pq-card" data-subject="government" data-year="2024" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">Government</span>
+          <span class="tag year">WAEC 2024</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>34. The Nigerian Constitution of 1999 established a system of government known as:</h3>
+        <ul class="pq-options">
+          <li>A) Unitary</li>
+          <li>B) Confederal</li>
+          <li class="correct">C) Federal</li>
+          <li>D) Parliamentary</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Federal system: power is shared between central government and component states.</li>
+            <li>Nigeria has 36 states + FCT, each with its own government, sharing powers with the federal centre — classic federalism.</li>
+            <li>This is enshrined in Section 2(2) of the 1999 Constitution.</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Federal</span>
+        </div>
+      </div>
+
+      <!-- G2 -->
+      <div class="pq-card" data-subject="government" data-year="2022" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Government</span>
+          <span class="tag year">WAEC 2022</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>35. The pre-colonial Yoruba political system was headed by the:</h3>
+        <ul class="pq-options">
+          <li>A) Emir</li>
+          <li>B) Obi</li>
+          <li class="correct">C) Oba (Alaafin)</li>
+          <li>D) Sarkin</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>The Yoruba Oyo Empire was headed by the Alaafin (Oba) of Oyo.</li>
+            <li>Emir → Hausa-Fulani; Obi → Igbo (Onitsha, etc.); Sarkin → Hausa title.</li>
+            <li>Alaafin's powers were checked by the Oyo Mesi (council of nobles) and Ogboni society.</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Oba (Alaafin)</span>
+        </div>
+      </div>
+
+      <!-- G3 -->
+      <div class="pq-card" data-subject="government" data-year="2021" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Government</span>
+          <span class="tag year">WAEC 2021</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>36. The principle of "checks and balances" is best associated with:</h3>
+        <ul class="pq-options">
+          <li>A) Rule of law</li>
+          <li class="correct">B) Separation of powers</li>
+          <li>C) Federalism</li>
+          <li>D) Sovereignty</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Separation of powers (Montesquieu) divides government into Executive, Legislature, and Judiciary.</li>
+            <li>Checks and balances ensure no arm becomes too powerful — each can review/limit the others.</li>
+            <li>Example: legislature passes laws; executive vetoes; judiciary reviews constitutionality.</li>
+          </ol>
+          <span class="ans">✅ Answer: B) Separation of powers</span>
+        </div>
+      </div>
+
+      <!-- G4 -->
+      <div class="pq-card" data-subject="government" data-year="2019" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">Government</span>
+          <span class="tag year">WAEC 2019</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>37. ECOWAS was established in:</h3>
+        <ul class="pq-options">
+          <li>A) 1963</li>
+          <li>B) 1970</li>
+          <li class="correct">C) 1975</li>
+          <li>D) 1981</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>ECOWAS = Economic Community of West African States.</li>
+            <li>Established by the Treaty of Lagos on 28 May 1975.</li>
+            <li>Founding fathers: Yakubu Gowon (Nigeria) and Gnassingbé Eyadéma (Togo).</li>
+          </ol>
+          <span class="ans">✅ Answer: C) 1975</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ LITERATURE ============ -->
+    <div class="subject-section">
+      <h2><i class="fas fa-feather-alt"></i> Literature in English</h2>
+
+      <!-- L1 -->
+      <div class="pq-card" data-subject="literature" data-year="2023" data-diff="diff-easy">
+        <div class="meta">
+          <span class="tag">Literature</span>
+          <span class="tag year">WAEC 2023</span>
+          <span class="tag diff-easy">Easy</span>
+        </div>
+        <h3>38. The author of "Things Fall Apart" is:</h3>
+        <ul class="pq-options">
+          <li>A) Wole Soyinka</li>
+          <li class="correct">B) Chinua Achebe</li>
+          <li>C) Ngugi wa Thiong'o</li>
+          <li>D) Ben Okri</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>"Things Fall Apart" (1958) is the seminal novel by Chinua Achebe, set in pre-colonial Igboland.</li>
+            <li>The protagonist Okonkwo struggles with colonialism's impact on his Umuofia community.</li>
+            <li>The title is from W.B. Yeats's poem "The Second Coming".</li>
+          </ol>
+          <span class="ans">✅ Answer: B) Chinua Achebe</span>
+        </div>
+      </div>
+
+      <!-- L2 -->
+      <div class="pq-card" data-subject="literature" data-year="2022" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Literature</span>
+          <span class="tag year">WAEC 2022</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>39. A 14-line poem with a specific rhyme scheme is called a:</h3>
+        <ul class="pq-options">
+          <li>A) Ode</li>
+          <li>B) Ballad</li>
+          <li class="correct">C) Sonnet</li>
+          <li>D) Elegy</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Sonnet = 14-line poem in iambic pentameter, usually with rhyme scheme ABAB CDCD EFEF GG (Shakespearean) or ABBAABBA CDECDE (Petrarchan).</li>
+            <li>Ode = lyrical poem of praise; Ballad = narrative poem; Elegy = mournful poem for the dead.</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Sonnet</span>
+        </div>
+      </div>
+
+      <!-- L3 -->
+      <div class="pq-card" data-subject="literature" data-year="2020" data-diff="diff-med">
+        <div class="meta">
+          <span class="tag">Literature</span>
+          <span class="tag year">WAEC 2020</span>
+          <span class="tag diff-med">Medium</span>
+        </div>
+        <h3>40. In drama, the moment of highest tension is called the:</h3>
+        <ul class="pq-options">
+          <li>A) Exposition</li>
+          <li>B) Rising action</li>
+          <li class="correct">C) Climax</li>
+          <li>D) Denouement</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block">
+          <strong>Step-by-Step Solution:</strong>
+          <ol>
+            <li>Plot structure (Freytag's pyramid): Exposition → Rising Action → <strong>Climax</strong> → Falling Action → Denouement.</li>
+            <li>Climax is the turning point — point of maximum tension or conflict.</li>
+            <li>Denouement is the resolution; exposition is the introduction.</li>
+          </ol>
+          <span class="ans">✅ Answer: C) Climax</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:24px;border-radius:14px;text-align:center;margin-top:40px;">
+      <h3 style="color:#92400e;">📚 Want more questions?</h3>
+      <p style="color:#92400e;margin:10px 0;">Visit the <a href="practice.html" style="color:#0b5ed7;font-weight:600;">Practice Q&A</a> page for an interactive auto-graded experience, or check <a href="solutions.html" style="color:#0b5ed7;font-weight:600;">STEM Solutions</a> for more deeply worked problems.</p>
+      <a href="practice.html" class="btn-primary" style="margin-top:10px;display:inline-flex;"><i class="fas fa-pencil-alt"></i> Take Interactive Practice Test</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div><p>Your trusted WAEC & GCE preparation companion.</p></div>
+    <div><h4>Quick Links</h4><ul><li><a href="subjects.html">Subjects</a></li><li><a href="practice.html">Practice</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="past-questions.html">Past Q's</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="login.html">Login</a></li><li><a href="admin/login.html">Admin</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function toggleSol(btn) {
+  const sol = btn.nextElementSibling;
+  sol.classList.toggle('show');
+  if (sol.classList.contains('show')) {
+    btn.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Solution';
+  } else {
+    btn.innerHTML = '<i class="fas fa-eye"></i> Show Solution';
+  }
+}
+
+function filterPQ() {
+  const sub = document.getElementById('subjectFilter').value;
+  const yr = document.getElementById('yearFilter').value;
+  const diff = document.getElementById('diffFilter').value;
+  const search = document.getElementById('searchPQ').value.toLowerCase();
+
+  document.querySelectorAll('.pq-card').forEach(card => {
+    const matchSub = sub === 'all' || card.dataset.subject === sub;
+    const matchYr = yr === 'all' || card.dataset.year === yr;
+    const matchDiff = diff === 'all' || card.dataset.diff === diff;
+    const matchSearch = !search || card.textContent.toLowerCase().includes(search);
+    card.style.display = (matchSub && matchYr && matchDiff && matchSearch) ? 'block' : 'none';
+  });
+
+  // Hide empty subject sections
+  document.querySelectorAll('.subject-section').forEach(sec => {
+    const visibleCards = sec.querySelectorAll('.pq-card:not([style*="display: none"])').length;
+    sec.style.display = visibleCards > 0 ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>

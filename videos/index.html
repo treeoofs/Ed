@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Walkthroughs | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-bottom:50px;}
+.video-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:.3s;}
+.video-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+.video-thumbnail{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#0b5ed7,#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;}
+.video-thumbnail .duration{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.7);color:#fff;padding:4px 8px;border-radius:4px;font-size:.8rem;font-weight:600;}
+.video-thumbnail .play{font-size:3rem;}
+.video-card .info{padding:16px;}
+.video-card h3{font-size:1.05rem;margin-bottom:8px;line-height:1.4;}
+.video-card .meta{display:flex;gap:8px;color:var(--muted);font-size:.85rem;margin-bottom:8px;}
+.video-card .views{display:flex;gap:4px;align-items:center;}
+.tag-row{display:flex;gap:6px;flex-wrap:wrap;}
+.tag-row span{background:#eef4ff;color:var(--primary);padding:2px 10px;border-radius:50px;font-size:.75rem;font-weight:600;}
+.video-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.9);z-index:9999;align-items:center;justify-content:center;padding:20px;}
+.video-modal.show{display:flex;}
+.video-modal-content{background:#000;width:100%;max-width:900px;border-radius:14px;overflow:hidden;}
+.video-modal-content iframe{width:100%;aspect-ratio:16/9;border:0;}
+.video-modal-content .modal-close{position:absolute;top:20px;right:20px;background:#fff;border:none;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;}
+.filter-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;}
+.filter-tabs button{padding:10px 20px;background:#fff;border:2px solid #e5e7eb;border-radius:50px;cursor:pointer;font-weight:600;}
+.filter-tabs button.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../videos/" class="active">Videos</a></li>
+      <li><a href="../practicals/">Practicals</a></li>
+      <li><a href="../ai-tutor/">AI Tutor</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-video"></i> Video Walkthroughs</h1>
+  <p>Watch expert tutors solve the toughest WAEC STEM problems step-by-step</p>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="filter-tabs">
+      <button class="active" onclick="filterVideos('all', this)">All Subjects</button>
+      <button onclick="filterVideos('math', this)">Mathematics</button>
+      <button onclick="filterVideos('physics', this)">Physics</button>
+      <button onclick="filterVideos('chemistry', this)">Chemistry</button>
+      <button onclick="filterVideos('biology', this)">Biology</button>
+      <button onclick="filterVideos('english', this)">English</button>
+    </div>
+
+    <div class="video-grid" id="videoGrid">
+
+      <div class="video-card" data-subject="math" onclick="openVideo('eF6zYNzlZKQ', 'Quadratic Equations Explained')">
+        <div class="video-thumbnail"><i class="fas fa-play-circle play"></i><span class="duration">12:34</span></div>
+        <div class="info">
+          <h3>Quadratic Equations — Three Methods Explained</h3>
+          <div class="meta"><span>Mr. Adebayo</span> · <span class="views"><i class="fas fa-eye"></i> 24K</span></div>
+          <div class="tag-row"><span>Math</span><span>Algebra</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="math" onclick="openVideo('WUvTyaaNkzM', 'Calculus Differentiation')">
+        <div class="video-thumbnail"><i class="fas fa-play-circle play"></i><span class="duration">15:20</span></div>
+        <div class="info">
+          <h3>Differentiation: Power Rule, Product Rule, Quotient Rule</h3>
+          <div class="meta"><span>Ms. Okonkwo</span> · <span class="views"><i class="fas fa-eye"></i> 18K</span></div>
+          <div class="tag-row"><span>Math</span><span>Calculus</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="physics" onclick="openVideo('kKKM8Y-u7ds', 'Newtons Laws')">
+        <div class="video-thumbnail" style="background:linear-gradient(135deg,#dc2626,#7c3aed);"><i class="fas fa-play-circle play"></i><span class="duration">10:45</span></div>
+        <div class="info">
+          <h3>Newton's Three Laws of Motion (with Examples)</h3>
+          <div class="meta"><span>Dr. Ibrahim</span> · <span class="views"><i class="fas fa-eye"></i> 42K</span></div>
+          <div class="tag-row"><span>Physics</span><span>Mechanics</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="physics" onclick="openVideo('5oM3qhGZN-Q', 'Ohms Law')">
+        <div class="video-thumbnail" style="background:linear-gradient(135deg,#dc2626,#7c3aed);"><i class="fas fa-play-circle play"></i><span class="duration">8:30</span></div>
+        <div class="info">
+          <h3>Ohm's Law and Circuit Analysis Made Easy</h3>
+          <div class="meta"><span>Dr. Ibrahim</span> · <span class="views"><i class="fas fa-eye"></i> 35K</span></div>
+          <div class="tag-row"><span>Physics</span><span>Electricity</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="chemistry" onclick="openVideo('eSiZ_zhLqsU', 'Mole Concept')">
+        <div class="video-thumbnail" style="background:linear-gradient(135deg,#16a34a,#0b5ed7);"><i class="fas fa-play-circle play"></i><span class="duration">14:15</span></div>
+        <div class="info">
+          <h3>Mole Concept and Stoichiometry — Master Class</h3>
+          <div class="meta"><span>Mrs. Eze</span> · <span class="views"><i class="fas fa-eye"></i> 31K</span></div>
+          <div class="tag-row"><span>Chemistry</span><span>Stoichiometry</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="chemistry" onclick="openVideo('Yw-WGw9NdNI', 'Titration')">
+        <div class="video-thumbnail" style="background:linear-gradient(135deg,#16a34a,#0b5ed7);"><i class="fas fa-play-circle play"></i><span class="duration">11:50</span></div>
+        <div class="info">
+          <h3>Titration: Acid-Base Reactions Step-by-Step</h3>
+          <div class="meta"><span>Mrs. Eze</span> · <span class="views"><i class="fas fa-eye"></i> 28K</span></div>
+          <div class="tag-row"><span>Chemistry</span><span>Practical</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="biology" onclick="openVideo('UPBMG5EYydo', 'Photosynthesis')">
+        <div class="video-thumbnail" style="background:linear-gradient(135deg,#f59e0b,#16a34a);"><i class="fas fa-play-circle play"></i><span class="duration">9:25</span></div>
+        <div class="info">
+          <h3>Photosynthesis Explained — Light & Dark Reactions</h3>
+          <div class="meta"><span>Mr. Mensah</span> · <span class="views"><i class="fas fa-eye"></i> 40K</span></div>
+          <div class="tag-row"><span>Biology</span><span>Plants</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="biology" onclick="openVideo('Qa3JIrVdXhQ', 'Genetics')">
+        <div class="video-thumbnail" style="background:linear-gradient(135deg,#f59e0b,#16a34a);"><i class="fas fa-play-circle play"></i><span class="duration">13:10</span></div>
+        <div class="info">
+          <h3>Genetics: Mendel's Laws & Punnett Squares</h3>
+          <div class="meta"><span>Mr. Mensah</span> · <span class="views"><i class="fas fa-eye"></i> 36K</span></div>
+          <div class="tag-row"><span>Biology</span><span>Genetics</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="english" onclick="openVideo('S_Tt5g3yMFc', 'Essay Writing')">
+        <div class="video-thumbnail" style="background:linear-gradient(135deg,#7c3aed,#dc2626);"><i class="fas fa-play-circle play"></i><span class="duration">16:00</span></div>
+        <div class="info">
+          <h3>Essay Writing: Structure & Strategies for WAEC</h3>
+          <div class="meta"><span>Mrs. Adekunle</span> · <span class="views"><i class="fas fa-eye"></i> 22K</span></div>
+          <div class="tag-row"><span>English</span><span>Essay</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="math" onclick="openVideo('rqWgM9HhnNQ', 'Trigonometry')">
+        <div class="video-thumbnail"><i class="fas fa-play-circle play"></i><span class="duration">11:00</span></div>
+        <div class="info">
+          <h3>Trigonometry: SOH CAH TOA & Beyond</h3>
+          <div class="meta"><span>Mr. Adebayo</span> · <span class="views"><i class="fas fa-eye"></i> 19K</span></div>
+          <div class="tag-row"><span>Math</span><span>Trig</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="physics" onclick="openVideo('5wVKrqGzgKc', 'Waves')">
+        <div class="video-thumbnail" style="background:linear-gradient(135deg,#dc2626,#7c3aed);"><i class="fas fa-play-circle play"></i><span class="duration">12:30</span></div>
+        <div class="info">
+          <h3>Waves and Sound: Wavelength, Frequency, Speed</h3>
+          <div class="meta"><span>Dr. Ibrahim</span> · <span class="views"><i class="fas fa-eye"></i> 25K</span></div>
+          <div class="tag-row"><span>Physics</span><span>Waves</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" data-subject="chemistry" onclick="openVideo('vaYC4-q9k_M', 'Organic Chem')">
+        <div class="video-thumbnail" style="background:linear-gradient(135deg,#16a34a,#0b5ed7);"><i class="fas fa-play-circle play"></i><span class="duration">17:20</span></div>
+        <div class="info">
+          <h3>Organic Chemistry: Alkanes, Alkenes, Alcohols</h3>
+          <div class="meta"><span>Mrs. Eze</span> · <span class="views"><i class="fas fa-eye"></i> 33K</span></div>
+          <div class="tag-row"><span>Chemistry</span><span>Organic</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:24px;border-radius:14px;color:#92400e;">
+      <strong><i class="fas fa-info-circle"></i> Production Note:</strong> Videos use placeholder YouTube IDs for demo. In the live deployment, you'd replace these with your own filmed content or curated educational channel videos with permission.
+    </div>
+  </div>
+</section>
+
+<div class="video-modal" id="videoModal" onclick="if(event.target.id==='videoModal')closeVideo()">
+  <div class="video-modal-content">
+    <iframe id="videoFrame" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen></iframe>
+  </div>
+  <button class="modal-close" onclick="closeVideo()"><i class="fas fa-times"></i></button>
+</div>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../subjects.html">Subjects</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+
+<script>
+function openVideo(id, title) {
+  document.getElementById('videoFrame').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+  document.getElementById('videoModal').classList.add('show');
+}
+function closeVideo() {
+  document.getElementById('videoFrame').src = '';
+  document.getElementById('videoModal').classList.remove('show');
+}
+function filterVideos(subj, btn) {
+  document.querySelectorAll('.filter-tabs button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.video-card').forEach(c => {
+    c.style.display = (subj === 'all' || c.dataset.subject === subj) ? '' : 'none';
+  });
+}
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

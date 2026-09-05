@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tutor | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.chat-container{max-width:900px;margin:30px auto;background:#fff;border-radius:14px;box-shadow:var(--shadow-lg);height:calc(100vh - 200px);display:flex;flex-direction:column;overflow:hidden;}
+.chat-header{background:linear-gradient(135deg,#0b5ed7,#7c3aed);color:#fff;padding:20px 24px;display:flex;align-items:center;gap:14px;}
+.bot-avatar{width:48px;height:48px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+.chat-header h3{font-size:1.2rem;}
+.chat-header .status{font-size:.85rem;opacity:.9;display:flex;align-items:center;gap:6px;}
+.chat-header .status::before{content:'';width:8px;height:8px;background:#10b981;border-radius:50%;display:inline-block;}
+.chat-messages{flex:1;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:16px;background:#f9fafb;}
+.msg{max-width:75%;padding:14px 18px;border-radius:18px;line-height:1.5;}
+.msg.bot{background:#fff;border:1px solid #e5e7eb;align-self:flex-start;border-bottom-left-radius:4px;}
+.msg.user{background:linear-gradient(135deg,#0b5ed7,#1d4ed8);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;}
+.msg.bot strong{color:#0b5ed7;}
+.msg pre{background:#1e293b;color:#fef3c7;padding:12px;border-radius:8px;overflow-x:auto;margin:8px 0;font-size:.85rem;}
+.suggested{display:flex;gap:8px;flex-wrap:wrap;padding:12px 24px;background:#fff;border-top:1px solid #e5e7eb;}
+.suggested button{background:#eef4ff;color:var(--primary);border:1px solid #c7d2fe;padding:8px 14px;border-radius:50px;cursor:pointer;font-size:.85rem;font-weight:500;transition:.2s;}
+.suggested button:hover{background:var(--primary);color:#fff;}
+.chat-input{display:flex;padding:16px;border-top:1px solid #e5e7eb;gap:10px;background:#fff;}
+.chat-input input{flex:1;padding:14px 18px;border:2px solid #e5e7eb;border-radius:50px;font-size:1rem;outline:none;}
+.chat-input input:focus{border-color:var(--primary);}
+.chat-input button{background:var(--primary);color:#fff;border:none;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:1.1rem;}
+.typing{display:flex;gap:4px;padding:14px 18px;}
+.typing span{width:8px;height:8px;background:#9ca3af;border-radius:50%;animation:typing 1.4s infinite;}
+.typing span:nth-child(2){animation-delay:.2s;}
+.typing span:nth-child(3){animation-delay:.4s;}
+@keyframes typing{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-8px);}}
+.banner-info{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px;color:#92400e;font-size:.9rem;border-radius:8px;margin:0 0 20px;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../practicals/">Practicals</a></li>
+      <li><a href="../ai-tutor/" class="active">AI Tutor</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner" style="padding:30px 24px;">
+  <h1><i class="fas fa-robot"></i> Ask the AI Tutor</h1>
+  <p>Get instant explanations and step-by-step solutions for any WAEC/GCE topic</p>
+</section>
+
+<div class="container">
+  <div class="banner-info">
+    <strong><i class="fas fa-info-circle"></i> Demo Mode:</strong> This AI Tutor is a knowledge-rule-based responder demonstrating the production design. In production, it would connect to GPT-4 / Gemini via API for full natural language understanding.
+  </div>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="bot-avatar"><i class="fas fa-robot"></i></div>
+      <div>
+        <h3>ExamAce AI Tutor</h3>
+        <div class="status">Online · Ready to help</div>
+      </div>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">
+        <strong>👋 Hello!</strong> I'm your ExamAce AI Tutor. Ask me anything about WAEC or GCE subjects — Math, Physics, Chemistry, Biology, English, Government, Economics. Try one of the suggested questions below, or type your own!
+      </div>
+    </div>
+
+    <div class="suggested">
+      <button onclick="sendSuggested('Solve quadratic 2x² − 5x − 3 = 0')">Solve quadratic 2x² − 5x − 3</button>
+      <button onclick="sendSuggested('Explain Newton\'s laws of motion')">Newton's laws</button>
+      <button onclick="sendSuggested('What is photosynthesis?')">Photosynthesis</button>
+      <button onclick="sendSuggested('Calculate mole of NaOH')">Mole calculation</button>
+      <button onclick="sendSuggested('Difference between simile and metaphor')">Simile vs metaphor</button>
+      <button onclick="sendSuggested('Features of federalism')">Federalism features</button>
+    </div>
+
+    <form class="chat-input" onsubmit="sendMessage(event)">
+      <input type="text" id="userInput" placeholder="Type your question..." autocomplete="off">
+      <button type="submit"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+</div>
+
+<script>
+const KNOWLEDGE = {
+  'quadratic|2x.*5x.*3|2x²': `**Solving 2x² − 5x − 3 = 0** using factorization:\n\n<pre>1. Find two numbers: product = a×c = 2×(−3) = −6; sum = b = −5\n   Numbers: −6 and +1 ✓\n2. Split middle: 2x² − 6x + x − 3 = 0\n3. Factor: 2x(x−3) + 1(x−3) = 0\n4. Common: (2x+1)(x−3) = 0\n5. Solve: x = −1/2 or x = 3</pre>\n\n**✅ Answer: x = −1/2 or x = 3**`,
+  'newton.*law|laws of motion': `**Newton's Three Laws of Motion:**\n\n**1st Law (Inertia):** An object at rest stays at rest, and an object in motion stays in motion at constant velocity, unless acted upon by an external force.\n\n**2nd Law (F=ma):** The acceleration of an object is directly proportional to the net force and inversely proportional to its mass:\n<pre>F = ma</pre>\n\n**3rd Law (Action-Reaction):** For every action, there is an equal and opposite reaction.\n\n**Example:** A 5kg object pushed with 20N → a = F/m = 20/5 = 4 m/s²`,
+  'photosynthesis': `**Photosynthesis** is the process by which green plants use sunlight to convert CO₂ and water into glucose and oxygen.\n\n<pre>6CO₂ + 6H₂O → (sunlight, chlorophyll) → C₆H₁₂O₆ + 6O₂</pre>\n\n**Where:** Mainly in chloroplasts of leaf mesophyll cells.\n\n**Two stages:**\n- **Light reactions:** Capture light energy → ATP & NADPH; split water (releasing O₂)\n- **Dark reactions (Calvin cycle):** Use ATP/NADPH to fix CO₂ into glucose\n\n**Factors affecting rate:** light intensity, CO₂ concentration, temperature, water, chlorophyll concentration.`,
+  'mole|naoh|calculate.*mole': `**Mole Calculation Example:** Find moles in 80g of NaOH (Na=23, O=16, H=1)\n\n<pre>Step 1: Molar mass NaOH = 23 + 16 + 1 = 40 g/mol\nStep 2: Moles = mass / molar mass\n        Moles = 80 / 40 = 2 mol</pre>\n\n**✅ Answer: 2 moles**\n\n**Key formulas:**\n• Moles = Mass / Molar mass\n• Moles = Volume(dm³) / 22.4 (at STP, gases)\n• Moles = Concentration × Volume(dm³)`,
+  'simile.*metaphor|figure of speech': `**Simile vs Metaphor:**\n\n**Simile** uses "like" or "as" to make a comparison:\n• "She is as brave as a lion."\n• "He runs like the wind."\n\n**Metaphor** is a direct comparison without "like/as":\n• "She is a lion in battle."\n• "Time is money."\n\n**Both create vivid imagery; metaphor is more direct and bold.**`,
+  'federalism|federal': `**Federalism** is a system where power is shared between a central government and component states/regions.\n\n**Four key features:**\n\n**1. Written, rigid constitution** — clearly outlines powers; difficult to amend.\n\n**2. Division of powers** — Exclusive list (federal), Concurrent list (both), Residual list (states).\n\n**3. Supremacy of constitution** — no law may contradict it; judiciary interprets.\n\n**4. Bicameral legislature** — lower house (population-based), upper house (state-equal representation).\n\n**Examples:** Nigeria, USA, India, Canada, Germany.`,
+  'pythagoras|right.*triangle': `**Pythagoras Theorem:** In a right-angled triangle, the square of the hypotenuse equals the sum of squares of the other two sides.\n\n<pre>a² + b² = c²</pre>\n\n**Example:** Legs 3 and 4; hypotenuse?\n<pre>c² = 3² + 4² = 9 + 16 = 25\nc = 5</pre>`,
+  'ohm|ohms law': `**Ohm's Law:** V = IR\n\n• V = potential difference (volts)\n• I = current (amperes)\n• R = resistance (ohms)\n\n**Example:** 12V battery, 4Ω resistor → I = V/R = 12/4 = 3A\n\n**Power:** P = VI = I²R = V²/R`,
+  'mitochondria|powerhouse': `**Mitochondrion** is the "powerhouse of the cell" — site of aerobic respiration where ATP (energy) is produced.\n\n**Structure:** Double membrane; inner folded into cristae; matrix contains enzymes and DNA.\n\n**Function:** Glucose + O₂ → CO₂ + H₂O + ATP energy.\n\n**Notable:** Has its own DNA (mtDNA), inherited maternally.`,
+  'inflation': `**Inflation** is a sustained increase in the general price level of goods and services over time.\n\n**Types:**\n• Demand-pull (too much money chasing too few goods)\n• Cost-push (rising production costs)\n• Imported (higher cost of imports)\n• Hyperinflation (extreme, e.g., Zimbabwe 2008)\n\n**Effects:** Erodes purchasing power; hurts savers; benefits borrowers; redistributes income.`,
+  'democracy': `**Democracy** is government by the people, where sovereignty resides in the citizenry.\n\n**Lincoln's definition:** "Government of the people, by the people, for the people."\n\n**Types:**\n• Direct (Athens, Switzerland referenda)\n• Representative (Nigeria, USA, UK)\n\n**Features:** Free elections, rule of law, fundamental rights, independent judiciary, multi-party system, free press.`,
+  'separation of powers': `**Separation of Powers** divides government into three branches with separate functions:\n\n• **Legislature** — makes laws (National Assembly)\n• **Executive** — implements laws (President + Cabinet)\n• **Judiciary** — interprets laws (Supreme Court)\n\nProposed by **Baron de Montesquieu** in *The Spirit of the Laws* (1748). Combined with **checks and balances** to prevent tyranny.`,
+  'help|hi|hello|hey': `Hello! I can help with:\n\n• **Math** — algebra, calculus, geometry, statistics\n• **Physics** — mechanics, waves, electricity, optics\n• **Chemistry** — moles, balancing, organic, qualitative analysis\n• **Biology** — cells, genetics, ecology, photosynthesis\n• **English** — essays, comprehension, grammar, lexis\n• **Government, Economics, History** — concepts and theory\n\nJust type a question or click a suggestion above!`
+};
+
+function findResponse(query) {
+  const q = query.toLowerCase();
+  for (const [pattern, response] of Object.entries(KNOWLEDGE)) {
+    const regex = new RegExp(pattern, 'i');
+    if (regex.test(q)) return response;
+  }
+  return `That's a great question! In production, I would call GPT-4/Gemini to give you a full answer. For now, try asking about:\n\n• Quadratic equations  • Newton's laws  • Photosynthesis\n• Mole calculations  • Simile vs metaphor  • Federalism\n• Ohm's law  • Mitochondria  • Inflation  • Democracy  • Pythagoras\n\nOr browse the [Past Questions](../past-questions.html) page for worked solutions.`;
+}
+
+function appendMsg(text, sender) {
+  const messages = document.getElementById('chatMessages');
+  const msg = document.createElement('div');
+  msg.className = 'msg ' + sender;
+  msg.innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  messages.appendChild(msg);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function showTyping() {
+  const messages = document.getElementById('chatMessages');
+  const typ = document.createElement('div');
+  typ.className = 'msg bot typing';
+  typ.id = 'typingIndicator';
+  typ.innerHTML = '<span></span><span></span><span></span>';
+  messages.appendChild(typ);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function removeTyping() {
+  const t = document.getElementById('typingIndicator');
+  if (t) t.remove();
+}
+
+function sendMessage(e) {
+  if (e) e.preventDefault();
+  const input = document.getElementById('userInput');
+  const text = input.value.trim();
+  if (!text) return;
+  appendMsg(text, 'user');
+  input.value = '';
+  showTyping();
+  setTimeout(() => {
+    removeTyping();
+    appendMsg(findResponse(text), 'bot');
+  }, 800 + Math.random() * 600);
+}
+
+function sendSuggested(text) {
+  document.getElementById('userInput').value = text;
+  sendMessage();
+}
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

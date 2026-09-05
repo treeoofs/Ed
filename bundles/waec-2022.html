@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAEC 2022 Bundle | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.pq-card{background:#fff;border-radius:14px;padding:28px;margin-bottom:20px;box-shadow:var(--shadow);border-left:5px solid var(--primary);}
+.pq-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.pq-card .tag{background:#eef4ff;color:var(--primary);padding:4px 12px;border-radius:50px;font-size:.8rem;font-weight:600;}
+.pq-card .tag.year{background:#fef3c7;color:#92400e;}
+.pq-card h3{font-size:1.15rem;margin-bottom:14px;line-height:1.5;}
+.pq-options{display:flex;flex-direction:column;gap:8px;margin:14px 0;list-style:none;padding:0;}
+.pq-options li{padding:10px 14px;background:#f9fafb;border-radius:8px;}
+.pq-options li.correct{background:#dcfce7;border-left:3px solid #16a34a;font-weight:600;}
+.toggle-sol{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;}
+.solution-block{display:none;margin-top:16px;padding:20px;background:#f0f9ff;border-radius:10px;border-left:4px solid var(--primary);}
+.solution-block.show{display:block;}
+.solution-block ol{padding-left:20px;}
+.solution-block .ans{background:#16a34a;color:#fff;padding:8px 14px;border-radius:8px;display:inline-block;margin-top:10px;font-weight:700;}
+.subject-section{margin-bottom:40px;}
+.subject-section h2{color:var(--primary);border-bottom:3px solid var(--primary);padding-bottom:10px;margin-bottom:20px;}
+.action-bar{background:#fff;padding:20px;border-radius:14px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow);}
+.action-bar button{padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+.action-bar .btn-pdf{background:#16a34a;color:#fff;}
+.action-bar .btn-show-all{background:var(--primary);color:#fff;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../bundles.html" class="active">Bundles</a></li>
+      <li><a href="../mock-exam.html">Mock Exam</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-box-open"></i> WAEC 2022 — Complete Bundle</h1>
+  <p>Mix of standard and advanced questions</p>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="action-bar">
+      <div><strong>📅 WAEC 2022 Edition</strong></div>
+      <div>
+        <button class="btn-show-all" onclick="expandAll()"><i class="fas fa-eye"></i> Show All Solutions</button>
+        <button class="btn-pdf" onclick="downloadPDF('bundle-2022')"><i class="fas fa-file-pdf"></i> Download Full PDF</button>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-square-root-alt"></i> Math (2022)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2022</span></div>
+        <h3>1. Angles of quadrilateral: (x+10)°, (2x−30)°, (x+40)°, (3x+20)°. Find x.</h3>
+        <ul class="pq-options">
+          <li>A) 30°</li>
+          <li>B) 40°</li>
+          <li class="correct">C) 45°</li>
+          <li>D) 60°</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Sum=360°. 7x+40=360 → x=45°</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2022</span></div>
+        <h3>2. Volume of cube of side 5cm:</h3>
+        <ul class="pq-options">
+          <li>A) 25 cm³</li>
+          <li>B) 75 cm³</li>
+          <li class="correct">C) 125 cm³</li>
+          <li>D) 150 cm³</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>V = 5³ = 125 cm³</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2022</span></div>
+        <h3>3. P(even number on a die):</h3>
+        <ul class="pq-options">
+          <li>A) 1/6</li>
+          <li>B) 1/3</li>
+          <li class="correct">C) 1/2</li>
+          <li>D) 2/3</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>3 even out of 6 = 1/2</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2022</span></div>
+        <h3>4. 10th term of AP: 3, 7, 11, 15...</h3>
+        <ul class="pq-options">
+          <li>A) 35</li>
+          <li class="correct">B) 39</li>
+          <li>C) 43</li>
+          <li>D) 47</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>T_n = a + (n-1)d = 3 + 9(4) = 39</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2022</span></div>
+        <h3>5. Make r subject: V = (4/3)πr³</h3>
+        <ul class="pq-options">
+          <li>A) 3V/4π</li>
+          <li>B) ∛(V/π)</li>
+          <li class="correct">C) ∛(3V/4π)</li>
+          <li>D) (3V/4π)²</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>r³ = 3V/4π → r = ∛(3V/4π)</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-atom"></i> Physics (2022)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2022</span></div>
+        <h3>6. 60W bulb for 2 hr. Energy in J:</h3>
+        <ul class="pq-options">
+          <li>A) 120</li>
+          <li>B) 7200</li>
+          <li>C) 216000</li>
+          <li class="correct">D) 432000</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>E = Pt = 60 × 7200 = 432000 J</li></ol><span class="ans">✅ D</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2022</span></div>
+        <h3>7. Current through 4Ω resistor at 12V:</h3>
+        <ul class="pq-options">
+          <li>A) 0.33A</li>
+          <li class="correct">B) 3A</li>
+          <li>C) 8A</li>
+          <li>D) 48A</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>I = V/R = 12/4 = 3A</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2022</span></div>
+        <h3>8. Convex lens forms real image when object is at:</h3>
+        <ul class="pq-options">
+          <li>A) Focal point</li>
+          <li class="correct">B) Beyond F</li>
+          <li>C) Between F and lens</li>
+          <li>D) Centre</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Object beyond F → real, inverted image</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-flask"></i> Chemistry (2022)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2022</span></div>
+        <h3>9. Volume of 0.2M HCl to neutralize 25cm³ of 0.1M NaOH:</h3>
+        <ul class="pq-options">
+          <li class="correct">A) 12.5</li>
+          <li>B) 25</li>
+          <li>C) 50</li>
+          <li>D) 100</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>1:1 ratio: 0.0025 mol HCl needed; V = 12.5 cm³</li></ol><span class="ans">✅ A</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2022</span></div>
+        <h3>10. Group 1 element:</h3>
+        <ul class="pq-options">
+          <li>A) Mg</li>
+          <li class="correct">B) Na</li>
+          <li>C) Cl</li>
+          <li>D) Ca</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Sodium is in Group 1 (alkali metals)</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2022</span></div>
+        <h3>11. Bonding in NaCl:</h3>
+        <ul class="pq-options">
+          <li>A) Covalent</li>
+          <li class="correct">B) Ionic</li>
+          <li>C) Metallic</li>
+          <li>D) H-bond</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Metal + non-metal → ionic</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-dna"></i> Biology (2022)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2022</span></div>
+        <h3>12. Pulmonary vein carries:</h3>
+        <ul class="pq-options">
+          <li>A) Deoxy from lungs</li>
+          <li>B) Oxy to lungs</li>
+          <li class="correct">C) Oxy from lungs to heart</li>
+          <li>D) Deoxy to heart</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Pulmonary vein returns oxygen-rich blood to heart</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2022</span></div>
+        <h3>13. Excretory organ of insects:</h3>
+        <ul class="pq-options">
+          <li>A) Kidney</li>
+          <li>B) Lungs</li>
+          <li class="correct">C) Malpighian tubules</li>
+          <li>D) Skin</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Insects use Malpighian tubules</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-book-open"></i> English (2022)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2022</span></div>
+        <h3>14. 'Wind whispered' is:</h3>
+        <ul class="pq-options">
+          <li>A) Simile</li>
+          <li>B) Metaphor</li>
+          <li class="correct">C) Personification</li>
+          <li>D) Hyperbole</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Human action attributed to non-human</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2022</span></div>
+        <h3>15. A 14-line poem is a:</h3>
+        <ul class="pq-options">
+          <li>A) Ode</li>
+          <li>B) Ballad</li>
+          <li class="correct">C) Sonnet</li>
+          <li>D) Elegy</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Sonnet = 14 lines, iambic pentameter</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-chart-line"></i> Economics (2022)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Economics</span><span class="tag year">2022</span></div>
+        <h3>16. NOT a function of money:</h3>
+        <ul class="pq-options">
+          <li>A) Medium of exchange</li>
+          <li>B) Store of value</li>
+          <li>C) Unit of account</li>
+          <li class="correct">D) Means of production</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Means of production = factors, not money function</li></ol><span class="ans">✅ D</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Economics</span><span class="tag year">2022</span></div>
+        <h3>17. Equilibrium price is where:</h3>
+        <ul class="pq-options">
+          <li>A) S>D</li>
+          <li>B) D>S</li>
+          <li class="correct">C) S=D</li>
+          <li>D) S=0</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Quantity supplied equals quantity demanded</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-landmark"></i> Government (2022)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2022</span></div>
+        <h3>18. Yoruba pre-colonial ruler:</h3>
+        <ul class="pq-options">
+          <li>A) Emir</li>
+          <li>B) Obi</li>
+          <li class="correct">C) Oba (Alaafin)</li>
+          <li>D) Sarkin</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Alaafin of Oyo headed Oyo Empire</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2022</span></div>
+        <h3>19. Constitution amendment requires (Nigeria):</h3>
+        <ul class="pq-options">
+          <li>A) Simple majority</li>
+          <li class="correct">B) 2/3 of NA + 24 states</li>
+          <li>C) Presidential decree</li>
+          <li>D) Referendum only</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>2/3 of National Assembly + 24/36 state legislatures</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../bundles.html">Bundles</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>
+function toggleSol(btn){const s=btn.nextElementSibling;s.classList.toggle('show');btn.innerHTML=s.classList.contains('show')?'<i class="fas fa-eye-slash"></i> Hide Solution':'<i class="fas fa-eye"></i> Show Solution';}
+function expandAll(){document.querySelectorAll('.solution-block').forEach(s=>s.classList.add('show'));document.querySelectorAll('.toggle-sol').forEach(b=>b.innerHTML='<i class="fas fa-eye-slash"></i> Hide');}
+if(window.location.hash==='#pdf'){setTimeout(()=>downloadPDF('bundle-2022'),500);}
+</script>
+</body>
+</html>

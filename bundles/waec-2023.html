@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAEC 2023 Bundle | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.pq-card{background:#fff;border-radius:14px;padding:28px;margin-bottom:20px;box-shadow:var(--shadow);border-left:5px solid var(--primary);}
+.pq-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.pq-card .tag{background:#eef4ff;color:var(--primary);padding:4px 12px;border-radius:50px;font-size:.8rem;font-weight:600;}
+.pq-card .tag.year{background:#fef3c7;color:#92400e;}
+.pq-card h3{font-size:1.15rem;margin-bottom:14px;line-height:1.5;}
+.pq-options{display:flex;flex-direction:column;gap:8px;margin:14px 0;list-style:none;padding:0;}
+.pq-options li{padding:10px 14px;background:#f9fafb;border-radius:8px;}
+.pq-options li.correct{background:#dcfce7;border-left:3px solid #16a34a;font-weight:600;}
+.toggle-sol{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;}
+.solution-block{display:none;margin-top:16px;padding:20px;background:#f0f9ff;border-radius:10px;border-left:4px solid var(--primary);}
+.solution-block.show{display:block;}
+.solution-block ol{padding-left:20px;}
+.solution-block .ans{background:#16a34a;color:#fff;padding:8px 14px;border-radius:8px;display:inline-block;margin-top:10px;font-weight:700;}
+.subject-section{margin-bottom:40px;}
+.subject-section h2{color:var(--primary);border-bottom:3px solid var(--primary);padding-bottom:10px;margin-bottom:20px;}
+.action-bar{background:#fff;padding:20px;border-radius:14px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow);}
+.action-bar button{padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+.action-bar .btn-pdf{background:#16a34a;color:#fff;}
+.action-bar .btn-show-all{background:var(--primary);color:#fff;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../bundles.html" class="active">Bundles</a></li>
+      <li><a href="../mock-exam.html">Mock Exam</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-box-open"></i> WAEC 2023 — Complete Bundle</h1>
+  <p>Strong foundation questions across all subjects</p>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="action-bar">
+      <div><strong>📅 WAEC 2023 Edition</strong></div>
+      <div>
+        <button class="btn-show-all" onclick="expandAll()"><i class="fas fa-eye"></i> Show All Solutions</button>
+        <button class="btn-pdf" onclick="downloadPDF('bundle-2023')"><i class="fas fa-file-pdf"></i> Download Full PDF</button>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-square-root-alt"></i> Math (2023)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2023</span></div>
+        <h3>1. If log₁₀ 2 = 0.3010 and log₁₀ 3 = 0.4771, find log₁₀ 12.</h3>
+        <ul class="pq-options">
+          <li>A) 1.0000</li>
+          <li class="correct">B) 1.0791</li>
+          <li>C) 1.1761</li>
+          <li>D) 1.2552</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>log 12 = log(4×3) = 2log2 + log3 = 0.6020 + 0.4771 = 1.0791</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2023</span></div>
+        <h3>2. Solve: 3x + 2y = 13, 2x − y = 4. Find x.</h3>
+        <ul class="pq-options">
+          <li>A) 1</li>
+          <li>B) 2</li>
+          <li class="correct">C) 3</li>
+          <li>D) 4</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Multiply 2nd eq by 2: 4x − 2y = 8. Add to 1st: 7x = 21 → x = 3</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2023</span></div>
+        <h3>3. Find the median of: 12, 15, 8, 20, 10, 18, 9</h3>
+        <ul class="pq-options">
+          <li>A) 10</li>
+          <li class="correct">B) 12</li>
+          <li>C) 13</li>
+          <li>D) 15</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Sorted: 8,9,10,12,15,18,20. Middle = 12</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2023</span></div>
+        <h3>4. ₦5000 invested at 10% p.a. compound interest for 2 years amounts to:</h3>
+        <ul class="pq-options">
+          <li>A) ₦5500</li>
+          <li>B) ₦6000</li>
+          <li class="correct">C) ₦6050</li>
+          <li>D) ₦6500</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>A = 5000(1.1)² = 5000 × 1.21 = ₦6050</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2023</span></div>
+        <h3>5. Find the determinant of [[3,2],[1,4]]</h3>
+        <ul class="pq-options">
+          <li>A) 5</li>
+          <li class="correct">B) 10</li>
+          <li>C) 12</li>
+          <li>D) 14</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>det = (3)(4) − (2)(1) = 10</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-atom"></i> Physics (2023)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2023</span></div>
+        <h3>6. A car travels 100m in 5s from rest. Acceleration?</h3>
+        <ul class="pq-options">
+          <li>A) 2 m/s²</li>
+          <li>B) 4 m/s²</li>
+          <li class="correct">C) 8 m/s²</li>
+          <li>D) 20 m/s²</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>s=½at² → 100=12.5a → a=8 m/s²</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2023</span></div>
+        <h3>7. Force on 2 kg accelerating at 3 m/s²:</h3>
+        <ul class="pq-options">
+          <li>A) 1.5 N</li>
+          <li>B) 5 N</li>
+          <li class="correct">C) 6 N</li>
+          <li>D) 0.67 N</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>F = ma = 2 × 3 = 6 N</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2023</span></div>
+        <h3>8. Wave speed if f=200Hz, λ=0.5m:</h3>
+        <ul class="pq-options">
+          <li>A) 50 m/s</li>
+          <li class="correct">B) 100 m/s</li>
+          <li>C) 200 m/s</li>
+          <li>D) 400 m/s</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>v = fλ = 200 × 0.5 = 100 m/s</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2023</span></div>
+        <h3>9. Energy stored in 5kg at height 10m (g=10):</h3>
+        <ul class="pq-options">
+          <li>A) 5 J</li>
+          <li>B) 50 J</li>
+          <li>C) 250 J</li>
+          <li class="correct">D) 500 J</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>PE = mgh = 5×10×10 = 500 J</li></ol><span class="ans">✅ D</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-flask"></i> Chemistry (2023)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2023</span></div>
+        <h3>10. Mass of 0.25 mol CaCO₃ (M=100):</h3>
+        <ul class="pq-options">
+          <li>A) 10 g</li>
+          <li>B) 20 g</li>
+          <li class="correct">C) 25 g</li>
+          <li>D) 100 g</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>m = n×M = 0.25 × 100 = 25 g</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2023</span></div>
+        <h3>11. Volume of 0.2M HCl to neutralize 25cm³ of 0.1M NaOH:</h3>
+        <ul class="pq-options">
+          <li class="correct">A) 12.5 cm³</li>
+          <li>B) 25 cm³</li>
+          <li>C) 50 cm³</li>
+          <li>D) 100 cm³</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>1:1 ratio. n(NaOH) = 0.0025; V = 0.0025/0.2 = 12.5 cm³</li></ol><span class="ans">✅ A</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2023</span></div>
+        <h3>12. Number of moles in 11g CO₂ (M=44):</h3>
+        <ul class="pq-options">
+          <li class="correct">A) 0.25</li>
+          <li>B) 0.5</li>
+          <li>C) 1</li>
+          <li>D) 2</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>11/44 = 0.25 mol</li></ol><span class="ans">✅ A</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2023</span></div>
+        <h3>13. Most reactive halogen:</h3>
+        <ul class="pq-options">
+          <li class="correct">A) F</li>
+          <li>B) Cl</li>
+          <li>C) Br</li>
+          <li>D) I</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Reactivity decreases down Group 7. F is most reactive</li></ol><span class="ans">✅ A</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-dna"></i> Biology (2023)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2023</span></div>
+        <h3>14. In a cross Aa × Aa, ratio of homozygous to heterozygous offspring:</h3>
+        <ul class="pq-options">
+          <li class="correct">A) 1:1</li>
+          <li>B) 1:2</li>
+          <li>C) 1:3</li>
+          <li>D) 2:1</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>AA, Aa, Aa, aa → 2 homozygous (AA, aa) : 2 heterozygous = 1:1</li></ol><span class="ans">✅ A</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2023</span></div>
+        <h3>15. Pulmonary vein carries:</h3>
+        <ul class="pq-options">
+          <li>A) Deoxygenated blood from lungs</li>
+          <li>B) Oxygenated blood to lungs</li>
+          <li class="correct">C) Oxygenated blood from lungs to heart</li>
+          <li>D) Deoxygenated blood to heart</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Pulmonary vein returns oxygen-rich blood from lungs to left atrium</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2023</span></div>
+        <h3>16. Site of protein synthesis:</h3>
+        <ul class="pq-options">
+          <li>A) Nucleus</li>
+          <li>B) Mitochondrion</li>
+          <li class="correct">C) Ribosome</li>
+          <li>D) Lysosome</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Ribosomes translate mRNA into proteins</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-book-open"></i> English (2023)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2023</span></div>
+        <h3>17. Complete: 'The boy ___ before father came back.'</h3>
+        <ul class="pq-options">
+          <li>A) finishes</li>
+          <li>B) finished</li>
+          <li class="correct">C) had finished</li>
+          <li>D) has finished</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Past perfect (had + V3) for earlier of two past actions</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2023</span></div>
+        <h3>18. Same vowel sound as 'cup':</h3>
+        <ul class="pq-options">
+          <li>A) Cool</li>
+          <li>B) Cope</li>
+          <li class="correct">C) Cut</li>
+          <li>D) Caught</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Both cup & cut have /ʌ/</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2023</span></div>
+        <h3>19. Synonym of 'eloquent':</h3>
+        <ul class="pq-options">
+          <li>A) Quiet</li>
+          <li class="correct">B) Articulate</li>
+          <li>C) Confused</li>
+          <li>D) Boring</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Eloquent = articulate, well-spoken</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-chart-line"></i> Economics (2023)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Economics</span><span class="tag year">2023</span></div>
+        <h3>20. If price rises ₦20→₦25 and demand falls 100→80, PED is:</h3>
+        <ul class="pq-options">
+          <li>A) 0.5</li>
+          <li class="correct">B) 0.8</li>
+          <li>C) 1.0</li>
+          <li>D) 1.25</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>PED = (-20%/25%) = 0.8 (inelastic)</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Economics</span><span class="tag year">2023</span></div>
+        <h3>21. GDP stands for:</h3>
+        <ul class="pq-options">
+          <li class="correct">A) Gross Domestic Product</li>
+          <li>B) Goods Demand Price</li>
+          <li>C) Gross Direct Profit</li>
+          <li>D) Government Domestic Plan</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Total value of goods/services produced in country in 1 year</li></ol><span class="ans">✅ A</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-landmark"></i> Government (2023)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2023</span></div>
+        <h3>22. Year ECOWAS established:</h3>
+        <ul class="pq-options">
+          <li>A) 1963</li>
+          <li>B) 1970</li>
+          <li class="correct">C) 1975</li>
+          <li>D) 1981</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Treaty of Lagos, 28 May 1975</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2023</span></div>
+        <h3>23. Pre-colonial Yoruba ruler:</h3>
+        <ul class="pq-options">
+          <li>A) Emir</li>
+          <li>B) Obi</li>
+          <li class="correct">C) Oba (Alaafin)</li>
+          <li>D) Sarkin</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Yoruba head was the Oba, e.g., Alaafin of Oyo</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2023</span></div>
+        <h3>24. Number of senators in Nigerian Senate:</h3>
+        <ul class="pq-options">
+          <li>A) 100</li>
+          <li class="correct">B) 109</li>
+          <li>C) 360</li>
+          <li>D) 469</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>3 senators × 36 states + 1 from FCT = 109</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../bundles.html">Bundles</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>
+function toggleSol(btn){const s=btn.nextElementSibling;s.classList.toggle('show');btn.innerHTML=s.classList.contains('show')?'<i class="fas fa-eye-slash"></i> Hide Solution':'<i class="fas fa-eye"></i> Show Solution';}
+function expandAll(){document.querySelectorAll('.solution-block').forEach(s=>s.classList.add('show'));document.querySelectorAll('.toggle-sol').forEach(b=>b.innerHTML='<i class="fas fa-eye-slash"></i> Hide');}
+if(window.location.hash==='#pdf'){setTimeout(()=>downloadPDF('bundle-2023'),500);}
+</script>
+</body>
+</html>

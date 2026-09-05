@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 More WAEC Math Questions | ExamAce</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.pq-card{background:#fff;border-radius:14px;padding:30px;margin-bottom:24px;box-shadow:var(--shadow);border-left:5px solid var(--primary);}
+.pq-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.pq-card .tag{background:#eef4ff;color:var(--primary);padding:4px 12px;border-radius:50px;font-size:.8rem;font-weight:600;}
+.pq-card .tag.year{background:#fef3c7;color:#92400e;}
+.pq-card .tag.diff-easy{background:#dcfce7;color:#166534;}
+.pq-card .tag.diff-med{background:#fef3c7;color:#92400e;}
+.pq-card .tag.diff-hard{background:#fee2e2;color:#991b1b;}
+.pq-card h3{font-size:1.15rem;margin-bottom:14px;font-family:'Lora',serif;line-height:1.5;}
+.pq-options{display:flex;flex-direction:column;gap:8px;margin:14px 0;list-style:none;padding:0;}
+.pq-options li{padding:10px 14px;background:#f9fafb;border-radius:8px;}
+.pq-options li.correct{background:#dcfce7;border-left:3px solid var(--success);font-weight:600;}
+.toggle-sol{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;margin-top:10px;}
+.solution-block{display:none;margin-top:16px;padding:20px;background:#f0f9ff;border-radius:10px;border-left:4px solid var(--primary);}
+.solution-block.show{display:block;}
+.solution-block ol{padding-left:20px;}
+.solution-block li{margin-bottom:8px;}
+.solution-block .ans{background:#16a34a;color:#fff;padding:8px 14px;border-radius:8px;display:inline-block;margin-top:10px;font-weight:700;}
+.action-bar{background:#fff;padding:20px;border-radius:14px;margin-bottom:30px;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center;box-shadow:var(--shadow);}
+.action-bar button{padding:10px 20px;background:var(--primary);color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+.action-bar button.success{background:#16a34a;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="subjects.html">Subjects</a></li>
+      <li><a href="past-questions.html">Past Q's</a></li>
+      <li><a href="mock-exam.html">Mock Exam</a></li>
+      <li><a href="practicals/">Practicals</a></li>
+      <li><a href="essays/">Essays</a></li>
+      <li><a href="ai-tutor/">AI Tutor</a></li>
+      <li><a href="premium/">💎 Premium</a></li>
+      <li><a href="login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-square-root-alt"></i> 50 More WAEC Mathematics Questions</h1>
+  <p>Comprehensive coverage with full step-by-step solutions</p>
+</section>
+
+<section class="section">
+  <div class="container" id="mathContent">
+
+    <div class="action-bar">
+      <div><strong>📊 50 Questions • All Topics • 2018–2024</strong></div>
+      <div>
+        <button onclick="expandAll()"><i class="fas fa-eye"></i> Show All Solutions</button>
+        <button onclick="downloadPDF('math')" class="success"><i class="fas fa-file-pdf"></i> Download PDF</button>
+      </div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Algebra</span><span class="tag year">WAEC 2024</span><span class="tag diff-easy">Easy</span></div>
+      <h3>Q1. Simplify: 5x − 3(x − 4)</h3>
+      <ul class="pq-options"><li>A) 2x − 4</li><li class="correct">B) 2x + 12</li><li>C) 2x − 12</li><li>D) 8x + 12</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Expand the bracket: 5x − 3x + 12</li><li>Combine like terms: 2x + 12</li></ol><span class="ans">✅ B) 2x + 12</span></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Quadratics</span><span class="tag year">WAEC 2024</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q2. Solve: x² − 9x + 20 = 0</h3>
+      <ul class="pq-options"><li class="correct">A) x = 4 or x = 5</li><li>B) x = −4 or x = −5</li><li>C) x = 2 or x = 10</li><li>D) x = 1 or x = 20</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Find two numbers whose product = 20 and sum = −9: (−4)(−5) = 20 and −4 + −5 = −9 ✓</li><li>Factor: (x − 4)(x − 5) = 0</li><li>Apply zero product property: x = 4 or x = 5</li></ol><span class="ans">✅ A) x = 4 or x = 5</span></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Indices</span><span class="tag year">WAEC 2024</span><span class="tag diff-easy">Easy</span></div>
+      <h3>Q3. Simplify: (2³)² × 2⁻⁴</h3>
+      <ul class="pq-options"><li>A) 2</li><li class="correct">B) 4</li><li>C) 8</li><li>D) 16</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>(2³)² = 2^(3×2) = 2⁶</li><li>2⁶ × 2⁻⁴ = 2^(6−4) = 2² = 4</li></ol><span class="ans">✅ B) 4</span></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Logarithms</span><span class="tag year">WAEC 2023</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q4. If log₃ x = 4, find x.</h3>
+      <ul class="pq-options"><li>A) 12</li><li>B) 27</li><li class="correct">C) 81</li><li>D) 243</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Convert log to exponential form: log_a x = b ⇔ x = aᵇ</li><li>x = 3⁴ = 81</li></ol><span class="ans">✅ C) 81</span></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Geometry</span><span class="tag year">WAEC 2023</span><span class="tag diff-easy">Easy</span></div>
+      <h3>Q5. The interior angles of a regular hexagon each measure:</h3>
+      <ul class="pq-options"><li>A) 90°</li><li>B) 108°</li><li class="correct">C) 120°</li><li>D) 135°</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Sum of interior angles = (n − 2) × 180° where n = 6</li><li>Sum = 4 × 180° = 720°</li><li>Each angle (regular) = 720°/6 = 120°</li></ol><span class="ans">✅ C) 120°</span></div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Trigonometry</span><span class="tag year">WAEC 2023</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q6. Evaluate: sin 30° + cos 60°</h3>
+      <ul class="pq-options"><li>A) 0</li><li>B) 1/2</li><li class="correct">C) 1</li><li>D) √3</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>sin 30° = 1/2</li><li>cos 60° = 1/2</li><li>Sum: 1/2 + 1/2 = 1</li></ol><span class="ans">✅ C) 1</span></div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Statistics</span><span class="tag year">WAEC 2023</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q7. Find the median of: 12, 15, 8, 20, 10, 18, 9</h3>
+      <ul class="pq-options"><li>A) 10</li><li class="correct">B) 12</li><li>C) 13</li><li>D) 15</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Arrange in ascending order: 8, 9, 10, 12, 15, 18, 20</li><li>Number of values = 7 (odd) → median is the middle (4th) value</li><li>Median = 12</li></ol><span class="ans">✅ B) 12</span></div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Mensuration</span><span class="tag year">WAEC 2022</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q8. Find the volume of a cube of side 5 cm.</h3>
+      <ul class="pq-options"><li>A) 25 cm³</li><li>B) 75 cm³</li><li class="correct">C) 125 cm³</li><li>D) 150 cm³</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Volume of cube = side³</li><li>V = 5³ = 125 cm³</li></ol><span class="ans">✅ C) 125 cm³</span></div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Probability</span><span class="tag year">WAEC 2022</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q9. A fair die is tossed. What is the probability of getting an even number?</h3>
+      <ul class="pq-options"><li>A) 1/6</li><li>B) 1/3</li><li class="correct">C) 1/2</li><li>D) 2/3</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Sample space = {1,2,3,4,5,6} → 6 outcomes</li><li>Even numbers = {2, 4, 6} → 3 outcomes</li><li>P(even) = 3/6 = 1/2</li></ol><span class="ans">✅ C) 1/2</span></div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Algebra</span><span class="tag year">WAEC 2022</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q10. Make r the subject: V = (4/3)πr³</h3>
+      <ul class="pq-options"><li>A) r = 3V/4π</li><li>B) r = ∛(V/π)</li><li class="correct">C) r = ∛(3V/4π)</li><li>D) r = (3V/4π)²</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Multiply both sides by 3: 3V = 4πr³</li><li>Divide by 4π: r³ = 3V/4π</li><li>Take cube root: r = ∛(3V/4π)</li></ol><span class="ans">✅ C) r = ∛(3V/4π)</span></div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Sequences</span><span class="tag year">WAEC 2022</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q11. Find the 10th term of the AP: 3, 7, 11, 15,...</h3>
+      <ul class="pq-options"><li>A) 35</li><li class="correct">B) 39</li><li>C) 43</li><li>D) 47</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>First term a = 3, common difference d = 7 − 3 = 4</li><li>Formula: T_n = a + (n−1)d</li><li>T₁₀ = 3 + (10−1)(4) = 3 + 36 = 39</li></ol><span class="ans">✅ B) 39</span></div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Sequences</span><span class="tag year">WAEC 2021</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q12. Find the sum of the first 8 terms of the GP: 2, 6, 18,...</h3>
+      <ul class="pq-options"><li>A) 4374</li><li>B) 6560</li><li class="correct">C) 6560</li><li>D) 13122</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>a = 2, r = 6/2 = 3, n = 8</li><li>S_n = a(rⁿ − 1)/(r − 1) for r > 1</li><li>S₈ = 2(3⁸ − 1)/(3 − 1) = 2(6561 − 1)/2 = 6560</li></ol><span class="ans">✅ C) 6560</span></div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Number Bases</span><span class="tag year">WAEC 2021</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q13. Convert 1101₂ to base 10.</h3>
+      <ul class="pq-options"><li>A) 11</li><li>B) 12</li><li class="correct">C) 13</li><li>D) 14</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Expand by place values: 1×2³ + 1×2² + 0×2¹ + 1×2⁰</li><li>= 8 + 4 + 0 + 1 = 13</li></ol><span class="ans">✅ C) 13</span></div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Sets</span><span class="tag year">WAEC 2021</span><span class="tag diff-easy">Easy</span></div>
+      <h3>Q14. If A = {1, 2, 3, 4} and B = {3, 4, 5, 6}, find A ∩ B.</h3>
+      <ul class="pq-options"><li>A) {1, 2}</li><li class="correct">B) {3, 4}</li><li>C) {5, 6}</li><li>D) {1, 2, 5, 6}</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>A ∩ B = elements common to both A and B</li><li>Common elements: 3 and 4</li><li>A ∩ B = {3, 4}</li></ol><span class="ans">✅ B) {3, 4}</span></div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Variation</span><span class="tag year">WAEC 2021</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q15. y varies directly as x. If y = 12 when x = 4, find y when x = 7.</h3>
+      <ul class="pq-options"><li>A) 14</li><li class="correct">B) 21</li><li>C) 24</li><li>D) 28</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>y ∝ x means y = kx</li><li>From 12 = 4k → k = 3</li><li>So y = 3 × 7 = 21</li></ol><span class="ans">✅ B) 21</span></div>
+    </div>
+
+    <!-- Q16 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Calculus</span><span class="tag year">WAEC 2020</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q16. Differentiate y = 4x³ − 6x² + 5x − 2 with respect to x.</h3>
+      <ul class="pq-options"><li>A) 12x² − 12x + 5</li><li class="correct">B) 12x² − 12x + 5</li><li>C) 4x² − 6x + 5</li><li>D) 12x³ − 12x² + 5</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Apply power rule: d/dx(xⁿ) = nxⁿ⁻¹</li><li>d/dx(4x³) = 12x²</li><li>d/dx(−6x²) = −12x</li><li>d/dx(5x) = 5; d/dx(−2) = 0</li><li>dy/dx = 12x² − 12x + 5</li></ol><span class="ans">✅ B) 12x² − 12x + 5</span></div>
+    </div>
+
+    <!-- Q17 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Calculus</span><span class="tag year">WAEC 2020</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q17. Find ∫(3x² + 2x) dx</h3>
+      <ul class="pq-options"><li>A) 6x + 2 + C</li><li>B) x³ + x² + C</li><li class="correct">C) x³ + x² + C</li><li>D) 3x³ + 2x² + C</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>∫xⁿ dx = xⁿ⁺¹/(n+1) + C</li><li>∫3x² dx = 3·x³/3 = x³</li><li>∫2x dx = 2·x²/2 = x²</li><li>Result: x³ + x² + C</li></ol><span class="ans">✅ C) x³ + x² + C</span></div>
+    </div>
+
+    <!-- Q18 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Geometry</span><span class="tag year">WAEC 2020</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q18. The area of a triangle with base 12 cm and height 8 cm is:</h3>
+      <ul class="pq-options"><li>A) 20 cm²</li><li>B) 40 cm²</li><li class="correct">C) 48 cm²</li><li>D) 96 cm²</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Area = ½ × base × height</li><li>= ½ × 12 × 8 = 48 cm²</li></ol><span class="ans">✅ C) 48 cm²</span></div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Mensuration</span><span class="tag year">WAEC 2020</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q19. Find the circumference of a circle of radius 14 cm. (π = 22/7)</h3>
+      <ul class="pq-options"><li>A) 44 cm</li><li class="correct">B) 88 cm</li><li>C) 154 cm</li><li>D) 616 cm</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>C = 2πr</li><li>C = 2 × (22/7) × 14 = 2 × 22 × 2 = 88 cm</li></ol><span class="ans">✅ B) 88 cm</span></div>
+    </div>
+
+    <!-- Q20 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Surds</span><span class="tag year">WAEC 2019</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q20. Simplify: √50 + √18</h3>
+      <ul class="pq-options"><li>A) 4√2</li><li>B) 6√2</li><li class="correct">C) 8√2</li><li>D) 9√2</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>√50 = √(25×2) = 5√2</li><li>√18 = √(9×2) = 3√2</li><li>5√2 + 3√2 = 8√2</li></ol><span class="ans">✅ C) 8√2</span></div>
+    </div>
+
+    <!-- Q21 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Algebra</span><span class="tag year">WAEC 2019</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q21. Solve: 2(x + 3) = 5x − 6</h3>
+      <ul class="pq-options"><li>A) 2</li><li>B) 3</li><li class="correct">C) 4</li><li>D) 5</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Expand: 2x + 6 = 5x − 6</li><li>Rearrange: 6 + 6 = 5x − 2x → 12 = 3x</li><li>x = 4</li></ol><span class="ans">✅ C) 4</span></div>
+    </div>
+
+    <!-- Q22 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Trigonometry</span><span class="tag year">WAEC 2019</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q22. From a point 30 m from the foot of a tree, the angle of elevation to its top is 45°. Find the height.</h3>
+      <ul class="pq-options"><li>A) 15 m</li><li>B) 20 m</li><li class="correct">C) 30 m</li><li>D) 60 m</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>tan(45°) = height / 30</li><li>tan 45° = 1 → height = 30 m</li></ol><span class="ans">✅ C) 30 m</span></div>
+    </div>
+
+    <!-- Q23 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Inequalities</span><span class="tag year">WAEC 2019</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q23. Solve: 3x − 5 ≥ 7</h3>
+      <ul class="pq-options"><li>A) x ≤ 4</li><li class="correct">B) x ≥ 4</li><li>C) x > 4</li><li>D) x < 4</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Add 5 to both sides: 3x ≥ 12</li><li>Divide by 3: x ≥ 4</li></ol><span class="ans">✅ B) x ≥ 4</span></div>
+    </div>
+
+    <!-- Q24 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Statistics</span><span class="tag year">WAEC 2018</span><span class="tag diff-easy">Easy</span></div>
+      <h3>Q24. Find the mode of: 4, 5, 5, 6, 7, 5, 8, 9, 5</h3>
+      <ul class="pq-options"><li>A) 4</li><li class="correct">B) 5</li><li>C) 6</li><li>D) 7</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Mode = most frequent value</li><li>5 appears 4 times, more than any other</li><li>Mode = 5</li></ol><span class="ans">✅ B) 5</span></div>
+    </div>
+
+    <!-- Q25 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Percentages</span><span class="tag year">WAEC 2018</span><span class="tag diff-easy">Easy</span></div>
+      <h3>Q25. Express 0.45 as a percentage.</h3>
+      <ul class="pq-options"><li>A) 4.5%</li><li class="correct">B) 45%</li><li>C) 0.45%</li><li>D) 450%</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>To convert decimal to %, multiply by 100</li><li>0.45 × 100 = 45%</li></ol><span class="ans">✅ B) 45%</span></div>
+    </div>
+
+    <!-- Q26 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Ratios</span><span class="tag year">WAEC 2018</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q26. Share ₦240 in the ratio 3:5. The smaller share is:</h3>
+      <ul class="pq-options"><li class="correct">A) ₦90</li><li>B) ₦120</li><li>C) ₦150</li><li>D) ₦180</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Total ratio parts = 3 + 5 = 8</li><li>Smaller share = (3/8) × 240 = 90</li></ol><span class="ans">✅ A) ₦90</span></div>
+    </div>
+
+    <!-- Q27 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Quadratics</span><span class="tag year">WAEC 2024</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q27. Use the quadratic formula to solve: 2x² + 3x − 5 = 0</h3>
+      <ul class="pq-options"><li class="correct">A) x = 1 or x = −5/2</li><li>B) x = −1 or x = 5/2</li><li>C) x = 2 or x = −5</li><li>D) x = 5 or x = −2</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>a=2, b=3, c=−5; discriminant = b² − 4ac = 9 + 40 = 49</li><li>x = [−3 ± √49]/(2·2) = (−3 ± 7)/4</li><li>x = (4)/4 = 1 or x = (−10)/4 = −5/2</li></ol><span class="ans">✅ A) x = 1 or x = −5/2</span></div>
+    </div>
+
+    <!-- Q28 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Functions</span><span class="tag year">WAEC 2024</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q28. If f(x) = 2x² − 3, find f(4).</h3>
+      <ul class="pq-options"><li>A) 13</li><li>B) 19</li><li class="correct">C) 29</li><li>D) 32</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Substitute x = 4: f(4) = 2(4)² − 3</li><li>= 2(16) − 3 = 32 − 3 = 29</li></ol><span class="ans">✅ C) 29</span></div>
+    </div>
+
+    <!-- Q29 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Word Problems</span><span class="tag year">WAEC 2023</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q29. The sum of two numbers is 30 and their difference is 6. Find the larger number.</h3>
+      <ul class="pq-options"><li>A) 12</li><li>B) 15</li><li class="correct">C) 18</li><li>D) 24</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Let the numbers be x and y, x > y</li><li>x + y = 30; x − y = 6</li><li>Add equations: 2x = 36 → x = 18</li></ol><span class="ans">✅ C) 18</span></div>
+    </div>
+
+    <!-- Q30 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Geometry</span><span class="tag year">WAEC 2023</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q30. The angles in a triangle are in the ratio 2:3:5. Find the largest angle.</h3>
+      <ul class="pq-options"><li>A) 36°</li><li>B) 54°</li><li class="correct">C) 90°</li><li>D) 108°</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Sum of angles in triangle = 180°</li><li>Ratio parts total = 2+3+5 = 10</li><li>Largest = (5/10) × 180° = 90°</li></ol><span class="ans">✅ C) 90°</span></div>
+    </div>
+
+    <!-- Q31 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Algebra</span><span class="tag year">WAEC 2022</span><span class="tag diff-easy">Easy</span></div>
+      <h3>Q31. Factorise: x² − 16</h3>
+      <ul class="pq-options"><li>A) (x−4)²</li><li class="correct">B) (x−4)(x+4)</li><li>C) (x−16)(x+1)</li><li>D) (x−2)(x+8)</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Recognise difference of squares: a² − b² = (a−b)(a+b)</li><li>x² − 16 = x² − 4²</li><li>= (x − 4)(x + 4)</li></ol><span class="ans">✅ B) (x−4)(x+4)</span></div>
+    </div>
+
+    <!-- Q32 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Logarithms</span><span class="tag year">WAEC 2022</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q32. Solve: log₁₀(x + 3) − log₁₀(x − 1) = log₁₀ 5</h3>
+      <ul class="pq-options"><li class="correct">A) x = 2</li><li>B) x = 3</li><li>C) x = 4</li><li>D) x = 5</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Apply log subtraction rule: log[(x+3)/(x−1)] = log 5</li><li>So (x+3)/(x−1) = 5</li><li>Cross multiply: x + 3 = 5(x − 1) → x + 3 = 5x − 5</li><li>3 + 5 = 5x − x → 8 = 4x → x = 2</li></ol><span class="ans">✅ A) x = 2</span></div>
+    </div>
+
+    <!-- Q33 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Probability</span><span class="tag year">WAEC 2021</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q33. A bag has 5 red and 3 white balls. Two balls drawn together. Find P(both red).</h3>
+      <ul class="pq-options"><li>A) 5/16</li><li class="correct">B) 5/14</li><li>C) 3/8</li><li>D) 5/8</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Total balls = 8, draws without replacement</li><li>P(1st red) = 5/8</li><li>P(2nd red | 1st red) = 4/7</li><li>P(both red) = 5/8 × 4/7 = 20/56 = 5/14</li></ol><span class="ans">✅ B) 5/14</span></div>
+    </div>
+
+    <!-- Q34 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Mensuration</span><span class="tag year">WAEC 2021</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q34. A cone has radius 7 cm and height 12 cm. Find its volume. (π = 22/7)</h3>
+      <ul class="pq-options"><li>A) 154 cm³</li><li>B) 308 cm³</li><li class="correct">C) 616 cm³</li><li>D) 1848 cm³</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>V = (1/3)πr²h</li><li>V = (1/3)(22/7)(7²)(12) = (1/3)(22/7)(49)(12)</li><li>= (1/3)(22)(7)(12) = (22 × 7 × 12)/3 = 1848/3 = 616 cm³</li></ol><span class="ans">✅ C) 616 cm³</span></div>
+    </div>
+
+    <!-- Q35 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Coordinate Geometry</span><span class="tag year">WAEC 2020</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q35. Find the distance between (2, 3) and (5, 7).</h3>
+      <ul class="pq-options"><li>A) 3</li><li>B) 4</li><li class="correct">C) 5</li><li>D) 7</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Distance = √[(x₂−x₁)² + (y₂−y₁)²]</li><li>= √[(5−2)² + (7−3)²] = √[9 + 16] = √25 = 5</li></ol><span class="ans">✅ C) 5</span></div>
+    </div>
+
+    <!-- Q36 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Coordinate Geometry</span><span class="tag year">WAEC 2020</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q36. Find the gradient of the line through (1, 2) and (4, 11).</h3>
+      <ul class="pq-options"><li>A) 2</li><li class="correct">B) 3</li><li>C) 4</li><li>D) 9</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Gradient m = (y₂ − y₁)/(x₂ − x₁)</li><li>= (11 − 2)/(4 − 1) = 9/3 = 3</li></ol><span class="ans">✅ B) 3</span></div>
+    </div>
+
+    <!-- Q37 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Sets</span><span class="tag year">WAEC 2019</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q37. In a class of 40, 25 study Math, 20 study Physics, 5 study neither. How many study both?</h3>
+      <ul class="pq-options"><li>A) 5</li><li class="correct">B) 10</li><li>C) 15</li><li>D) 20</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Students taking at least one = 40 − 5 = 35</li><li>n(M ∪ P) = n(M) + n(P) − n(M ∩ P)</li><li>35 = 25 + 20 − n(M ∩ P)</li><li>n(M ∩ P) = 45 − 35 = 10</li></ol><span class="ans">✅ B) 10</span></div>
+    </div>
+
+    <!-- Q38 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Statistics</span><span class="tag year">WAEC 2019</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q38. The mean of 10 numbers is 18. If one number is removed, the mean becomes 17. Find the removed number.</h3>
+      <ul class="pq-options"><li>A) 17</li><li>B) 25</li><li class="correct">C) 27</li><li>D) 30</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Original sum = 10 × 18 = 180</li><li>New sum (9 numbers) = 9 × 17 = 153</li><li>Removed = 180 − 153 = 27</li></ol><span class="ans">✅ C) 27</span></div>
+    </div>
+
+    <!-- Q39 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Algebra</span><span class="tag year">WAEC 2018</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q39. Simplify: (x² − 4) / (x − 2)</h3>
+      <ul class="pq-options"><li>A) x − 2</li><li class="correct">B) x + 2</li><li>C) x² − 2</li><li>D) x</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Factor numerator: x² − 4 = (x−2)(x+2)</li><li>(x−2)(x+2)/(x−2) = x + 2</li></ol><span class="ans">✅ B) x + 2</span></div>
+    </div>
+
+    <!-- Q40 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Mensuration</span><span class="tag year">WAEC 2018</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q40. The surface area of a sphere of radius 7 cm is: (π = 22/7)</h3>
+      <ul class="pq-options"><li>A) 154 cm²</li><li>B) 308 cm²</li><li class="correct">C) 616 cm²</li><li>D) 1232 cm²</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>SA = 4πr²</li><li>= 4 × (22/7) × 49 = 4 × 22 × 7 = 616 cm²</li></ol><span class="ans">✅ C) 616 cm²</span></div>
+    </div>
+
+    <!-- Q41 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Trigonometry</span><span class="tag year">WAEC 2024</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q41. If cos θ = 5/13 (θ acute), find sin θ.</h3>
+      <ul class="pq-options"><li>A) 5/12</li><li class="correct">B) 12/13</li><li>C) 13/12</li><li>D) 12/5</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Use sin²θ + cos²θ = 1</li><li>sin²θ = 1 − (5/13)² = 1 − 25/169 = 144/169</li><li>sin θ = √(144/169) = 12/13</li></ol><span class="ans">✅ B) 12/13</span></div>
+    </div>
+
+    <!-- Q42 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Number Bases</span><span class="tag year">WAEC 2024</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q42. Convert 25₁₀ to base 2.</h3>
+      <ul class="pq-options"><li>A) 10001₂</li><li>B) 11000₂</li><li class="correct">C) 11001₂</li><li>D) 10101₂</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>25 ÷ 2 = 12 r 1</li><li>12 ÷ 2 = 6 r 0</li><li>6 ÷ 2 = 3 r 0</li><li>3 ÷ 2 = 1 r 1</li><li>1 ÷ 2 = 0 r 1</li><li>Read remainders bottom-up: 11001₂</li></ol><span class="ans">✅ C) 11001₂</span></div>
+    </div>
+
+    <!-- Q43 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Compound Interest</span><span class="tag year">WAEC 2023</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q43. ₦5000 invested at 10% p.a. compound interest for 2 years amounts to:</h3>
+      <ul class="pq-options"><li>A) ₦5500</li><li>B) ₦6000</li><li class="correct">C) ₦6050</li><li>D) ₦6500</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>A = P(1 + r/100)ⁿ</li><li>A = 5000(1 + 10/100)² = 5000(1.1)²</li><li>= 5000 × 1.21 = ₦6050</li></ol><span class="ans">✅ C) ₦6050</span></div>
+    </div>
+
+    <!-- Q44 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Simple Interest</span><span class="tag year">WAEC 2022</span><span class="tag diff-easy">Easy</span></div>
+      <h3>Q44. Find the simple interest on ₦8000 at 5% p.a. for 3 years.</h3>
+      <ul class="pq-options"><li>A) ₦400</li><li>B) ₦800</li><li class="correct">C) ₦1200</li><li>D) ₦2400</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>I = PRT/100</li><li>= (8000 × 5 × 3)/100 = 120000/100 = ₦1200</li></ol><span class="ans">✅ C) ₦1200</span></div>
+    </div>
+
+    <!-- Q45 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Variation</span><span class="tag year">WAEC 2021</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q45. y varies inversely as x². If y = 4 when x = 3, find y when x = 6.</h3>
+      <ul class="pq-options"><li class="correct">A) 1</li><li>B) 2</li><li>C) 4</li><li>D) 16</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>y = k/x²</li><li>4 = k/9 → k = 36</li><li>When x = 6: y = 36/36 = 1</li></ol><span class="ans">✅ A) 1</span></div>
+    </div>
+
+    <!-- Q46 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Calculus</span><span class="tag year">WAEC 2020</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q46. Find the equation of the tangent to y = x² at x = 3.</h3>
+      <ul class="pq-options"><li>A) y = 6x</li><li>B) y = 9x</li><li class="correct">C) y = 6x − 9</li><li>D) y = 3x − 9</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>dy/dx = 2x; at x=3, slope = 6</li><li>At x=3, y = 9; point (3, 9)</li><li>y − 9 = 6(x − 3) → y = 6x − 18 + 9 = 6x − 9</li></ol><span class="ans">✅ C) y = 6x − 9</span></div>
+    </div>
+
+    <!-- Q47 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Geometry</span><span class="tag year">WAEC 2019</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q47. The exterior angle of a regular polygon is 30°. How many sides does it have?</h3>
+      <ul class="pq-options"><li>A) 8</li><li>B) 10</li><li class="correct">C) 12</li><li>D) 15</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Sum of exterior angles = 360°</li><li>Number of sides = 360°/30° = 12</li></ol><span class="ans">✅ C) 12</span></div>
+    </div>
+
+    <!-- Q48 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Surds</span><span class="tag year">WAEC 2018</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q48. Rationalise: 3/(√5 − √2)</h3>
+      <ul class="pq-options"><li>A) (√5+√2)</li><li class="correct">B) (√5+√2)</li><li>C) 3(√5−√2)/3</li><li>D) (√5−√2)</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Multiply numerator and denominator by (√5 + √2)</li><li>= 3(√5 + √2)/[(√5)² − (√2)²]</li><li>= 3(√5 + √2)/(5 − 2) = 3(√5 + √2)/3 = √5 + √2</li></ol><span class="ans">✅ B) √5 + √2</span></div>
+    </div>
+
+    <!-- Q49 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Word Problems</span><span class="tag year">WAEC 2024</span><span class="tag diff-med">Medium</span></div>
+      <h3>Q49. A trader bought an article for ₦250 and sold it at a 20% profit. Selling price?</h3>
+      <ul class="pq-options"><li>A) ₦270</li><li class="correct">B) ₦300</li><li>C) ₦320</li><li>D) ₦350</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>Profit = 20% of ₦250 = (20/100)(250) = ₦50</li><li>Selling price = 250 + 50 = ₦300</li></ol><span class="ans">✅ B) ₦300</span></div>
+    </div>
+
+    <!-- Q50 -->
+    <div class="pq-card"><div class="meta"><span class="tag">Matrices</span><span class="tag year">WAEC 2023</span><span class="tag diff-hard">Hard</span></div>
+      <h3>Q50. Find the determinant of [[3,2],[1,4]]</h3>
+      <ul class="pq-options"><li>A) 5</li><li class="correct">B) 10</li><li>C) 12</li><li>D) 14</li></ul>
+      <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="solution-block"><strong>Solution:</strong><ol><li>For 2×2 matrix [[a,b],[c,d]], det = ad − bc</li><li>= (3)(4) − (2)(1) = 12 − 2 = 10</li></ol><span class="ans">✅ B) 10</span></div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="subjects.html">Subjects</a></li><li><a href="past-questions.html">Past Q's</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/pdf-export.js"></script>
+<script>
+function toggleSol(btn) {
+  const sol = btn.nextElementSibling;
+  sol.classList.toggle('show');
+  btn.innerHTML = sol.classList.contains('show')
+    ? '<i class="fas fa-eye-slash"></i> Hide Solution'
+    : '<i class="fas fa-eye"></i> Show Solution';
+}
+function expandAll() {
+  document.querySelectorAll('.solution-block').forEach(s => s.classList.add('show'));
+  document.querySelectorAll('.toggle-sol').forEach(b => b.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Solution');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biology Practical | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.practical-card{background:#fff;border-radius:14px;padding:32px;margin-bottom:30px;box-shadow:var(--shadow);border-left:5px solid #f59e0b;}
+.practical-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.practical-card .tag{padding:4px 12px;border-radius:50px;font-size:.8rem;font-weight:600;}
+.practical-card .tag.subj{background:#fef3c7;color:#92400e;}
+.practical-card .tag.year{background:#dbeafe;color:#1e40af;}
+.practical-card h2{color:#b45309;margin-bottom:16px;font-family:'Lora',serif;}
+.practical-card h3{margin:20px 0 10px;color:#1e3a8a;}
+.observation-table{width:100%;border-collapse:collapse;margin:14px 0;}
+.observation-table th{background:#f59e0b;color:#fff;padding:10px;text-align:left;}
+.observation-table td{padding:10px;border:1px solid #e5e7eb;}
+.observation-table tr:nth-child(even){background:#f9fafb;}
+.solution-toggle{background:#f59e0b;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;margin-top:10px;}
+.full-solution{display:none;margin-top:16px;padding:24px;background:#fffbeb;border-radius:10px;border-left:4px solid #f59e0b;}
+.full-solution.show{display:block;}
+.action-bar{background:#fff;padding:20px;border-radius:14px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow);}
+.action-bar button{padding:10px 20px;background:#16a34a;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../practicals/">Practicals</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../mock-exam.html">Mock Exam</a></li>
+      <li><a href="../essays/">Essays</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner" style="background:linear-gradient(135deg,#f59e0b,#16a34a);">
+  <h1><i class="fas fa-dna"></i> Biology Practical</h1>
+  <p>Specimen identification, food tests, and biological drawing</p>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="action-bar">
+      <div><strong>🔬 8 Practical Questions • Specimens, Food Tests, Drawings</strong></div>
+      <button onclick="downloadPDF('biology-practical')"><i class="fas fa-file-pdf"></i> Download PDF</button>
+    </div>
+
+    <div class="practical-card">
+      <div class="meta"><span class="tag subj">Food Tests</span><span class="tag year">WAEC 2024</span></div>
+      <h2>P1. Identification of Food Substances</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show All Tests</button>
+      <div class="full-solution">
+        <table class="observation-table">
+          <thead><tr><th>Food</th><th>Test</th><th>Positive Result</th></tr></thead>
+          <tbody>
+            <tr><td>Starch</td><td>Iodine solution</td><td>Blue-black colour</td></tr>
+            <tr><td>Reducing sugar (glucose)</td><td>Benedict's solution + heat</td><td>Brick-red precipitate</td></tr>
+            <tr><td>Non-reducing sugar (sucrose)</td><td>Boil with HCl, neutralise, then Benedict's</td><td>Brick-red after hydrolysis</td></tr>
+            <tr><td>Protein</td><td>Biuret test (NaOH + CuSO₄)</td><td>Violet/purple colour</td></tr>
+            <tr><td>Fat / Oil</td><td>(i) Translucent spot on paper (ii) Sudan III</td><td>Greasy translucent stain / Red-stained globules</td></tr>
+            <tr><td>Vitamin C</td><td>DCPIP solution</td><td>Blue solution decolourised</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="practical-card">
+      <div class="meta"><span class="tag subj">Specimen ID</span><span class="tag year">WAEC 2023</span></div>
+      <h2>P2. Identification of Biological Specimens</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Specimens</button>
+      <div class="full-solution">
+        <table class="observation-table">
+          <thead><tr><th>Specimen</th><th>Class/Group</th><th>Two distinguishing features</th></tr></thead>
+          <tbody>
+            <tr><td>Cockroach</td><td>Insecta (Arthropoda)</td><td>3 pairs of legs; 2 pairs of wings; 3 body parts</td></tr>
+            <tr><td>Earthworm</td><td>Annelida</td><td>Segmented body; clitellum; chaetae</td></tr>
+            <tr><td>Tilapia</td><td>Pisces (fish)</td><td>Scales, fins, gills</td></tr>
+            <tr><td>Toad</td><td>Amphibia</td><td>Moist skin, no scales, breeds in water</td></tr>
+            <tr><td>Lizard</td><td>Reptilia</td><td>Dry scaly skin, claws, lays eggs on land</td></tr>
+            <tr><td>Maize plant</td><td>Monocot (Angiospermae)</td><td>Parallel veins, fibrous root, single cotyledon</td></tr>
+            <tr><td>Bean plant</td><td>Dicot (Angiospermae)</td><td>Network veins, taproot, two cotyledons</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="practical-card">
+      <div class="meta"><span class="tag subj">Drawing</span><span class="tag year">WAEC 2022</span></div>
+      <h2>P3. Biological Drawing Rules</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Drawing Rules</button>
+      <div class="full-solution">
+        <ul style="margin-left:20px;line-height:2;">
+          <li>Use a sharp HB pencil only — never colour or shade.</li>
+          <li>Make drawings large (at least half page) and clear.</li>
+          <li>Lines must be single, firm, and continuous — no sketching.</li>
+          <li>Label lines should not cross each other.</li>
+          <li>Labels written in lowercase except proper nouns; pulled out horizontally.</li>
+          <li>State magnification: M = drawing length / actual length.</li>
+          <li>Title written below drawing — underlined.</li>
+          <li>Show only what you observe — do NOT add details from memory.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="practical-card">
+      <div class="meta"><span class="tag subj">Habitat Study</span><span class="tag year">WAEC 2021</span></div>
+      <h2>P4. Habitat Adaptations</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <table class="observation-table">
+          <thead><tr><th>Organism</th><th>Habitat</th><th>Adaptation</th></tr></thead>
+          <tbody>
+            <tr><td>Camel</td><td>Desert</td><td>Hump (fat store), thick lashes, broad feet, conserves water</td></tr>
+            <tr><td>Fish</td><td>Aquatic</td><td>Streamlined body, gills, fins, scales, swim bladder</td></tr>
+            <tr><td>Cactus</td><td>Desert</td><td>Spines (reduced leaves), thick cuticle, succulent stem</td></tr>
+            <tr><td>Water lily</td><td>Aquatic</td><td>Air spaces in leaves (aerenchyma), waxy upper surface</td></tr>
+            <tr><td>Mangrove</td><td>Saline swamp</td><td>Pneumatophores (breathing roots), salt-excreting glands</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="practical-card">
+      <div class="meta"><span class="tag subj">Microscopy</span><span class="tag year">WAEC 2020</span></div>
+      <h2>P5. Onion Epidermis under Microscope</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Procedure & Observation</button>
+      <div class="full-solution">
+        <p><strong>Procedure:</strong> Peel a thin transparent layer from inside of onion bulb. Place on clean slide. Add 1 drop iodine. Cover with cover slip avoiding bubbles. Observe under low then high power.</p>
+        <p><strong>Observations:</strong></p>
+        <ul style="margin-left:20px;line-height:1.8;">
+          <li>Brick-shaped or rectangular cells arranged in rows.</li>
+          <li>Each cell has a thick cell wall, large central vacuole, nucleus stained yellow-brown by iodine, and cytoplasm.</li>
+          <li>No chloroplasts (storage tissue, not photosynthetic).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="practical-card">
+      <div class="meta"><span class="tag subj">Plant Physiology</span><span class="tag year">WAEC 2019</span></div>
+      <h2>P6. Investigation of Photosynthesis (Starch test)</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Procedure</button>
+      <div class="full-solution">
+        <ol style="margin-left:20px;line-height:1.8;">
+          <li>Place a destarched leaf in light for 4 hours.</li>
+          <li>Pluck the leaf; boil in water for 1 minute (to kill cells).</li>
+          <li>Boil in ethanol (water bath) for 5 minutes — leaf becomes brittle and decolorised.</li>
+          <li>Wash in warm water to soften.</li>
+          <li>Spread on white tile; add iodine solution.</li>
+          <li>Observation: Leaf turns blue-black → starch present → photosynthesis occurred.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="practical-card">
+      <div class="meta"><span class="tag subj">Ecology</span><span class="tag year">WAEC 2018</span></div>
+      <h2>P7. Sampling — Quadrat Method</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <p><strong>Use:</strong> Estimate population of plants/sessile animals in a habitat.</p>
+        <p><strong>Procedure:</strong></p>
+        <ol style="margin-left:20px;line-height:1.8;">
+          <li>Throw quadrat (1 m²) randomly in habitat — repeat 10 times.</li>
+          <li>Count organisms in each quadrat. Find mean per m².</li>
+          <li>Multiply mean by total habitat area.</li>
+          <li>Example: mean = 8 per m²; field = 200 m² → estimated population = 1600.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="practical-card">
+      <div class="meta"><span class="tag subj">Genetics</span><span class="tag year">WAEC 2024</span></div>
+      <h2>P8. Genetic Cross — Punnett Square</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <p><strong>Question:</strong> Cross between heterozygous tall (Tt) and homozygous short (tt). Find offspring ratio.</p>
+        <table class="observation-table">
+          <thead><tr><th></th><th>T</th><th>t</th></tr></thead>
+          <tbody>
+            <tr><th>t</th><td>Tt (tall)</td><td>tt (short)</td></tr>
+            <tr><th>t</th><td>Tt (tall)</td><td>tt (short)</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Phenotypic ratio:</strong> 2 tall : 2 short = <strong>1 : 1</strong></p>
+        <p><strong>Genotypic ratio:</strong> 2 Tt : 2 tt = <strong>1 : 1</strong></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../subjects.html">Subjects</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>function toggleSol(btn){const s=btn.nextElementSibling;s.classList.toggle('show');btn.innerHTML=s.classList.contains('show')?'<i class="fas fa-eye-slash"></i> Hide':'<i class="fas fa-eye"></i> Show';}</script>
+</body>
+</html>

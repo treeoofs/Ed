@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard Wireframe | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.wf-container{max-width:1400px;margin:0 auto;padding:30px;}
+.wf-section{background:#fff;border:2px dashed #94a3b8;border-radius:14px;padding:30px;margin-bottom:30px;}
+.wf-section h2{color:#0b5ed7;margin-bottom:16px;font-size:1.4rem;display:flex;align-items:center;gap:10px;}
+.wf-block{background:#f1f5f9;border:2px dashed #64748b;border-radius:10px;padding:24px;text-align:center;color:#475569;font-weight:600;position:relative;min-height:80px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;}
+.wf-block.primary{background:#dbeafe;border-color:#3b82f6;color:#1e40af;}
+.wf-block.success{background:#dcfce7;border-color:#16a34a;color:#166534;}
+.wf-block.warning{background:#fef3c7;border-color:#f59e0b;color:#92400e;}
+.wf-block.danger{background:#fee2e2;border-color:#dc2626;color:#991b1b;}
+.wf-block.purple{background:#f3e8ff;border-color:#7c3aed;color:#6b21a8;}
+.wf-label{position:absolute;top:-12px;left:14px;background:#fff;padding:0 8px;font-size:.75rem;color:#64748b;font-weight:500;}
+.wf-grid{display:grid;gap:14px;}
+.wf-grid-2{grid-template-columns:1fr 1fr;}
+.wf-grid-3{grid-template-columns:repeat(3,1fr);}
+.wf-grid-4{grid-template-columns:repeat(4,1fr);}
+.wf-grid-12{grid-template-columns:1fr 4fr;min-height:600px;}
+.wf-arrow{text-align:center;color:#94a3b8;font-size:2rem;margin:10px 0;}
+.wf-spec{background:#fefce8;border-left:4px solid #f59e0b;padding:14px;border-radius:8px;margin-top:14px;font-size:.9rem;color:#713f12;}
+.wf-spec strong{color:#92400e;}
+.tab-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;background:#fff;padding:14px;border-radius:14px;box-shadow:var(--shadow);}
+.tab-nav button{padding:10px 18px;border:2px solid #e5e7eb;border-radius:8px;background:#fff;cursor:pointer;font-weight:600;}
+.tab-nav button.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+.wf-page{display:none;}
+.wf-page.active{display:block;}
+.wf-mini-card{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px;font-size:.85rem;}
+.wf-stat{font-size:2rem;font-weight:800;color:#0b5ed7;}
+.wf-table-row{display:grid;grid-template-columns:50px 2fr 2fr 1fr 1fr 1.5fr;gap:10px;padding:10px;border-bottom:1px solid #e5e7eb;font-size:.85rem;}
+.wf-table-row.header{background:#f1f5f9;font-weight:700;color:#1e293b;}
+.wf-chart{background:#f1f5f9;border-radius:10px;height:200px;display:flex;align-items:flex-end;justify-content:space-around;padding:14px;}
+.wf-bar{background:linear-gradient(180deg,#0b5ed7,#7c3aed);border-radius:4px 4px 0 0;width:30px;}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin:14px 0;font-size:.85rem;}
+.legend-item{display:flex;align-items:center;gap:6px;}
+.legend-color{width:14px;height:14px;border-radius:3px;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../admin/dashboard.html">Live Admin</a></li>
+      <li><a href="../wireframes/admin-wireframe.html" class="active">Wireframe</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-banner" style="background:linear-gradient(135deg,#1e293b,#0f172a);">
+  <h1><i class="fas fa-drafting-compass"></i> Admin Dashboard Wireframe</h1>
+  <p>Low-fidelity blueprints showing layout, components, and information architecture</p>
+</section>
+
+<div class="wf-container">
+
+  <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:18px;border-radius:10px;margin-bottom:30px;color:#92400e;">
+    <strong><i class="fas fa-info-circle"></i> About These Wireframes:</strong> These are low-fidelity blueprints (boxes, labels, structure) showing the IA and layout decisions before visual design. They guide developers building production admin features. Each section includes specs in yellow boxes.
+  </div>
+
+  <div class="tab-nav">
+    <button class="active" onclick="showTab('layout', this)">Master Layout</button>
+    <button onclick="showTab('dashboard', this)">Dashboard Home</button>
+    <button onclick="showTab('users', this)">User Management</button>
+    <button onclick="showTab('content', this)">Content CMS</button>
+    <button onclick="showTab('analytics', this)">Analytics</button>
+    <button onclick="showTab('mobile', this)">Mobile View</button>
+    <button onclick="showTab('flow', this)">User Flow</button>
+  </div>
+
+  <!-- TAB 1: MASTER LAYOUT -->
+  <div id="layout" class="wf-page active">
+    <div class="wf-section">
+      <h2><i class="fas fa-th-large"></i> 1. Master Layout (Desktop ≥ 1024px)</h2>
+
+      <div class="wf-block primary" style="margin-bottom:14px;">
+        <div class="wf-label">Top Bar (Sticky · 64px height)</div>
+        <div>[ LOGO ] &nbsp;·&nbsp; Search bar &nbsp;·&nbsp; 🔔 Notifications &nbsp;·&nbsp; ⚙️ Settings &nbsp;·&nbsp; 👤 Admin Profile dropdown</div>
+      </div>
+
+      <div class="wf-grid wf-grid-12">
+        <div class="wf-block purple">
+          <div class="wf-label">Sidebar (240px · Collapsible)</div>
+          <div style="text-align:left;width:100%;">
+            📊 Dashboard<br>
+            👥 Users<br>
+            📚 Content<br>
+            ❓ Q&A Bank<br>
+            🧪 Practicals<br>
+            📈 Analytics<br>
+            💳 Billing<br>
+            🎓 Tutors<br>
+            📧 Messages<br>
+            ⚙️ Settings
+          </div>
+        </div>
+        <div class="wf-block">
+          <div class="wf-label">Main Content Area (fluid)</div>
+          <div>Page content renders here<br>Breadcrumbs at top<br>Action buttons top-right</div>
+        </div>
+      </div>
+
+      <div class="wf-block" style="margin-top:14px;background:#1e293b;color:#cbd5e1;border-color:#475569;">
+        <div class="wf-label" style="background:#1e293b;color:#cbd5e1;">Footer</div>
+        <div>© 2026 ExamAce · v2.4.0 · Build 2026.05.09 · System Status: 🟢 All systems operational</div>
+      </div>
+
+      <div class="wf-spec">
+        <strong>Layout Specs:</strong>
+        Container max-width: 1280px · Sidebar: collapsible to 60px · Top bar: sticky on scroll · Z-index hierarchy: top bar (100), sidebar (90), modals (1000), toasts (10000) · Color tokens: --primary #0b5ed7, --success #16a34a, --warning #f59e0b, --danger #dc2626
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: DASHBOARD HOME -->
+  <div id="dashboard" class="wf-page">
+    <div class="wf-section">
+      <h2><i class="fas fa-tachometer-alt"></i> 2. Dashboard Home</h2>
+
+      <div class="wf-block" style="margin-bottom:14px;">
+        <div class="wf-label">Welcome Banner</div>
+        <div>"Welcome back, [Admin Name]!" + Date + Quick action: [+ New Question] [Send Announcement]</div>
+      </div>
+
+      <h4 style="margin:20px 0 10px;color:#64748b;">→ KPI Cards Row (4 columns)</h4>
+      <div class="wf-grid wf-grid-4">
+        <div class="wf-block primary"><div class="wf-stat">12,847</div><div>Total Students<br><small>↑ 18% MoM</small></div></div>
+        <div class="wf-block success"><div class="wf-stat">3,842</div><div>Active Today<br><small>↑ 12% DoD</small></div></div>
+        <div class="wf-block warning"><div class="wf-stat">98%</div><div>Pass Rate<br><small>↑ 2.1% YoY</small></div></div>
+        <div class="wf-block purple"><div class="wf-stat">₦4.2M</div><div>Revenue MTD<br><small>↑ 24% MoM</small></div></div>
+      </div>
+
+      <h4 style="margin:20px 0 10px;color:#64748b;">→ Charts Row (2/3 + 1/3)</h4>
+      <div class="wf-grid" style="grid-template-columns:2fr 1fr;">
+        <div class="wf-block">
+          <div class="wf-label">Activity Trend (Line chart, 30 days)</div>
+          <div class="wf-chart">
+            <div class="wf-bar" style="height:30%;"></div><div class="wf-bar" style="height:45%;"></div>
+            <div class="wf-bar" style="height:60%;"></div><div class="wf-bar" style="height:50%;"></div>
+            <div class="wf-bar" style="height:70%;"></div><div class="wf-bar" style="height:80%;"></div>
+            <div class="wf-bar" style="height:65%;"></div><div class="wf-bar" style="height:90%;"></div>
+            <div class="wf-bar" style="height:75%;"></div><div class="wf-bar" style="height:95%;"></div>
+          </div>
+          <div class="legend">
+            <div class="legend-item"><div class="legend-color" style="background:#0b5ed7;"></div>New Signups</div>
+            <div class="legend-item"><div class="legend-color" style="background:#7c3aed;"></div>Active Sessions</div>
+          </div>
+        </div>
+        <div class="wf-block">
+          <div class="wf-label">Top Subjects (Pie chart)</div>
+          <div style="text-align:left;width:100%;font-size:.85rem;">
+            🟦 Math (42%)<br>🟩 English (28%)<br>🟧 Physics (15%)<br>🟪 Chemistry (10%)<br>⬜ Others (5%)
+          </div>
+        </div>
+      </div>
+
+      <h4 style="margin:20px 0 10px;color:#64748b;">→ Bottom Row: Quick Tables (2 columns)</h4>
+      <div class="wf-grid wf-grid-2">
+        <div class="wf-block">
+          <div class="wf-label">Recent Signups (last 5)</div>
+          <div style="text-align:left;width:100%;font-size:.85rem;">
+            <div class="wf-table-row header"><span>#</span><span>Name</span><span>Email</span><span>Plan</span><span>Date</span><span>Action</span></div>
+            <div class="wf-table-row"><span>1</span><span>Chinedu O.</span><span>chinedu@...</span><span>Premium</span><span>2m ago</span><span>👁 ✏ 🗑</span></div>
+            <div class="wf-table-row"><span>2</span><span>Ama S.</span><span>ama@...</span><span>Free</span><span>14m</span><span>👁 ✏ 🗑</span></div>
+            <div class="wf-table-row"><span>3</span><span>Tunde B.</span><span>tunde@...</span><span>Pro</span><span>1h</span><span>👁 ✏ 🗑</span></div>
+          </div>
+        </div>
+        <div class="wf-block">
+          <div class="wf-label">System Alerts</div>
+          <div style="text-align:left;width:100%;">
+            🔴 Server CPU at 78% — investigate<br>
+            🟡 PDF service queued: 23 jobs<br>
+            🟢 Daily backup completed 03:00<br>
+            🟡 23 questions pending review<br>
+            🟢 SSL certificate valid (89 days)
+          </div>
+        </div>
+      </div>
+
+      <div class="wf-spec">
+        <strong>Dashboard Home Specs:</strong>
+        Auto-refresh: every 60s (KPIs), 5min (charts) · WebSocket for real-time alerts · Cards have skeleton loaders during fetch · Charts use Chart.js or Recharts · Tables: max 5 rows + "View all" link · Mobile: stacks vertically, KPIs become 2×2 grid
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: USER MANAGEMENT -->
+  <div id="users" class="wf-page">
+    <div class="wf-section">
+      <h2><i class="fas fa-users"></i> 3. User Management</h2>
+
+      <div class="wf-block" style="margin-bottom:14px;">
+        <div class="wf-label">Page Header</div>
+        <div>"Manage Users" · Total: 12,847 · [ + Add User ] [ ↓ Export CSV ] [ 📤 Bulk Import ]</div>
+      </div>
+
+      <div class="wf-grid wf-grid-4" style="margin-bottom:14px;">
+        <div class="wf-block primary"><div>🔍 Search by name/email</div></div>
+        <div class="wf-block"><div>Filter: Status ▾<br>(All / Active / Pending / Suspended)</div></div>
+        <div class="wf-block"><div>Filter: Plan ▾<br>(Free / Premium / Pro Tutor)</div></div>
+        <div class="wf-block"><div>Filter: Date joined ▾<br>(Today / 7 days / 30 days / Custom)</div></div>
+      </div>
+
+      <div class="wf-block">
+        <div class="wf-label">Users Data Table (paginated · 25 per page)</div>
+        <div style="text-align:left;width:100%;">
+          <div class="wf-table-row header">
+            <span>☐</span><span>Name & Avatar</span><span>Email</span><span>Plan</span><span>Status</span><span>Actions</span>
+          </div>
+          <div class="wf-table-row">
+            <span>☐</span><span>👤 Chinedu O.<br><small>Lagos · L18</small></span><span>chinedu@email.com</span><span>🟢 Premium</span><span>Active</span><span>👁 ✏ 🔒 🗑 📧</span>
+          </div>
+          <div class="wf-table-row">
+            <span>☐</span><span>👤 Ama S.<br><small>Accra · L12</small></span><span>ama@email.com</span><span>🆓 Free</span><span>Active</span><span>👁 ✏ 🔒 🗑 📧</span>
+          </div>
+          <div class="wf-table-row">
+            <span>☐</span><span>👤 Tunde B.<br><small>Abuja · L8</small></span><span>tunde@email.com</span><span>👑 Pro</span><span>Pending</span><span>👁 ✏ ✅ 🗑 📧</span>
+          </div>
+        </div>
+        <div style="margin-top:14px;color:#64748b;font-size:.85rem;">← Previous · Page 1 of 514 · Next →</div>
+      </div>
+
+      <h4 style="margin:20px 0 10px;color:#64748b;">→ User Detail Modal (opens on Edit click)</h4>
+      <div class="wf-grid wf-grid-2">
+        <div class="wf-block">
+          <div class="wf-label">Profile Tab</div>
+          <div style="text-align:left;width:100%;">
+            👤 Avatar (upload)<br>
+            Full Name: [______]<br>
+            Email: [______]<br>
+            Phone: [______]<br>
+            School: [______]<br>
+            Class: [SS3 ▾]<br>
+            Date of Birth: [📅]<br>
+            Status: [Active ▾]<br>
+            Plan: [Premium ▾]<br>
+            [Save Changes] [Cancel]
+          </div>
+        </div>
+        <div class="wf-block success">
+          <div class="wf-label">Activity Tab</div>
+          <div style="text-align:left;width:100%;">
+            📊 Stats:<br>
+            • XP: 2,847<br>
+            • Level: 12<br>
+            • Streak: 14 days<br>
+            • Tests taken: 47<br>
+            • Avg score: 78%<br>
+            • Hours studied: 124h<br><br>
+            📅 Activity Heatmap (last 90 days)<br>
+            🏆 Recent achievements<br>
+            📝 Test history (clickable rows)
+          </div>
+        </div>
+      </div>
+
+      <div class="wf-spec">
+        <strong>User Management Specs:</strong>
+        Bulk actions (toolbar appears when rows selected): Suspend, Activate, Delete, Export, Send Email · Column sort: clicking header toggles asc/desc · Saved filters: users can name and save filter combos · Row hover reveals quick actions · Audit log: every change logged with admin name + timestamp · GDPR-compliant: "Right to be forgotten" button initiates anonymization
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: CONTENT CMS -->
+  <div id="content" class="wf-page">
+    <div class="wf-section">
+      <h2><i class="fas fa-book"></i> 4. Content Management System</h2>
+
+      <div class="wf-block" style="margin-bottom:14px;">
+        <div class="wf-label">CMS Navigation Tabs</div>
+        <div>📚 Subjects · 📖 Topics · ❓ Questions · 🎬 Videos · 📝 Essays · 🧪 Practicals · 📊 Past Papers</div>
+      </div>
+
+      <h4 style="margin:20px 0 10px;color:#64748b;">→ Question Editor (WYSIWYG)</h4>
+      <div class="wf-grid" style="grid-template-columns:2fr 1fr;">
+        <div class="wf-block">
+          <div class="wf-label">Editor Pane</div>
+          <div style="text-align:left;width:100%;">
+            <strong>Subject:</strong> [Mathematics ▾] <strong>Topic:</strong> [Quadratics ▾]<br>
+            <strong>Difficulty:</strong> ◯ Easy ◉ Medium ◯ Hard<br>
+            <strong>Year:</strong> [2024 ▾] <strong>Type:</strong> [Multiple Choice ▾]<br><br>
+            <strong>Question Text:</strong><br>
+            ┌─[B I U &nbsp;|&nbsp; H1 H2 &nbsp;|&nbsp; ∑ √ ∫ &nbsp;|&nbsp; 🖼 📊 ]─────┐<br>
+            │ Solve: 2x² − 5x − 3 = 0 (LaTeX/MathJax) │<br>
+            └─────────────────────────────────────────┘<br><br>
+            <strong>Options:</strong><br>
+            A) [______] ☐ correct<br>
+            B) [______] ☐ correct<br>
+            C) [______] ☑ correct<br>
+            D) [______] ☐ correct<br><br>
+            <strong>Step-by-Step Solution:</strong><br>
+            ┌─────────────────────┐<br>
+            │ 1. Identify a, b, c │<br>
+            │ 2. Find factors...  │<br>
+            │ 3. ...              │<br>
+            └─────────────────────┘<br><br>
+            <strong>Hints (optional):</strong> [+ Add hint]<br>
+            <strong>Tags:</strong> [factorization] [+]<br><br>
+            [Save Draft] [Preview] [Publish]
+          </div>
+        </div>
+        <div class="wf-block warning">
+          <div class="wf-label">Live Preview Pane</div>
+          <div style="text-align:left;width:100%;">
+            👁 Renders question as students see it<br><br>
+            Real-time MathJax formula rendering<br>
+            Image/diagram preview<br>
+            Mobile responsive toggle 📱<br>
+            Accessibility audit ♿<br>
+            Word count<br>
+            Estimated reading time
+          </div>
+        </div>
+      </div>
+
+      <div class="wf-spec">
+        <strong>CMS Specs:</strong>
+        Rich-text editor: TipTap or ProseMirror with math extension · Auto-save every 30s to draft · Version history with rollback · Bulk import via CSV/JSON · AI-assist: "Generate solution from question" button (calls GPT-4) · Image storage: Cloudflare R2 or S3 · Approval workflow: Author → Reviewer → Publisher · SEO meta fields per topic
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 5: ANALYTICS -->
+  <div id="analytics" class="wf-page">
+    <div class="wf-section">
+      <h2><i class="fas fa-chart-line"></i> 5. Analytics & Reports</h2>
+
+      <div class="wf-block" style="margin-bottom:14px;">
+        <div class="wf-label">Date Range Picker + Filters</div>
+        <div>📅 [Last 30 days ▾] · 📍 Region: [All ▾] · 🎓 School: [All ▾] · 📚 Subject: [All ▾] · [Apply] [Export PDF]</div>
+      </div>
+
+      <div class="wf-grid wf-grid-3" style="margin-bottom:14px;">
+        <div class="wf-block primary"><div class="wf-stat">847K</div><div>Questions Attempted</div></div>
+        <div class="wf-block success"><div class="wf-stat">73%</div><div>Avg Accuracy</div></div>
+        <div class="wf-block warning"><div class="wf-stat">42min</div><div>Avg Daily Study</div></div>
+      </div>
+
+      <div class="wf-grid wf-grid-2">
+        <div class="wf-block">
+          <div class="wf-label">Subject Performance Heatmap</div>
+          <div class="wf-chart" style="grid-template-rows:repeat(7,1fr);display:grid;gap:2px;height:180px;padding:4px;">
+            <div style="background:#16a34a;"></div><div style="background:#16a34a;"></div><div style="background:#84cc16;"></div>
+            <div style="background:#eab308;"></div><div style="background:#16a34a;"></div><div style="background:#22c55e;"></div>
+            <div style="background:#84cc16;"></div>
+          </div>
+          <small style="color:#64748b;">🟥 Below 50% &nbsp; 🟧 50-70% &nbsp; 🟨 70-85% &nbsp; 🟩 85%+</small>
+        </div>
+
+        <div class="wf-block">
+          <div class="wf-label">Geographic Distribution (Map)</div>
+          <div style="background:#dbeafe;height:180px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            🗺 Nigeria/Ghana map · color-coded by user density · click state for breakdown
+          </div>
+        </div>
+
+        <div class="wf-block">
+          <div class="wf-label">Cohort Retention Curve</div>
+          <div style="text-align:left;width:100%;">
+            Day 1: 100% ━━━━━━━━━<br>
+            Day 7: 64%  ━━━━━━<br>
+            Day 14: 48% ━━━━<br>
+            Day 30: 35% ━━━<br>
+            Day 60: 27% ━━<br>
+            Day 90: 22% ━<br>
+          </div>
+        </div>
+
+        <div class="wf-block">
+          <div class="wf-label">Funnel Analysis</div>
+          <div style="text-align:left;width:100%;">
+            🔵 Visited: 50,000 (100%)<br>
+            🔵 Signed up: 18,500 (37%)<br>
+            🟦 Activated: 12,400 (25%)<br>
+            🟪 Took quiz: 8,200 (16%)<br>
+            🟨 Subscribed: 1,100 (2.2%)<br><br>
+            Biggest drop: Sign up → Activate (-33%)
+          </div>
+        </div>
+      </div>
+
+      <div class="wf-spec">
+        <strong>Analytics Specs:</strong>
+        Real-time data via Firestore listeners · Historical aggregation in BigQuery · Custom dashboards: drag-and-drop widgets · Export formats: PDF (executive summary), CSV (raw), PPTX (board presentation) · Scheduled reports: daily/weekly/monthly auto-emails · Drill-down: click any metric for detail view
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 6: MOBILE -->
+  <div id="mobile" class="wf-page">
+    <div class="wf-section">
+      <h2><i class="fas fa-mobile-alt"></i> 6. Mobile Responsive Layout (≤ 768px)</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;">
+        <div>
+          <h4 style="text-align:center;color:#64748b;">📱 Mobile Dashboard</h4>
+          <div style="border:8px solid #1e293b;border-radius:30px;padding:8px;background:#1e293b;max-width:280px;margin:0 auto;">
+            <div style="background:#fff;border-radius:24px;padding:10px;height:520px;overflow:hidden;">
+              <div class="wf-block primary" style="margin-bottom:8px;padding:10px;font-size:.75rem;">☰ ExamAce Admin · 🔔 👤</div>
+              <div class="wf-block" style="margin-bottom:8px;padding:10px;font-size:.75rem;">Welcome, Admin!</div>
+              <div class="wf-block primary" style="margin-bottom:8px;padding:10px;font-size:.75rem;"><div style="font-size:1.4rem;font-weight:800;">12,847</div>Total Students</div>
+              <div class="wf-block success" style="margin-bottom:8px;padding:10px;font-size:.75rem;"><div style="font-size:1.4rem;font-weight:800;">3,842</div>Active Today</div>
+              <div class="wf-block" style="margin-bottom:8px;padding:10px;font-size:.75rem;">📊 Activity Chart</div>
+              <div class="wf-block" style="padding:10px;font-size:.75rem;">⚡ Quick Actions</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="text-align:center;color:#64748b;">📱 User List</h4>
+          <div style="border:8px solid #1e293b;border-radius:30px;padding:8px;background:#1e293b;max-width:280px;margin:0 auto;">
+            <div style="background:#fff;border-radius:24px;padding:10px;height:520px;overflow:hidden;">
+              <div class="wf-block primary" style="margin-bottom:8px;padding:8px;font-size:.7rem;">← Users (12,847)</div>
+              <div class="wf-block" style="margin-bottom:8px;padding:8px;font-size:.7rem;">🔍 Search... 🎚 Filter</div>
+              <div class="wf-mini-card" style="margin-bottom:6px;font-size:.7rem;">👤 Chinedu O.<br>chinedu@... · 🟢 Active</div>
+              <div class="wf-mini-card" style="margin-bottom:6px;font-size:.7rem;">👤 Ama S.<br>ama@... · 🟢 Active</div>
+              <div class="wf-mini-card" style="margin-bottom:6px;font-size:.7rem;">👤 Tunde B.<br>tunde@... · 🟡 Pending</div>
+              <div class="wf-mini-card" style="margin-bottom:6px;font-size:.7rem;">👤 Fatima S.<br>fatima@... · 🟢 Active</div>
+              <div class="wf-block" style="padding:8px;font-size:.7rem;">[+ Add] (FAB)</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="text-align:center;color:#64748b;">📱 Drawer Menu</h4>
+          <div style="border:8px solid #1e293b;border-radius:30px;padding:8px;background:#1e293b;max-width:280px;margin:0 auto;">
+            <div style="background:#fff;border-radius:24px;padding:10px;height:520px;overflow:hidden;">
+              <div class="wf-block purple" style="margin-bottom:8px;padding:14px;font-size:.75rem;text-align:left;">
+                👤 Admin User<br><small>admin@examace.edu</small>
+              </div>
+              <div style="text-align:left;font-size:.8rem;line-height:2.4;padding-left:6px;">
+                📊 Dashboard<br>
+                👥 Users<br>
+                📚 Content<br>
+                ❓ Q&A Bank<br>
+                🧪 Practicals<br>
+                📈 Analytics<br>
+                💳 Billing<br>
+                🎓 Tutors<br>
+                ⚙️ Settings<br>
+                🚪 Logout
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wf-spec" style="margin-top:30px;">
+        <strong>Mobile Specs:</strong>
+        Breakpoints: sm 640px, md 768px, lg 1024px, xl 1280px · Sidebar collapses to bottom hamburger drawer below 768px · KPIs stack to 1 column on phones, 2 cols on tablets · Tables become cards · Touch targets ≥ 44×44px · FAB (Floating Action Button) for primary actions · Pull-to-refresh on lists · Skeleton loaders match desktop
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 7: USER FLOW -->
+  <div id="flow" class="wf-page">
+    <div class="wf-section">
+      <h2><i class="fas fa-route"></i> 7. Admin User Flow Diagram</h2>
+
+      <div class="wf-grid" style="grid-template-columns:1fr;">
+        <div class="wf-block primary">🚪 START — Admin opens /admin/login</div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-block">🔐 Enter credentials (or 2FA via authenticator)</div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-grid wf-grid-2">
+          <div class="wf-block danger">❌ Invalid → show error<br>after 5 attempts → lock 15min</div>
+          <div class="wf-block success">✅ Valid → JWT issued<br>redirect to /admin/dashboard</div>
+        </div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-block primary">📊 Dashboard loads with KPIs</div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-grid wf-grid-3">
+          <div class="wf-block warning">👥 Users → CRUD operations<br>Search, filter, edit, suspend, delete</div>
+          <div class="wf-block warning">📚 Content → Manage<br>Add/edit questions, videos, essays</div>
+          <div class="wf-block warning">📈 Analytics → Reports<br>View metrics, export PDF/CSV</div>
+        </div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-block">💾 Every change writes to audit log<br>(actor, action, timestamp, IP, before/after)</div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-block success">🎯 END — Admin logs out (auto after 30min idle)</div>
+      </div>
+
+      <div class="wf-spec">
+        <strong>Flow Specs:</strong>
+        Authentication: Firebase Auth + custom claims for roles · Session: 30min idle timeout, max 8h absolute · 2FA: TOTP (Google Authenticator) for super admins · Audit log: immutable Firestore collection, archived monthly · Permission tiers: Super Admin (all), Editor (content only), Moderator (users only), Viewer (read-only analytics)
+      </div>
+    </div>
+
+    <div class="wf-section">
+      <h2><i class="fas fa-shield-alt"></i> 8. Permission Matrix</h2>
+      <div class="wf-block">
+        <div style="text-align:left;width:100%;">
+          <div class="wf-table-row header" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;">
+            <span>Action</span><span>Super Admin</span><span>Editor</span><span>Moderator</span><span>Viewer</span>
+          </div>
+          <div class="wf-table-row" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;"><span>View dashboard</span><span>✅</span><span>✅</span><span>✅</span><span>✅</span></div>
+          <div class="wf-table-row" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;"><span>Manage users</span><span>✅</span><span>❌</span><span>✅</span><span>❌</span></div>
+          <div class="wf-table-row" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;"><span>Edit content</span><span>✅</span><span>✅</span><span>❌</span><span>❌</span></div>
+          <div class="wf-table-row" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;"><span>View billing</span><span>✅</span><span>❌</span><span>❌</span><span>❌</span></div>
+          <div class="wf-table-row" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;"><span>Export data</span><span>✅</span><span>✅</span><span>✅</span><span>✅</span></div>
+          <div class="wf-table-row" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;"><span>Manage admins</span><span>✅</span><span>❌</span><span>❌</span><span>❌</span></div>
+          <div class="wf-table-row" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;"><span>System settings</span><span>✅</span><span>❌</span><span>❌</span><span>❌</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../admin/dashboard.html">Live Admin</a></li></ul></div>
+    <div><h4>Resources</h4><ul><li><a href="../wireframes/admin-wireframe.html">Wireframes</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.wf-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

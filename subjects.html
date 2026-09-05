@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Subjects | ExamAce</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="subjects.html">Subjects</a></li>
+      <li><a href="past-questions.html">Past Q's</a></li>
+      <li><a href="mock-exam.html">Mock Exam</a></li>
+      <li><a href="practicals/">Practicals</a></li>
+      <li><a href="essays/">Essays</a></li>
+      <li><a href="ai-tutor/">AI Tutor</a></li>
+      <li><a href="premium/">💎 Premium</a></li>
+      <li><a href="login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1>All Subjects</h1>
+  <p>Complete WAEC & GCE syllabus coverage — 25+ subjects across Sciences, Arts, and Commerce</p>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">🔬 Sciences (STEM)</h2>
+    <div class="subject-grid">
+      <a href="subjects/mathematics.html" class="subject-card stem"><div class="card-icon"><i class="fas fa-square-root-alt"></i></div><h3>Mathematics</h3><p>Algebra, Geometry, Calculus, Statistics</p><span class="card-link">Open →</span></a>
+      <a href="subjects/physics.html" class="subject-card stem"><div class="card-icon"><i class="fas fa-atom"></i></div><h3>Physics</h3><p>Mechanics, Waves, Electricity</p><span class="card-link">Open →</span></a>
+      <a href="subjects/chemistry.html" class="subject-card stem"><div class="card-icon"><i class="fas fa-flask"></i></div><h3>Chemistry</h3><p>Organic, Inorganic, Physical</p><span class="card-link">Open →</span></a>
+      <a href="subjects/biology.html" class="subject-card stem"><div class="card-icon"><i class="fas fa-dna"></i></div><h3>Biology</h3><p>Cell, Genetics, Ecology</p><span class="card-link">Open →</span></a>
+      <a href="subjects/further-math.html" class="subject-card stem"><div class="card-icon"><i class="fas fa-infinity"></i></div><h3>Further Mathematics</h3><p>Vectors, Mechanics, Statistics</p><span class="card-link">Open →</span></a>
+      <a href="subjects/agric.html" class="subject-card stem"><div class="card-icon"><i class="fas fa-seedling"></i></div><h3>Agricultural Science</h3><p>Crop & animal husbandry, Soil science</p><span class="card-link">Open →</span></a>
+      <a href="subjects/computer.html" class="subject-card stem"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><h3>Computer Studies / ICT</h3><p>Hardware, Software, Programming</p><span class="card-link">Open →</span></a>
+      <a href="subjects/technical.html" class="subject-card stem"><div class="card-icon"><i class="fas fa-drafting-compass"></i></div><h3>Technical Drawing</h3><p>Geometric construction, Projection</p><span class="card-link">Open →</span></a>
+    </div>
+
+    <h2 class="section-title" style="margin-top:60px;">📚 Arts & Languages</h2>
+    <div class="subject-grid">
+      <a href="subjects/english.html" class="subject-card arts"><div class="card-icon"><i class="fas fa-book-open"></i></div><h3>English Language</h3><p>Comprehension, Essays, Lexis</p><span class="card-link">Open →</span></a>
+      <a href="subjects/literature.html" class="subject-card arts"><div class="card-icon"><i class="fas fa-feather-alt"></i></div><h3>Literature in English</h3><p>Prose, Poetry, Drama</p><span class="card-link">Open →</span></a>
+      <a href="subjects/government.html" class="subject-card arts"><div class="card-icon"><i class="fas fa-landmark"></i></div><h3>Government</h3><p>Constitutions, Politics</p><span class="card-link">Open →</span></a>
+      <a href="subjects/history.html" class="subject-card arts"><div class="card-icon"><i class="fas fa-scroll"></i></div><h3>History</h3><p>African & World History</p><span class="card-link">Open →</span></a>
+      <a href="subjects/crs.html" class="subject-card arts"><div class="card-icon"><i class="fas fa-cross"></i></div><h3>CRS</h3><p>Christian Religious Studies</p><span class="card-link">Open →</span></a>
+      <a href="subjects/irs.html" class="subject-card arts"><div class="card-icon"><i class="fas fa-mosque"></i></div><h3>IRS</h3><p>Islamic Religious Studies</p><span class="card-link">Open →</span></a>
+      <a href="subjects/french.html" class="subject-card arts"><div class="card-icon"><i class="fas fa-language"></i></div><h3>French</h3><p>Grammar, Comprehension, Oral</p><span class="card-link">Open →</span></a>
+      <a href="subjects/yoruba.html" class="subject-card arts"><div class="card-icon"><i class="fas fa-globe-africa"></i></div><h3>Nigerian Languages</h3><p>Yoruba, Igbo, Hausa</p><span class="card-link">Open →</span></a>
+    </div>
+
+    <h2 class="section-title" style="margin-top:60px;">💼 Commerce & Social Sciences</h2>
+    <div class="subject-grid">
+      <a href="subjects/economics.html" class="subject-card commerce"><div class="card-icon"><i class="fas fa-chart-line"></i></div><h3>Economics</h3><p>Micro, Macro, Theories</p><span class="card-link">Open →</span></a>
+      <a href="subjects/accounting.html" class="subject-card commerce"><div class="card-icon"><i class="fas fa-calculator"></i></div><h3>Financial Accounting</h3><p>Ledger, Trial Balance, Final Accounts</p><span class="card-link">Open →</span></a>
+      <a href="subjects/commerce.html" class="subject-card commerce"><div class="card-icon"><i class="fas fa-store"></i></div><h3>Commerce</h3><p>Trade, Business Organisations</p><span class="card-link">Open →</span></a>
+      <a href="subjects/business.html" class="subject-card commerce"><div class="card-icon"><i class="fas fa-briefcase"></i></div><h3>Business Studies</h3><p>Office Practice, Marketing</p><span class="card-link">Open →</span></a>
+      <a href="subjects/geography.html" class="subject-card commerce"><div class="card-icon"><i class="fas fa-globe"></i></div><h3>Geography</h3><p>Physical, Human, Map Reading</p><span class="card-link">Open →</span></a>
+      <a href="subjects/civic.html" class="subject-card commerce"><div class="card-icon"><i class="fas fa-balance-scale"></i></div><h3>Civic Education</h3><p>Citizenship, Rights, Duties</p><span class="card-link">Open →</span></a>
+      <a href="subjects/marketing.html" class="subject-card commerce"><div class="card-icon"><i class="fas fa-bullhorn"></i></div><h3>Marketing</h3><p>Concepts, Channels, Branding</p><span class="card-link">Open →</span></a>
+      <a href="subjects/food.html" class="subject-card commerce"><div class="card-icon"><i class="fas fa-utensils"></i></div><h3>Food & Nutrition</h3><p>Nutrients, Meal planning</p><span class="card-link">Open →</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div><p>Your trusted WAEC & GCE preparation companion.</p></div>
+    <div><h4>Quick Links</h4><ul><li><a href="subjects.html">Subjects</a></li><li><a href="practice.html">Practice</a></li><li><a href="solutions.html">Solutions</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="login.html">Sign In</a></li><li><a href="admin/login.html">Admin</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

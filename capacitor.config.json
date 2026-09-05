@@ -1,0 +1,58 @@
+{
+  "appId": "edu.examace.app",
+  "appName": "ExamAce",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "iosScheme": "https",
+    "hostname": "examace.edu",
+    "allowNavigation": ["*.examace.edu", "*.firebaseio.com", "*.googleapis.com"]
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0b5ed7",
+      "showSpinner": true,
+      "spinnerColor": "#fbbf24"
+    },
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
+    },
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon",
+      "iconColor": "#0b5ed7"
+    }
+  },
+  "android": {
+    "minWebViewVersion": 60,
+    "webContentsDebuggingEnabled": false,
+    "backgroundColor": "#FFFFFF"
+  },
+  "ios": {
+    "contentInset": "always",
+    "scheme": "ExamAce",
+    "preferredContentMode": "mobile"
+  },
+  "_README": {
+    "purpose": "This config converts the ExamAce web app into native iOS and Android apps using Capacitor.",
+    "setup": [
+      "1. Install Node.js",
+      "2. npm install @capacitor/core @capacitor/cli @capacitor/ios @capacitor/android",
+      "3. npx cap init",
+      "4. npx cap add android  &&  npx cap add ios",
+      "5. npx cap copy  (copies web assets into native projects)",
+      "6. npx cap open android   (opens Android Studio)",
+      "7. npx cap open ios       (opens Xcode)",
+      "8. Build and submit to Play Store / App Store"
+    ],
+    "features": [
+      "Push notifications (FCM/APNs)",
+      "Offline mode with Service Worker",
+      "Native splash screen and app icons",
+      "Deep linking from browser",
+      "Native sharing for results",
+      "Biometric login (Face ID / Fingerprint)"
+    ]
+  }
+}

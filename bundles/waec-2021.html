@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAEC 2021 Bundle | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.pq-card{background:#fff;border-radius:14px;padding:28px;margin-bottom:20px;box-shadow:var(--shadow);border-left:5px solid var(--primary);}
+.pq-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.pq-card .tag{background:#eef4ff;color:var(--primary);padding:4px 12px;border-radius:50px;font-size:.8rem;font-weight:600;}
+.pq-card .tag.year{background:#fef3c7;color:#92400e;}
+.pq-card h3{font-size:1.15rem;margin-bottom:14px;line-height:1.5;}
+.pq-options{display:flex;flex-direction:column;gap:8px;margin:14px 0;list-style:none;padding:0;}
+.pq-options li{padding:10px 14px;background:#f9fafb;border-radius:8px;}
+.pq-options li.correct{background:#dcfce7;border-left:3px solid #16a34a;font-weight:600;}
+.toggle-sol{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;}
+.solution-block{display:none;margin-top:16px;padding:20px;background:#f0f9ff;border-radius:10px;border-left:4px solid var(--primary);}
+.solution-block.show{display:block;}
+.solution-block ol{padding-left:20px;}
+.solution-block .ans{background:#16a34a;color:#fff;padding:8px 14px;border-radius:8px;display:inline-block;margin-top:10px;font-weight:700;}
+.subject-section{margin-bottom:40px;}
+.subject-section h2{color:var(--primary);border-bottom:3px solid var(--primary);padding-bottom:10px;margin-bottom:20px;}
+.action-bar{background:#fff;padding:20px;border-radius:14px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow);}
+.action-bar button{padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+.action-bar .btn-pdf{background:#16a34a;color:#fff;}
+.action-bar .btn-show-all{background:var(--primary);color:#fff;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../bundles.html" class="active">Bundles</a></li>
+      <li><a href="../mock-exam.html">Mock Exam</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-box-open"></i> WAEC 2021 — Complete Bundle</h1>
+  <p>Pandemic-era exam emphasising core syllabus</p>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="action-bar">
+      <div><strong>📅 WAEC 2021 Edition</strong></div>
+      <div>
+        <button class="btn-show-all" onclick="expandAll()"><i class="fas fa-eye"></i> Show All Solutions</button>
+        <button class="btn-pdf" onclick="downloadPDF('bundle-2021')"><i class="fas fa-file-pdf"></i> Download Full PDF</button>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-square-root-alt"></i> Math (2021)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2021</span></div>
+        <h3>1. Mean of 4, 7, 8, 11, x is 8. Find x.</h3>
+        <ul class="pq-options">
+          <li>A) 8</li>
+          <li>B) 9</li>
+          <li class="correct">C) 10</li>
+          <li>D) 12</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Sum = 8×5 = 40. 4+7+8+11=30. x = 10</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2021</span></div>
+        <h3>2. Convert 1101₂ to base 10:</h3>
+        <ul class="pq-options">
+          <li>A) 11</li>
+          <li>B) 12</li>
+          <li class="correct">C) 13</li>
+          <li>D) 14</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>8 + 4 + 0 + 1 = 13</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2021</span></div>
+        <h3>3. If A={1,2,3,4}, B={3,4,5,6}, A∩B is:</h3>
+        <ul class="pq-options">
+          <li>A) {1,2}</li>
+          <li class="correct">B) {3,4}</li>
+          <li>C) {5,6}</li>
+          <li>D) {1,2,5,6}</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Intersection = common elements = {3,4}</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2021</span></div>
+        <h3>4. y∝1/x²; y=4 when x=3. Find y when x=6:</h3>
+        <ul class="pq-options">
+          <li class="correct">A) 1</li>
+          <li>B) 2</li>
+          <li>C) 4</li>
+          <li>D) 16</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>k=36; y=36/36=1</li></ol><span class="ans">✅ A</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2021</span></div>
+        <h3>5. Cone: r=7, h=12, π=22/7. Volume:</h3>
+        <ul class="pq-options">
+          <li>A) 154</li>
+          <li>B) 308</li>
+          <li class="correct">C) 616</li>
+          <li>D) 1848</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>V=(1/3)πr²h = 616 cm³</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-atom"></i> Physics (2021)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2021</span></div>
+        <h3>6. Wave: λ=0.5m, f=200Hz. Speed:</h3>
+        <ul class="pq-options">
+          <li>A) 50</li>
+          <li class="correct">B) 100</li>
+          <li>C) 200</li>
+          <li>D) 400</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>v=fλ=100 m/s</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2021</span></div>
+        <h3>7. Heat to warm 1kg water by 10°C (c=4200):</h3>
+        <ul class="pq-options">
+          <li>A) 420 J</li>
+          <li>B) 4200 J</li>
+          <li class="correct">C) 42000 J</li>
+          <li>D) 420000 J</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Q=mcΔT = 1×4200×10 = 42000 J</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2021</span></div>
+        <h3>8. Velocity of free fall after 3s (g=10):</h3>
+        <ul class="pq-options">
+          <li class="correct">A) 30 m/s</li>
+          <li>B) 10 m/s</li>
+          <li>C) 90 m/s</li>
+          <li>D) 33 m/s</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>v = gt = 10×3 = 30 m/s</li></ol><span class="ans">✅ A</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-flask"></i> Chemistry (2021)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2021</span></div>
+        <h3>9. pH of [H⁺]=10⁻⁴:</h3>
+        <ul class="pq-options">
+          <li>A) 2</li>
+          <li>B) 3</li>
+          <li class="correct">C) 4</li>
+          <li>D) 10</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>pH = -log(10⁻⁴) = 4</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2021</span></div>
+        <h3>10. Catalyst in Haber process:</h3>
+        <ul class="pq-options">
+          <li>A) Pt</li>
+          <li class="correct">B) Fe</li>
+          <li>C) Ni</li>
+          <li>D) V₂O₅</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Iron is the catalyst for NH₃ synthesis</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2021</span></div>
+        <h3>11. Mass of 2 moles H₂O:</h3>
+        <ul class="pq-options">
+          <li>A) 18g</li>
+          <li>B) 24g</li>
+          <li class="correct">C) 36g</li>
+          <li>D) 40g</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>M(H₂O)=18; mass = 2×18 = 36g</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-dna"></i> Biology (2021)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2021</span></div>
+        <h3>12. Process plants lose water through stomata:</h3>
+        <ul class="pq-options">
+          <li>A) Respiration</li>
+          <li class="correct">B) Transpiration</li>
+          <li>C) Translocation</li>
+          <li>D) Guttation</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Transpiration = water loss as vapour through stomata</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2021</span></div>
+        <h3>13. Number of chambers in human heart:</h3>
+        <ul class="pq-options">
+          <li>A) 2</li>
+          <li>B) 3</li>
+          <li class="correct">C) 4</li>
+          <li>D) 5</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>2 atria + 2 ventricles = 4</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2021</span></div>
+        <h3>14. Disease caused by Plasmodium:</h3>
+        <ul class="pq-options">
+          <li>A) TB</li>
+          <li>B) Cholera</li>
+          <li class="correct">C) Malaria</li>
+          <li>D) Typhoid</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Plasmodium → malaria, transmitted by Anopheles mosquito</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-book-open"></i> English (2021)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2021</span></div>
+        <h3>15. Same vowel as 'cup':</h3>
+        <ul class="pq-options">
+          <li>A) Cool</li>
+          <li>B) Cope</li>
+          <li class="correct">C) Cut</li>
+          <li>D) Caught</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Both have /ʌ/</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2021</span></div>
+        <h3>16. Idiom 'kick the bucket' means:</h3>
+        <ul class="pq-options">
+          <li>A) Be angry</li>
+          <li class="correct">B) Die</li>
+          <li>C) Run away</li>
+          <li>D) Win</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Idiom for death</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-chart-line"></i> Economics (2021)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Economics</span><span class="tag year">2021</span></div>
+        <h3>17. Inflation means:</h3>
+        <ul class="pq-options">
+          <li>A) Falling prices</li>
+          <li>B) Stable prices</li>
+          <li class="correct">C) Rising prices</li>
+          <li>D) Zero growth</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Sustained increase in general price level</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-landmark"></i> Government (2021)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2021</span></div>
+        <h3>18. Doctrine of separation of powers by:</h3>
+        <ul class="pq-options">
+          <li>A) Locke</li>
+          <li class="correct">B) Montesquieu</li>
+          <li>C) Marx</li>
+          <li>D) Plato</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Montesquieu, Spirit of the Laws (1748)</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2021</span></div>
+        <h3>19. Father of modern democracy:</h3>
+        <ul class="pq-options">
+          <li>A) Solon</li>
+          <li class="correct">B) Pericles</li>
+          <li>C) Aristotle</li>
+          <li>D) Plato</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Pericles championed Athenian democracy</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../bundles.html">Bundles</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>
+function toggleSol(btn){const s=btn.nextElementSibling;s.classList.toggle('show');btn.innerHTML=s.classList.contains('show')?'<i class="fas fa-eye-slash"></i> Hide Solution':'<i class="fas fa-eye"></i> Show Solution';}
+function expandAll(){document.querySelectorAll('.solution-block').forEach(s=>s.classList.add('show'));document.querySelectorAll('.toggle-sol').forEach(b=>b.innerHTML='<i class="fas fa-eye-slash"></i> Hide');}
+if(window.location.hash==='#pdf'){setTimeout(()=>downloadPDF('bundle-2021'),500);}
+</script>
+</body>
+</html>

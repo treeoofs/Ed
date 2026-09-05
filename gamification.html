@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achievements & Leaderboard | ExamAce</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.gamif-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px;}
+@media (max-width:900px){.gamif-grid{grid-template-columns:1fr;}}
+.gamif-card{background:#fff;border-radius:14px;padding:30px;box-shadow:var(--shadow);}
+.streak-flame{font-size:5rem;text-align:center;margin:20px 0;}
+.streak-num{font-size:3rem;font-weight:800;text-align:center;color:var(--accent);}
+.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px;margin-top:20px;}
+.badge{text-align:center;padding:16px 10px;background:#f9fafb;border-radius:10px;border:2px solid var(--border);transition:.3s;}
+.badge.earned{background:linear-gradient(135deg,#dcfce7,#fef3c7);border-color:#16a34a;}
+.badge.locked{opacity:.4;}
+.badge-icon{font-size:2.5rem;margin-bottom:6px;}
+.badge-name{font-size:.85rem;font-weight:600;}
+.leaderboard{list-style:none;}
+.leader-row{display:flex;align-items:center;gap:14px;padding:14px;border-bottom:1px solid var(--border);}
+.leader-rank{width:40px;height:40px;border-radius:50%;background:#eef4ff;color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:800;}
+.leader-row:nth-child(1) .leader-rank{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#fff;}
+.leader-row:nth-child(2) .leader-rank{background:linear-gradient(135deg,#9ca3af,#6b7280);color:#fff;}
+.leader-row:nth-child(3) .leader-rank{background:linear-gradient(135deg,#fb923c,#ea580c);color:#fff;}
+.leader-info{flex:1;}
+.leader-name{font-weight:600;}
+.leader-stats{font-size:.85rem;color:var(--muted);}
+.leader-pts{font-weight:800;color:var(--primary);}
+.xp-bar{height:14px;background:#e5e7eb;border-radius:50px;margin:10px 0;overflow:hidden;}
+.xp-fill{height:100%;background:linear-gradient(90deg,#0b5ed7,#7c3aed);border-radius:50px;transition:width 1s;}
+.level-display{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.level-num{font-size:2rem;font-weight:800;color:var(--primary);}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="subjects.html">Subjects</a></li>
+      <li><a href="past-questions.html">Past Q's</a></li>
+      <li><a href="mock-exam.html">Mock Exam</a></li>
+      <li><a href="practicals/">Practicals</a></li>
+      <li><a href="essays/">Essays</a></li>
+      <li><a href="ai-tutor/">AI Tutor</a></li>
+      <li><a href="premium/">💎 Premium</a></li>
+      <li><a href="login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner" style="background:linear-gradient(135deg,#f59e0b,#dc2626);">
+  <h1><i class="fas fa-trophy"></i> Achievements & Leaderboard</h1>
+  <p>Earn badges, build streaks, climb the rankings — make studying fun!</p>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="gamif-card" style="margin-bottom:30px;background:linear-gradient(135deg,#0b5ed7,#7c3aed);color:#fff;">
+      <div class="level-display">
+        <div>
+          <div style="font-size:.95rem;opacity:.85;">Your Level</div>
+          <div class="level-num" style="color:#fbbf24;">Level 12</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:.95rem;opacity:.85;">Total XP</div>
+          <div style="font-size:1.5rem;font-weight:800;">2,847 / 3,000</div>
+        </div>
+      </div>
+      <div class="xp-bar" style="background:rgba(255,255,255,.2);">
+        <div class="xp-fill" style="width:95%;"></div>
+      </div>
+      <p style="opacity:.9;font-size:.9rem;">🎯 153 XP until Level 13 — keep going!</p>
+    </div>
+
+    <div class="gamif-grid">
+
+      <div class="gamif-card">
+        <h3>🔥 Daily Streak</h3>
+        <div class="streak-flame">🔥</div>
+        <div class="streak-num">14 days</div>
+        <p style="text-align:center;color:var(--muted);">Don't break the chain! Come back tomorrow to keep your streak alive.</p>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:20px;">
+          <div style="background:#f59e0b;color:#fff;padding:8px;text-align:center;border-radius:6px;font-size:.8rem;">M ✓</div>
+          <div style="background:#f59e0b;color:#fff;padding:8px;text-align:center;border-radius:6px;font-size:.8rem;">T ✓</div>
+          <div style="background:#f59e0b;color:#fff;padding:8px;text-align:center;border-radius:6px;font-size:.8rem;">W ✓</div>
+          <div style="background:#f59e0b;color:#fff;padding:8px;text-align:center;border-radius:6px;font-size:.8rem;">T ✓</div>
+          <div style="background:#f59e0b;color:#fff;padding:8px;text-align:center;border-radius:6px;font-size:.8rem;">F ✓</div>
+          <div style="background:#f59e0b;color:#fff;padding:8px;text-align:center;border-radius:6px;font-size:.8rem;">S ✓</div>
+          <div style="background:#f59e0b;color:#fff;padding:8px;text-align:center;border-radius:6px;font-size:.8rem;">S ✓</div>
+        </div>
+      </div>
+
+      <div class="gamif-card">
+        <h3>🏆 Top Performers This Week</h3>
+        <ul class="leaderboard">
+          <li class="leader-row"><div class="leader-rank">1</div><div class="leader-info"><div class="leader-name">Fatima Sani 👑</div><div class="leader-stats">Lagos · Level 24 · 47-day streak</div></div><div class="leader-pts">9,874 XP</div></li>
+          <li class="leader-row"><div class="leader-rank">2</div><div class="leader-info"><div class="leader-name">Chinedu Okafor</div><div class="leader-stats">Enugu · Level 22 · 31-day streak</div></div><div class="leader-pts">8,932 XP</div></li>
+          <li class="leader-row"><div class="leader-rank">3</div><div class="leader-info"><div class="leader-name">Ama Sefa</div><div class="leader-stats">Accra · Level 20 · 28-day streak</div></div><div class="leader-pts">7,621 XP</div></li>
+          <li class="leader-row"><div class="leader-rank">4</div><div class="leader-info"><div class="leader-name">Tunde Bello</div><div class="leader-stats">Abuja · Level 18 · 22-day streak</div></div><div class="leader-pts">6,912 XP</div></li>
+          <li class="leader-row"><div class="leader-rank">5</div><div class="leader-info"><div class="leader-name">Kwame Asare</div><div class="leader-stats">Kumasi · Level 16 · 19-day streak</div></div><div class="leader-pts">5,803 XP</div></li>
+          <li class="leader-row"><div class="leader-rank">6</div><div class="leader-info"><div class="leader-name">Ngozi Eze</div><div class="leader-stats">Owerri · Level 15 · 12-day streak</div></div><div class="leader-pts">5,234 XP</div></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="gamif-card" style="margin-top:30px;">
+      <h3>🎖️ Your Badges (8 of 16 earned)</h3>
+      <div class="badge-grid">
+        <div class="badge earned"><div class="badge-icon">🌟</div><div class="badge-name">First Quiz</div></div>
+        <div class="badge earned"><div class="badge-icon">📚</div><div class="badge-name">Scholar</div></div>
+        <div class="badge earned"><div class="badge-icon">🔥</div><div class="badge-name">7-Day Streak</div></div>
+        <div class="badge earned"><div class="badge-icon">⚡</div><div class="badge-name">Speed Solver</div></div>
+        <div class="badge earned"><div class="badge-icon">🧠</div><div class="badge-name">Math Wizard</div></div>
+        <div class="badge earned"><div class="badge-icon">🔬</div><div class="badge-name">Lab Master</div></div>
+        <div class="badge earned"><div class="badge-icon">📝</div><div class="badge-name">Essay Pro</div></div>
+        <div class="badge earned"><div class="badge-icon">🎯</div><div class="badge-name">Sharp Shooter</div></div>
+        <div class="badge locked"><div class="badge-icon">👑</div><div class="badge-name">Top 10</div></div>
+        <div class="badge locked"><div class="badge-icon">💯</div><div class="badge-name">Perfect Score</div></div>
+        <div class="badge locked"><div class="badge-icon">🌍</div><div class="badge-name">Global Champ</div></div>
+        <div class="badge locked"><div class="badge-icon">🚀</div><div class="badge-name">Level 25</div></div>
+        <div class="badge locked"><div class="badge-icon">📅</div><div class="badge-name">100-Day Streak</div></div>
+        <div class="badge locked"><div class="badge-icon">🏅</div><div class="badge-name">Subject Master</div></div>
+        <div class="badge locked"><div class="badge-icon">⭐</div><div class="badge-name">Mentor</div></div>
+        <div class="badge locked"><div class="badge-icon">💎</div><div class="badge-name">Diamond Tier</div></div>
+      </div>
+    </div>
+
+    <div class="gamif-card" style="margin-top:30px;">
+      <h3>🎯 Active Challenges</h3>
+      <div style="display:grid;gap:14px;margin-top:14px;">
+        <div style="background:#eef4ff;padding:18px;border-radius:10px;border-left:4px solid var(--primary);">
+          <strong>Math Marathon</strong> — Solve 50 math problems this week<br>
+          <div class="xp-bar"><div class="xp-fill" style="width:64%;"></div></div>
+          <small style="color:var(--muted);">32 / 50 completed · Reward: 500 XP</small>
+        </div>
+        <div style="background:#fef3c7;padding:18px;border-radius:10px;border-left:4px solid var(--accent);">
+          <strong>Daily Devotee</strong> — Complete 30-day streak<br>
+          <div class="xp-bar"><div class="xp-fill" style="width:47%;background:linear-gradient(90deg,#f59e0b,#dc2626);"></div></div>
+          <small style="color:var(--muted);">14 / 30 days · Reward: 1000 XP + special badge</small>
+        </div>
+        <div style="background:#dcfce7;padding:18px;border-radius:10px;border-left:4px solid #16a34a;">
+          <strong>Practical Pro</strong> — Complete all 28 practical questions<br>
+          <div class="xp-bar"><div class="xp-fill" style="width:25%;background:linear-gradient(90deg,#16a34a,#0b5ed7);"></div></div>
+          <small style="color:var(--muted);">7 / 28 completed · Reward: Lab Master badge</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="subjects.html">Subjects</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

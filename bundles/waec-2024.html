@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAEC 2024 Bundle | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.pq-card{background:#fff;border-radius:14px;padding:28px;margin-bottom:20px;box-shadow:var(--shadow);border-left:5px solid var(--primary);}
+.pq-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.pq-card .tag{background:#eef4ff;color:var(--primary);padding:4px 12px;border-radius:50px;font-size:.8rem;font-weight:600;}
+.pq-card .tag.year{background:#fef3c7;color:#92400e;}
+.pq-card h3{font-size:1.15rem;margin-bottom:14px;line-height:1.5;}
+.pq-options{display:flex;flex-direction:column;gap:8px;margin:14px 0;list-style:none;padding:0;}
+.pq-options li{padding:10px 14px;background:#f9fafb;border-radius:8px;}
+.pq-options li.correct{background:#dcfce7;border-left:3px solid #16a34a;font-weight:600;}
+.toggle-sol{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;}
+.solution-block{display:none;margin-top:16px;padding:20px;background:#f0f9ff;border-radius:10px;border-left:4px solid var(--primary);}
+.solution-block.show{display:block;}
+.solution-block ol{padding-left:20px;}
+.solution-block .ans{background:#16a34a;color:#fff;padding:8px 14px;border-radius:8px;display:inline-block;margin-top:10px;font-weight:700;}
+.subject-section{margin-bottom:40px;}
+.subject-section h2{color:var(--primary);border-bottom:3px solid var(--primary);padding-bottom:10px;margin-bottom:20px;}
+.action-bar{background:#fff;padding:20px;border-radius:14px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow);}
+.action-bar button{padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+.action-bar .btn-pdf{background:#16a34a;color:#fff;}
+.action-bar .btn-show-all{background:var(--primary);color:#fff;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../bundles.html" class="active">Bundles</a></li>
+      <li><a href="../mock-exam.html">Mock Exam</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-box-open"></i> WAEC 2024 — Complete Bundle</h1>
+  <p>Most recent exam questions across all major subjects with step-by-step solutions</p>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="action-bar">
+      <div><strong>📅 2024 Edition • 7 Subjects • 35 Questions</strong></div>
+      <div>
+        <button class="btn-show-all" onclick="expandAll()"><i class="fas fa-eye"></i> Show All Solutions</button>
+        <button class="btn-pdf" onclick="downloadPDF('bundle-2024')"><i class="fas fa-file-pdf"></i> Download Full PDF</button>
+      </div>
+    </div>
+
+    <!-- MATHEMATICS -->
+    <div class="subject-section">
+      <h2><i class="fas fa-square-root-alt"></i> Mathematics (2024)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2024</span></div>
+        <h3>1. Simplify: 5x − 3(x − 4)</h3>
+        <ul class="pq-options"><li>A) 2x − 4</li><li class="correct">B) 2x + 12</li><li>C) 2x − 12</li><li>D) 8x + 12</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Expand: 5x − 3x + 12 = 2x + 12</li></ol><span class="ans">✅ B) 2x + 12</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2024</span></div>
+        <h3>2. Solve: 2x² + 3x − 5 = 0</h3>
+        <ul class="pq-options"><li class="correct">A) x = 1 or x = −5/2</li><li>B) x = −1 or 5/2</li><li>C) x = 2 or −5</li><li>D) x = 5 or −2</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Discriminant b²−4ac = 9 + 40 = 49</li><li>x = (−3 ± 7)/4 → x = 1 or −5/2</li></ol><span class="ans">✅ A</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2024</span></div>
+        <h3>3. If f(x) = 2x² − 3, find f(4).</h3>
+        <ul class="pq-options"><li>A) 13</li><li>B) 19</li><li class="correct">C) 29</li><li>D) 32</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>f(4) = 2(16) − 3 = 29</li></ol><span class="ans">✅ C) 29</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2024</span></div>
+        <h3>4. If cos θ = 5/13 (acute), find sin θ.</h3>
+        <ul class="pq-options"><li>A) 5/12</li><li class="correct">B) 12/13</li><li>C) 13/12</li><li>D) 12/5</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>sin²θ = 1 − 25/169 = 144/169 → sin θ = 12/13</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2024</span></div>
+        <h3>5. Convert 25₁₀ to base 2.</h3>
+        <ul class="pq-options"><li>A) 10001₂</li><li>B) 11000₂</li><li class="correct">C) 11001₂</li><li>D) 10101₂</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>25 = 16+8+1 = 11001₂</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+
+    <!-- PHYSICS -->
+    <div class="subject-section">
+      <h2><i class="fas fa-atom"></i> Physics (2024)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2024</span></div>
+        <h3>6. The SI unit of electric current is:</h3>
+        <ul class="pq-options"><li>A) Volt</li><li class="correct">B) Ampere</li><li>C) Ohm</li><li>D) Coulomb</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>SI base unit of current is the Ampere</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2024</span></div>
+        <h3>7. A 3 kg object accelerates at 4 m/s². Find the force.</h3>
+        <ul class="pq-options"><li>A) 7 N</li><li class="correct">B) 12 N</li><li>C) 0.75 N</li><li>D) 1.33 N</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>F = ma = 3 × 4 = 12 N</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2024</span></div>
+        <h3>8. The frequency of a wave with period 0.05 s is:</h3>
+        <ul class="pq-options"><li>A) 10 Hz</li><li class="correct">B) 20 Hz</li><li>C) 50 Hz</li><li>D) 5 Hz</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>f = 1/T = 1/0.05 = 20 Hz</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2024</span></div>
+        <h3>9. Two resistors 6 Ω and 12 Ω are in parallel. Equivalent resistance?</h3>
+        <ul class="pq-options"><li>A) 18 Ω</li><li>B) 6 Ω</li><li class="correct">C) 4 Ω</li><li>D) 2 Ω</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>1/R = 1/6 + 1/12 = 3/12 → R = 4 Ω</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2024</span></div>
+        <h3>10. The work done in lifting 5 kg by 3 m (g=10) is:</h3>
+        <ul class="pq-options"><li>A) 50 J</li><li class="correct">B) 150 J</li><li>C) 15 J</li><li>D) 1500 J</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>W = mgh = 5 × 10 × 3 = 150 J</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <!-- CHEMISTRY -->
+    <div class="subject-section">
+      <h2><i class="fas fa-flask"></i> Chemistry (2024)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2024</span></div>
+        <h3>11. Which is a noble gas?</h3>
+        <ul class="pq-options"><li>A) Oxygen</li><li>B) Chlorine</li><li class="correct">C) Argon</li><li>D) Sodium</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Argon is in Group 0 (noble gases)</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2024</span></div>
+        <h3>12. Number of moles in 50g CaCO₃ (M=100):</h3>
+        <ul class="pq-options"><li>A) 0.25</li><li class="correct">B) 0.5</li><li>C) 1</li><li>D) 2</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>n = m/M = 50/100 = 0.5 mol</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2024</span></div>
+        <h3>13. The pH of pure water at 25°C is:</h3>
+        <ul class="pq-options"><li>A) 0</li><li>B) 1</li><li class="correct">C) 7</li><li>D) 14</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Pure water [H⁺] = 10⁻⁷ → pH = 7 (neutral)</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2024</span></div>
+        <h3>14. The IUPAC name of CH₃CH₂COOH is:</h3>
+        <ul class="pq-options"><li>A) Methanoic acid</li><li>B) Ethanoic acid</li><li class="correct">C) Propanoic acid</li><li>D) Butanoic acid</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>3 carbons + COOH → propanoic acid</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2024</span></div>
+        <h3>15. Element with atomic number 11 is:</h3>
+        <ul class="pq-options"><li>A) Magnesium</li><li class="correct">B) Sodium</li><li>C) Aluminium</li><li>D) Carbon</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Z=11 corresponds to Sodium (Na)</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <!-- BIOLOGY -->
+    <div class="subject-section">
+      <h2><i class="fas fa-dna"></i> Biology (2024)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2024</span></div>
+        <h3>16. The functional unit of the kidney is the:</h3>
+        <ul class="pq-options"><li>A) Neuron</li><li class="correct">B) Nephron</li><li>C) Alveolus</li><li>D) Villus</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Each kidney contains millions of nephrons</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2024</span></div>
+        <h3>17. Which organelle is called the "powerhouse" of the cell?</h3>
+        <ul class="pq-options"><li>A) Nucleus</li><li>B) Ribosome</li><li class="correct">C) Mitochondrion</li><li>D) Golgi body</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Mitochondria produce ATP via cellular respiration</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2024</span></div>
+        <h3>18. The largest organ of the human body is the:</h3>
+        <ul class="pq-options"><li>A) Liver</li><li>B) Lung</li><li class="correct">C) Skin</li><li>D) Brain</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Skin (15% of body weight) is the largest organ</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2024</span></div>
+        <h3>19. Vitamin needed for blood clotting:</h3>
+        <ul class="pq-options"><li>A) A</li><li>B) C</li><li>C) D</li><li class="correct">D) K</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Vitamin K (Koagulation) supports clotting factor synthesis</li></ol><span class="ans">✅ D</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2024</span></div>
+        <h3>20. Photosynthesis occurs mainly in:</h3>
+        <ul class="pq-options"><li>A) Roots</li><li class="correct">B) Leaves</li><li>C) Stem</li><li>D) Flowers</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Leaves contain chloroplasts with chlorophyll</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <!-- ENGLISH -->
+    <div class="subject-section">
+      <h2><i class="fas fa-book-open"></i> English Language (2024)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2024</span></div>
+        <h3>21. Synonym of "candid":</h3>
+        <ul class="pq-options"><li>A) Rude</li><li class="correct">B) Honest</li><li>C) Polite</li><li>D) Lengthy</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Candid = frank, truthful, honest</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2024</span></div>
+        <h3>22. Choose the correctly punctuated sentence:</h3>
+        <ul class="pq-options"><li>A) The boys book is on the table.</li><li class="correct">B) The boy's book is on the table.</li><li>C) The boys' book is on the table.</li><li>D) The boy's books is on the table.</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Singular possessive: boy's (one boy owns the book)</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2024</span></div>
+        <h3>23. "Each of the students ___ done the work." Choose correct verb.</h3>
+        <ul class="pq-options"><li>A) have</li><li class="correct">B) has</li><li>C) are</li><li>D) were</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>"Each" is singular → singular verb "has"</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <!-- ECONOMICS -->
+    <div class="subject-section">
+      <h2><i class="fas fa-chart-line"></i> Economics (2024)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Economics</span><span class="tag year">2024</span></div>
+        <h3>24. Basic economic problem arises from:</h3>
+        <ul class="pq-options"><li>A) Surplus production</li><li>B) Inflation</li><li class="correct">C) Scarcity of resources</li><li>D) Government policy</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Resources are finite, wants are infinite → scarcity</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Economics</span><span class="tag year">2024</span></div>
+        <h3>25. Demand curve normally slopes:</h3>
+        <ul class="pq-options"><li>A) Upward right</li><li class="correct">B) Downward right</li><li>C) Horizontal</li><li>D) Vertical</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Inverse relation between price and quantity demanded</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Economics</span><span class="tag year">2024</span></div>
+        <h3>26. NOT a function of money:</h3>
+        <ul class="pq-options"><li>A) Medium of exchange</li><li>B) Store of value</li><li>C) Unit of account</li><li class="correct">D) Means of production</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Means of production refers to factors of production</li></ol><span class="ans">✅ D</span></div>
+      </div>
+    </div>
+
+    <!-- GOVERNMENT -->
+    <div class="subject-section">
+      <h2><i class="fas fa-landmark"></i> Government (2024)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2024</span></div>
+        <h3>27. The 1999 Nigerian Constitution established:</h3>
+        <ul class="pq-options"><li>A) Unitary</li><li>B) Confederal</li><li class="correct">C) Federal</li><li>D) Parliamentary</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Power is shared between centre & 36 states</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2024</span></div>
+        <h3>28. Separation of powers was propounded by:</h3>
+        <ul class="pq-options"><li>A) John Locke</li><li class="correct">B) Montesquieu</li><li>C) Marx</li><li>D) Aristotle</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Montesquieu, in The Spirit of the Laws (1748)</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2024</span></div>
+        <h3>29. ECOWAS headquarters is located in:</h3>
+        <ul class="pq-options"><li>A) Accra</li><li>B) Lagos</li><li class="correct">C) Abuja</li><li>D) Lome</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>ECOWAS headquarters: Abuja, Nigeria</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2024</span></div>
+        <h3>30. The legislative arm in Nigeria is the:</h3>
+        <ul class="pq-options"><li>A) Cabinet</li><li class="correct">B) National Assembly</li><li>C) Supreme Court</li><li>D) Federal Executive Council</li></ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Senate + House of Representatives</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../bundles.html">Bundles</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>
+function toggleSol(btn){const s=btn.nextElementSibling;s.classList.toggle('show');btn.innerHTML=s.classList.contains('show')?'<i class="fas fa-eye-slash"></i> Hide Solution':'<i class="fas fa-eye"></i> Show Solution';}
+function expandAll(){document.querySelectorAll('.solution-block').forEach(s=>s.classList.add('show'));document.querySelectorAll('.toggle-sol').forEach(b=>b.innerHTML='<i class="fas fa-eye-slash"></i> Hide');}
+if(window.location.hash==='#pdf'){setTimeout(()=>downloadPDF('bundle-2024'),500);}
+</script>
+</body>
+</html>

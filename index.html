@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExamAce — WAEC & GCE Exam Preparation Portal</title>
+<meta name="description" content="Master WAEC and GCE with step-by-step solutions, AI tutoring, mock exams, and 200+ video walkthroughs across 25+ subjects.">
+<meta name="theme-color" content="#0b5ed7">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="subjects.html">Subjects</a></li>
+      <li><a href="practice.html">Practice</a></li>
+      <li><a href="past-questions.html">Past Q's</a></li>
+      <li><a href="bundles.html">Bundles</a></li>
+      <li><a href="mock-exam.html">Mock Exam</a></li>
+      <li><a href="practicals/">Practicals</a></li>
+      <li><a href="essays/">Essays</a></li>
+      <li><a href="videos/">Videos</a></li>
+      <li><a href="ai-tutor/">AI Tutor</a></li>
+      <li><a href="languages/">Languages</a></li>
+      <li><a href="premium/">💎 Premium</a></li>
+      <li><a href="admin/login.html" class="btn-admin"><i class="fas fa-user-shield"></i></a></li>
+      <li><a href="login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">🎓 Trusted by 50,000+ Students Across West Africa · v2.4.0</span>
+    <h1>Master <span class="highlight">WAEC</span> & <span class="highlight">GCE</span> with Confidence</h1>
+    <p>Step-by-step solutions, AI tutoring, video walkthroughs, timed mock exams, and 7 years of past papers — all in one place.</p>
+    <div class="hero-buttons">
+      <a href="subjects.html" class="btn-primary">Start Learning <i class="fas fa-arrow-right"></i></a>
+      <a href="mock-exam.html" class="btn-secondary"><i class="fas fa-stopwatch"></i> Take Timed Mock Exam</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>25+</strong><span>Subjects</span></div>
+      <div><strong>10,000+</strong><span>Past Questions</span></div>
+      <div><strong>200+</strong><span>Video Lessons</span></div>
+      <div><strong>98%</strong><span>Pass Rate</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Everything You Need to Excel</h2>
+    <p class="section-subtitle">12 powerful features built for serious WAEC/GCE candidates</p>
+
+    <div class="subject-grid">
+      <a href="subjects.html" class="subject-card stem">
+        <div class="card-icon"><i class="fas fa-book-reader"></i></div>
+        <h3>25+ Subjects</h3>
+        <p>STEM, Arts, Commerce — full WAEC & GCE syllabus coverage with worked examples.</p>
+        <span class="card-link">Browse subjects →</span>
+      </a>
+      <a href="past-questions.html" class="subject-card stem">
+        <div class="card-icon"><i class="fas fa-archive"></i></div>
+        <h3>Past Questions</h3>
+        <p>40+ authentic WAEC questions (2018-2024) with full step-by-step solutions.</p>
+        <span class="card-link">Browse archive →</span>
+      </a>
+      <a href="bundles.html" class="subject-card stem">
+        <div class="card-icon"><i class="fas fa-box-open"></i></div>
+        <h3>Year Bundles</h3>
+        <p>Tackle full WAEC papers grouped by year — 2018 through 2024.</p>
+        <span class="card-link">Open bundles →</span>
+      </a>
+      <a href="mock-exam.html" class="subject-card commerce">
+        <div class="card-icon"><i class="fas fa-stopwatch"></i></div>
+        <h3>Timed Mock Exam</h3>
+        <p>Real exam simulator with countdown timer, auto-submit & instant scoring.</p>
+        <span class="card-link">Start exam →</span>
+      </a>
+      <a href="practicals/" class="subject-card stem">
+        <div class="card-icon"><i class="fas fa-microscope"></i></div>
+        <h3>Practical Lab</h3>
+        <p>Chemistry, Physics & Biology practicals — apparatus, procedures, calculations.</p>
+        <span class="card-link">Open lab →</span>
+      </a>
+      <a href="essays/" class="subject-card arts">
+        <div class="card-icon"><i class="fas fa-pen-fancy"></i></div>
+        <h3>Essay & Theory</h3>
+        <p>17 model answers for English & Government with full marking guides.</p>
+        <span class="card-link">View essays →</span>
+      </a>
+      <a href="videos/" class="subject-card commerce">
+        <div class="card-icon"><i class="fas fa-video"></i></div>
+        <h3>Video Walkthroughs</h3>
+        <p>200+ expert tutor videos breaking down the toughest STEM concepts.</p>
+        <span class="card-link">Watch now →</span>
+      </a>
+      <a href="ai-tutor/" class="subject-card stem">
+        <div class="card-icon"><i class="fas fa-robot"></i></div>
+        <h3>AI Tutor</h3>
+        <p>Ask any question, get instant step-by-step explanations 24/7.</p>
+        <span class="card-link">Chat now →</span>
+      </a>
+      <a href="languages/" class="subject-card arts">
+        <div class="card-icon"><i class="fas fa-globe-africa"></i></div>
+        <h3>Native Languages</h3>
+        <p>Yoruba, Igbo & Hausa essays with translations and cultural studies.</p>
+        <span class="card-link">Open →</span>
+      </a>
+      <a href="gamification.html" class="subject-card commerce">
+        <div class="card-icon"><i class="fas fa-trophy"></i></div>
+        <h3>Achievements</h3>
+        <p>Earn XP, build streaks, unlock badges, climb the leaderboard.</p>
+        <span class="card-link">View progress →</span>
+      </a>
+      <a href="premium/" class="subject-card commerce">
+        <div class="card-icon"><i class="fas fa-crown"></i></div>
+        <h3>Premium Plans</h3>
+        <p>Unlimited access, AI tutor, expert essay grading, 1-on-1 tutors.</p>
+        <span class="card-link">Upgrade →</span>
+      </a>
+      <a href="login.html" class="subject-card view-all">
+        <div class="card-icon"><i class="fas fa-rocket"></i></div>
+        <h3>Get Started Free</h3>
+        <p>Create your free account and join 50,000+ ambitious students.</p>
+        <span class="card-link">Sign up →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light">
+  <div class="container">
+    <h2 class="section-title">How ExamAce Helps You Pass</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Step-by-Step Solutions</h3>
+        <p>Every STEM problem is broken down into logical steps so you understand the *why*, not just the answer.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-bolt"></i>
+        <h3>AI-Powered Tutoring</h3>
+        <p>24/7 AI tutor answers your questions instantly, explains concepts, and walks through worked examples.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobile App Ready</h3>
+        <p>Install on iOS, Android, or as a Progressive Web App. Study offline; sync when online.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Pass Guarantee</h3>
+        <p>Pro Tutor subscribers who complete the study plan get 100% money back if they don't pass.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Sample Step-by-Step Solution</h2>
+    <p class="section-subtitle">Here's how we break down a real WAEC Mathematics question:</p>
+    <div class="solution-card">
+      <div class="solution-question">
+        <span class="badge">WAEC 2023 — Mathematics</span>
+        <h3>Solve for x: 2x² − 5x − 3 = 0</h3>
+      </div>
+      <div class="solution-steps">
+        <div class="step"><span class="step-num">1</span><div><strong>Identify the equation type:</strong> Quadratic in standard form ax² + bx + c = 0, where a=2, b=−5, c=−3.</div></div>
+        <div class="step"><span class="step-num">2</span><div><strong>Choose method — Factorization:</strong> Two numbers whose product is a×c = −6, sum is b = −5: −6 and +1.</div></div>
+        <div class="step"><span class="step-num">3</span><div><strong>Split middle term:</strong> 2x² − 6x + x − 3 = 0</div></div>
+        <div class="step"><span class="step-num">4</span><div><strong>Group and factor:</strong> 2x(x−3) + 1(x−3) = 0 → (2x+1)(x−3) = 0</div></div>
+        <div class="step"><span class="step-num">5</span><div><strong>Apply zero product:</strong> x = −½ or x = 3</div></div>
+        <div class="step final"><span class="step-num"><i class="fas fa-check"></i></span><div><strong>✅ Final Answer:</strong> x = −½ or x = 3</div></div>
+      </div>
+      <a href="solutions.html" class="btn-primary inline">See more solutions <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-gradient">
+  <div class="container">
+    <h2 class="section-title light">What Our Students Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>"The AI tutor saved me during late-night cram sessions. It explained calculus better than my classroom teacher!"</p>
+        <div class="author"><strong>Chinedu O.</strong><span>SS3, Lagos · A1 in Math</span></div>
+      </div>
+      <div class="testimonial">
+        <p>"I took 12 mock exams before WAEC. The timer simulation made the real exam feel familiar. Aced 7 subjects!"</p>
+        <div class="author"><strong>Ama S.</strong><span>Achimota School, Accra</span></div>
+      </div>
+      <div class="testimonial">
+        <p>"As a tutor, I use ExamAce as my reference. The admin dashboard helps me track all 30 of my students."</p>
+        <div class="author"><strong>Mr. Bello</strong><span>Pro Tutor, Abuja</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Ready to ace your exams?</h2>
+    <p>Join thousands of students mastering WAEC and GCE.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="login.html" class="btn-primary large">Create Free Account <i class="fas fa-rocket"></i></a>
+      <a href="premium/" class="btn-secondary" style="background:#1f2937;color:#fff;border:none;padding:18px 38px;font-size:1.1rem;border-radius:10px;font-weight:600;display:inline-flex;align-items:center;gap:10px;">View Premium <i class="fas fa-crown"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div>
+      <p>The complete WAEC & GCE preparation platform with AI-powered solutions and expert content.</p>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="subjects.html">All Subjects</a></li>
+        <li><a href="past-questions.html">Past Questions</a></li>
+        <li><a href="bundles.html">Year Bundles</a></li>
+        <li><a href="practicals/">Practicals</a></li>
+        <li><a href="essays/">Essay Models</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="mock-exam.html">Mock Exam</a></li>
+        <li><a href="ai-tutor/">AI Tutor</a></li>
+        <li><a href="videos/">Video Library</a></li>
+        <li><a href="gamification.html">Achievements</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Account</h4>
+      <ul>
+        <li><a href="login.html">Sign In</a></li>
+        <li><a href="premium/">Premium</a></li>
+        <li><a href="admin/login.html">Admin</a></li>
+        <li><a href="wireframes/admin-wireframe.html">Wireframes</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 ExamAce Education · v2.4.0 · 
+    <a href="#" style="color:#cbd5e1;">Privacy</a> · 
+    <a href="#" style="color:#cbd5e1;">Terms</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/firebase-config.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(e => console.log('SW failed:', e));
+  }
+</script>
+</body>
+</html>

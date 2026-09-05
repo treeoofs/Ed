@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEM Solutions | ExamAce</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="subjects.html">Subjects</a></li>
+      <li><a href="past-questions.html">Past Q's</a></li>
+      <li><a href="mock-exam.html">Mock Exam</a></li>
+      <li><a href="practicals/">Practicals</a></li>
+      <li><a href="essays/">Essays</a></li>
+      <li><a href="ai-tutor/">AI Tutor</a></li>
+      <li><a href="premium/">💎 Premium</a></li>
+      <li><a href="login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1>STEM Step-by-Step Solutions</h1>
+  <p>Detailed worked solutions for Mathematics, Physics, Chemistry & Biology</p>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Solution 1 -->
+    <div class="solution-card" style="margin-bottom:30px;">
+      <div class="solution-question">
+        <span class="badge">WAEC Math 2022</span>
+        <h3>Q1. Solve: 2(x − 3) + 3(2x − 5) = 7</h3>
+      </div>
+      <div class="solution-steps">
+        <div class="step"><span class="step-num">1</span><div><strong>Expand the brackets:</strong> 2x − 6 + 6x − 15 = 7</div></div>
+        <div class="step"><span class="step-num">2</span><div><strong>Combine like terms:</strong> 8x − 21 = 7</div></div>
+        <div class="step"><span class="step-num">3</span><div><strong>Add 21 to both sides:</strong> 8x = 28</div></div>
+        <div class="step"><span class="step-num">4</span><div><strong>Divide both sides by 8:</strong> x = 28 / 8 = 3.5</div></div>
+        <div class="step final"><span class="step-num"><i class="fas fa-check"></i></span><div><strong>Final Answer:</strong> x = 3.5 or 7/2</div></div>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card" style="margin-bottom:30px;">
+      <div class="solution-question">
+        <span class="badge">GCE Physics 2023</span>
+        <h3>Q2. A stone is thrown vertically upward with velocity 30 m/s. How high does it rise? (g = 10 m/s²)</h3>
+      </div>
+      <div class="solution-steps">
+        <div class="step"><span class="step-num">1</span><div><strong>Identify variables:</strong> u = 30 m/s (initial), v = 0 (at max height), a = −g = −10 m/s², s = ?</div></div>
+        <div class="step"><span class="step-num">2</span><div><strong>Choose the right equation:</strong> v² = u² + 2as (no time given)</div></div>
+        <div class="step"><span class="step-num">3</span><div><strong>Substitute values:</strong> 0² = 30² + 2(−10)s</div></div>
+        <div class="step"><span class="step-num">4</span><div><strong>Solve for s:</strong> 0 = 900 − 20s → 20s = 900 → s = 45</div></div>
+        <div class="step final"><span class="step-num"><i class="fas fa-check"></i></span><div><strong>Maximum Height = 45 m</strong></div></div>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card" style="margin-bottom:30px;">
+      <div class="solution-question">
+        <span class="badge">WAEC Chemistry 2021</span>
+        <h3>Q3. Calculate the percentage of nitrogen in NH₄NO₃. (N=14, H=1, O=16)</h3>
+      </div>
+      <div class="solution-steps">
+        <div class="step"><span class="step-num">1</span><div><strong>Calculate molar mass of NH₄NO₃:</strong> 2(N) + 4(H) + 3(O) = 2(14) + 4(1) + 3(16) = 28 + 4 + 48 = 80 g/mol</div></div>
+        <div class="step"><span class="step-num">2</span><div><strong>Mass of N in compound:</strong> 2 × 14 = 28 g</div></div>
+        <div class="step"><span class="step-num">3</span><div><strong>Apply % composition formula:</strong> %N = (mass of N / molar mass) × 100</div></div>
+        <div class="step"><span class="step-num">4</span><div><strong>Compute:</strong> %N = (28/80) × 100 = 35%</div></div>
+        <div class="step final"><span class="step-num"><i class="fas fa-check"></i></span><div><strong>%Nitrogen = 35%</strong></div></div>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card" style="margin-bottom:30px;">
+      <div class="solution-question">
+        <span class="badge">GCE Math 2024</span>
+        <h3>Q4. Differentiate y = (3x² + 2)(x − 5)</h3>
+      </div>
+      <div class="solution-steps">
+        <div class="step"><span class="step-num">1</span><div><strong>Method:</strong> Use product rule — d(uv)/dx = u(dv/dx) + v(du/dx)</div></div>
+        <div class="step"><span class="step-num">2</span><div><strong>Let u = 3x² + 2, v = x − 5.</strong> Then du/dx = 6x, dv/dx = 1.</div></div>
+        <div class="step"><span class="step-num">3</span><div><strong>Apply rule:</strong> dy/dx = (3x² + 2)(1) + (x − 5)(6x)</div></div>
+        <div class="step"><span class="step-num">4</span><div><strong>Expand:</strong> dy/dx = 3x² + 2 + 6x² − 30x</div></div>
+        <div class="step"><span class="step-num">5</span><div><strong>Simplify:</strong> dy/dx = 9x² − 30x + 2</div></div>
+        <div class="step final"><span class="step-num"><i class="fas fa-check"></i></span><div><strong>dy/dx = 9x² − 30x + 2</strong></div></div>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card" style="margin-bottom:30px;">
+      <div class="solution-question">
+        <span class="badge">WAEC Biology 2022</span>
+        <h3>Q5. (Genetics) In a cross between two heterozygous tall pea plants (Tt × Tt), what is the probability of obtaining a short offspring?</h3>
+      </div>
+      <div class="solution-steps">
+        <div class="step"><span class="step-num">1</span><div><strong>Set up Punnett square:</strong> Parents: Tt × Tt</div></div>
+        <div class="step"><span class="step-num">2</span><div><strong>Possible gametes:</strong> Each parent produces T or t (50% each)</div></div>
+        <div class="step"><span class="step-num">3</span><div><strong>Offspring genotypes:</strong> TT, Tt, Tt, tt → ratio 1 : 2 : 1</div></div>
+        <div class="step"><span class="step-num">4</span><div><strong>Short = tt (homozygous recessive):</strong> Only 1 out of 4 outcomes</div></div>
+        <div class="step final"><span class="step-num"><i class="fas fa-check"></i></span><div><strong>Probability = 1/4 = 25%</strong></div></div>
+      </div>
+    </div>
+
+    <!-- Solution 6 -->
+    <div class="solution-card" style="margin-bottom:30px;">
+      <div class="solution-question">
+        <span class="badge">GCE Physics 2022</span>
+        <h3>Q6. Find equivalent resistance of three resistors (3Ω, 6Ω, 4Ω) in parallel.</h3>
+      </div>
+      <div class="solution-steps">
+        <div class="step"><span class="step-num">1</span><div><strong>Formula:</strong> 1/Rₑ = 1/R₁ + 1/R₂ + 1/R₃</div></div>
+        <div class="step"><span class="step-num">2</span><div><strong>Substitute:</strong> 1/Rₑ = 1/3 + 1/6 + 1/4</div></div>
+        <div class="step"><span class="step-num">3</span><div><strong>LCM of 3, 6, 4 is 12:</strong> 1/Rₑ = 4/12 + 2/12 + 3/12 = 9/12</div></div>
+        <div class="step"><span class="step-num">4</span><div><strong>Invert:</strong> Rₑ = 12/9 = 4/3 Ω</div></div>
+        <div class="step final"><span class="step-num"><i class="fas fa-check"></i></span><div><strong>Equivalent Resistance ≈ 1.33 Ω</strong></div></div>
+      </div>
+    </div>
+
+    <!-- Solution 7 -->
+    <div class="solution-card" style="margin-bottom:30px;">
+      <div class="solution-question">
+        <span class="badge">WAEC Chemistry 2024</span>
+        <h3>Q7. Balance and find the volume of CO₂ produced when 50 g of CaCO₃ decomposes at STP. (Ca=40, C=12, O=16)</h3>
+      </div>
+      <div class="solution-steps">
+        <div class="step"><span class="step-num">1</span><div><strong>Write balanced equation:</strong> CaCO₃ → CaO + CO₂</div></div>
+        <div class="step"><span class="step-num">2</span><div><strong>Molar mass of CaCO₃:</strong> 40 + 12 + (3×16) = 100 g/mol</div></div>
+        <div class="step"><span class="step-num">3</span><div><strong>Moles of CaCO₃:</strong> 50/100 = 0.5 mol</div></div>
+        <div class="step"><span class="step-num">4</span><div><strong>Moles of CO₂ produced:</strong> 1:1 ratio → 0.5 mol</div></div>
+        <div class="step"><span class="step-num">5</span><div><strong>Volume at STP:</strong> V = 0.5 × 22.4 = 11.2 dm³</div></div>
+        <div class="step final"><span class="step-num"><i class="fas fa-check"></i></span><div><strong>Volume of CO₂ = 11.2 dm³ (litres)</strong></div></div>
+      </div>
+    </div>
+
+    <!-- Solution 8 -->
+    <div class="solution-card" style="margin-bottom:30px;">
+      <div class="solution-question">
+        <span class="badge">GCE Math 2023</span>
+        <h3>Q8. Find the area enclosed between y = x² and y = 4.</h3>
+      </div>
+      <div class="solution-steps">
+        <div class="step"><span class="step-num">1</span><div><strong>Find intersection points:</strong> x² = 4 → x = ±2</div></div>
+        <div class="step"><span class="step-num">2</span><div><strong>Set up integral:</strong> A = ∫₋₂² (4 − x²) dx</div></div>
+        <div class="step"><span class="step-num">3</span><div><strong>Integrate:</strong> [4x − x³/3] from −2 to 2</div></div>
+        <div class="step"><span class="step-num">4</span><div><strong>Evaluate at upper:</strong> 4(2) − 8/3 = 8 − 8/3 = 16/3</div></div>
+        <div class="step"><span class="step-num">5</span><div><strong>Evaluate at lower:</strong> 4(−2) − (−8)/3 = −8 + 8/3 = −16/3</div></div>
+        <div class="step"><span class="step-num">6</span><div><strong>Subtract:</strong> 16/3 − (−16/3) = 32/3</div></div>
+        <div class="step final"><span class="step-num"><i class="fas fa-check"></i></span><div><strong>Area = 32/3 ≈ 10.67 square units</strong></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="subjects.html">Subjects</a></li><li><a href="practice.html">Practice</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

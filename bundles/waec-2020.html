@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAEC 2020 Bundle | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.pq-card{background:#fff;border-radius:14px;padding:28px;margin-bottom:20px;box-shadow:var(--shadow);border-left:5px solid var(--primary);}
+.pq-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.pq-card .tag{background:#eef4ff;color:var(--primary);padding:4px 12px;border-radius:50px;font-size:.8rem;font-weight:600;}
+.pq-card .tag.year{background:#fef3c7;color:#92400e;}
+.pq-card h3{font-size:1.15rem;margin-bottom:14px;line-height:1.5;}
+.pq-options{display:flex;flex-direction:column;gap:8px;margin:14px 0;list-style:none;padding:0;}
+.pq-options li{padding:10px 14px;background:#f9fafb;border-radius:8px;}
+.pq-options li.correct{background:#dcfce7;border-left:3px solid #16a34a;font-weight:600;}
+.toggle-sol{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;}
+.solution-block{display:none;margin-top:16px;padding:20px;background:#f0f9ff;border-radius:10px;border-left:4px solid var(--primary);}
+.solution-block.show{display:block;}
+.solution-block ol{padding-left:20px;}
+.solution-block .ans{background:#16a34a;color:#fff;padding:8px 14px;border-radius:8px;display:inline-block;margin-top:10px;font-weight:700;}
+.subject-section{margin-bottom:40px;}
+.subject-section h2{color:var(--primary);border-bottom:3px solid var(--primary);padding-bottom:10px;margin-bottom:20px;}
+.action-bar{background:#fff;padding:20px;border-radius:14px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow);}
+.action-bar button{padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+.action-bar .btn-pdf{background:#16a34a;color:#fff;}
+.action-bar .btn-show-all{background:var(--primary);color:#fff;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../bundles.html" class="active">Bundles</a></li>
+      <li><a href="../mock-exam.html">Mock Exam</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-box-open"></i> WAEC 2020 — Complete Bundle</h1>
+  <p>Comprehensive set with classic exam patterns</p>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="action-bar">
+      <div><strong>📅 WAEC 2020 Edition</strong></div>
+      <div>
+        <button class="btn-show-all" onclick="expandAll()"><i class="fas fa-eye"></i> Show All Solutions</button>
+        <button class="btn-pdf" onclick="downloadPDF('bundle-2020')"><i class="fas fa-file-pdf"></i> Download Full PDF</button>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-square-root-alt"></i> Math (2020)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2020</span></div>
+        <h3>1. Area of circle r=7cm (π=22/7):</h3>
+        <ul class="pq-options">
+          <li>A) 22</li>
+          <li>B) 44</li>
+          <li class="correct">C) 154</li>
+          <li>D) 49</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>A = πr² = 22/7 × 49 = 154 cm²</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2020</span></div>
+        <h3>2. Differentiate y = 4x³−6x²+5x−2:</h3>
+        <ul class="pq-options">
+          <li class="correct">A) 12x²−12x+5</li>
+          <li>B) 4x²−6x+5</li>
+          <li>C) 12x³−12x²+5</li>
+          <li>D) x²−x+5</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Power rule: 12x²−12x+5</li></ol><span class="ans">✅ A</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2020</span></div>
+        <h3>3. ∫(3x²+2x)dx:</h3>
+        <ul class="pq-options">
+          <li>A) 6x+2+C</li>
+          <li class="correct">B) x³+x²+C</li>
+          <li>C) x²+x+C</li>
+          <li>D) 3x³+2x²+C</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>x³+x²+C</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2020</span></div>
+        <h3>4. Distance between (2,3) and (5,7):</h3>
+        <ul class="pq-options">
+          <li>A) 3</li>
+          <li>B) 4</li>
+          <li class="correct">C) 5</li>
+          <li>D) 7</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>√(9+16) = √25 = 5</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Math</span><span class="tag year">2020</span></div>
+        <h3>5. Gradient of line through (1,2) and (4,11):</h3>
+        <ul class="pq-options">
+          <li>A) 2</li>
+          <li class="correct">B) 3</li>
+          <li>C) 4</li>
+          <li>D) 9</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>(11-2)/(4-1) = 9/3 = 3</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-atom"></i> Physics (2020)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2020</span></div>
+        <h3>6. Series resistors 4Ω+6Ω at 20V. Current?</h3>
+        <ul class="pq-options">
+          <li>A) 1A</li>
+          <li class="correct">B) 2A</li>
+          <li>C) 5A</li>
+          <li>D) 10A</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>R=10Ω; I=V/R=2A</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2020</span></div>
+        <h3>7. Refractive index formula:</h3>
+        <ul class="pq-options">
+          <li>A) sin i × sin r</li>
+          <li class="correct">B) sin i / sin r</li>
+          <li>C) sin r / sin i</li>
+          <li>D) i × r</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>n = sin i / sin r (Snell's law)</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Physics</span><span class="tag year">2020</span></div>
+        <h3>8. Latent heat formula:</h3>
+        <ul class="pq-options">
+          <li>A) Q=mcΔT</li>
+          <li class="correct">B) Q=ml</li>
+          <li>C) Q=mgh</li>
+          <li>D) Q=½mv²</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>For phase changes: Q = ml</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-flask"></i> Chemistry (2020)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2020</span></div>
+        <h3>9. IUPAC name CH₃CH₂CH₂OH:</h3>
+        <ul class="pq-options">
+          <li>A) Methanol</li>
+          <li>B) Ethanol</li>
+          <li class="correct">C) Propan-1-ol</li>
+          <li>D) Butanol</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>3 carbons + OH = propan-1-ol</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2020</span></div>
+        <h3>10. Acid + Base →:</h3>
+        <ul class="pq-options">
+          <li>A) Salt only</li>
+          <li>B) Water only</li>
+          <li class="correct">C) Salt + water</li>
+          <li>D) Gas + salt</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Neutralization: Acid + Base → Salt + Water</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Chemistry</span><span class="tag year">2020</span></div>
+        <h3>11. Litmus paper turns ___ in acid:</h3>
+        <ul class="pq-options">
+          <li>A) Blue</li>
+          <li class="correct">B) Red</li>
+          <li>C) Green</li>
+          <li>D) Yellow</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Acid turns blue litmus red</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-dna"></i> Biology (2020)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2020</span></div>
+        <h3>12. Vitamin K deficiency causes:</h3>
+        <ul class="pq-options">
+          <li>A) Scurvy</li>
+          <li>B) Rickets</li>
+          <li class="correct">C) Bleeding</li>
+          <li>D) Night blindness</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>K supports clotting → deficiency causes bleeding</li></ol><span class="ans">✅ C</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2020</span></div>
+        <h3>13. Insect that transmits malaria:</h3>
+        <ul class="pq-options">
+          <li>A) Tsetse</li>
+          <li class="correct">B) Anopheles</li>
+          <li>C) Aedes</li>
+          <li>D) Black fly</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Anopheles mosquito</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Biology</span><span class="tag year">2020</span></div>
+        <h3>14. Excretory organ of mammals:</h3>
+        <ul class="pq-options">
+          <li>A) Lungs</li>
+          <li>B) Skin</li>
+          <li>C) Kidney</li>
+          <li class="correct">D) All of the above</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>All three excrete waste</li></ol><span class="ans">✅ D</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-book-open"></i> English (2020)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2020</span></div>
+        <h3>15. Antonym of 'commendable':</h3>
+        <ul class="pq-options">
+          <li>A) Praiseworthy</li>
+          <li class="correct">B) Reprehensible</li>
+          <li>C) Acceptable</li>
+          <li>D) Respectable</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Direct opposite of praiseworthy</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">English</span><span class="tag year">2020</span></div>
+        <h3>16. Plural of 'crisis':</h3>
+        <ul class="pq-options">
+          <li>A) Crisises</li>
+          <li class="correct">B) Crises</li>
+          <li>C) Crisi</li>
+          <li>D) Crisiss</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Greek-origin: -is → -es</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-chart-line"></i> Economics (2020)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Economics</span><span class="tag year">2020</span></div>
+        <h3>17. Demand curve slopes:</h3>
+        <ul class="pq-options">
+          <li>A) Up</li>
+          <li class="correct">B) Down</li>
+          <li>C) Horizontal</li>
+          <li>D) Vertical</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Higher price → lower demand</li></ol><span class="ans">✅ B</span></div>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <h2><i class="fas fa-landmark"></i> Government (2020)</h2>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2020</span></div>
+        <h3>18. Climax of plot is:</h3>
+        <ul class="pq-options">
+          <li>A) Beginning</li>
+          <li class="correct">B) Highest tension</li>
+          <li>C) End</li>
+          <li>D) Resolution</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>Climax = peak conflict point</li></ol><span class="ans">✅ B</span></div>
+      </div>
+
+      <div class="pq-card"><div class="meta"><span class="tag">Govt</span><span class="tag year">2020</span></div>
+        <h3>19. Father of Nigerian democracy:</h3>
+        <ul class="pq-options">
+          <li>A) Awolowo</li>
+          <li>B) Azikiwe</li>
+          <li class="correct">C) Abiola</li>
+          <li>D) Balewa</li>
+        </ul>
+        <button class="toggle-sol" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+        <div class="solution-block"><strong>Solution:</strong><ol><li>MKO Abiola, hero of June 12, 1993</li></ol><span class="ans">✅ C</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../bundles.html">Bundles</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>
+function toggleSol(btn){const s=btn.nextElementSibling;s.classList.toggle('show');btn.innerHTML=s.classList.contains('show')?'<i class="fas fa-eye-slash"></i> Hide Solution':'<i class="fas fa-eye"></i> Show Solution';}
+function expandAll(){document.querySelectorAll('.solution-block').forEach(s=>s.classList.add('show'));document.querySelectorAll('.toggle-sol').forEach(b=>b.innerHTML='<i class="fas fa-eye-slash"></i> Hide');}
+if(window.location.hash==='#pdf'){setTimeout(()=>downloadPDF('bundle-2020'),500);}
+</script>
+</body>
+</html>

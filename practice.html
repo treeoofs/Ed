@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Q&A | ExamAce</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="subjects.html">Subjects</a></li>
+      <li><a href="past-questions.html">Past Q's</a></li>
+      <li><a href="mock-exam.html">Mock Exam</a></li>
+      <li><a href="practicals/">Practicals</a></li>
+      <li><a href="essays/">Essays</a></li>
+      <li><a href="ai-tutor/">AI Tutor</a></li>
+      <li><a href="premium/">💎 Premium</a></li>
+      <li><a href="login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1>Practice Questions & Answers</h1>
+  <p>Real WAEC & GCE-style questions with instant feedback and full explanations</p>
+</section>
+
+<div class="quiz-container">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+    <div>
+      <h2>📘 Mixed Practice Test</h2>
+      <p style="color:var(--muted)">10 multiple-choice questions across STEM and Arts.</p>
+    </div>
+    <div id="scoreDisplay" style="background:var(--primary);color:#fff;padding:10px 20px;border-radius:50px;font-weight:600;">Score: 0/0 (0%)</div>
+  </div>
+
+  <!-- Question 1 -->
+  <div class="question-card">
+    <h3>Q1. (Mathematics) — Solve: 3x − 5 = 16</h3>
+    <div class="options">
+      <div class="option" onclick="selectOption(0, 0, 1)">A) x = 6</div>
+      <div class="option" onclick="selectOption(0, 1, 1)">B) x = 7</div>
+      <div class="option" onclick="selectOption(0, 2, 1)">C) x = 5</div>
+      <div class="option" onclick="selectOption(0, 3, 1)">D) x = 21</div>
+    </div>
+    <div class="feedback"><strong class="fb-status"></strong> 3x − 5 = 16 → 3x = 21 → x = 7. ✅ Correct answer: B</div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question-card">
+    <h3>Q2. (Physics) — A body moves with uniform velocity. Its acceleration is:</h3>
+    <div class="options">
+      <div class="option" onclick="selectOption(1, 0, 2)">A) Maximum</div>
+      <div class="option" onclick="selectOption(1, 1, 2)">B) Equal to gravity</div>
+      <div class="option" onclick="selectOption(1, 2, 2)">C) Zero</div>
+      <div class="option" onclick="selectOption(1, 3, 2)">D) Negative</div>
+    </div>
+    <div class="feedback"><strong class="fb-status"></strong> Uniform velocity means constant velocity → no change → acceleration = 0. ✅ Correct: C</div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question-card">
+    <h3>Q3. (Chemistry) — The number of moles in 22 g of CO₂ (M = 44 g/mol) is:</h3>
+    <div class="options">
+      <div class="option" onclick="selectOption(2, 0, 1)">A) 1 mol</div>
+      <div class="option" onclick="selectOption(2, 1, 1)">B) 0.5 mol</div>
+      <div class="option" onclick="selectOption(2, 2, 1)">C) 2 mol</div>
+      <div class="option" onclick="selectOption(2, 3, 1)">D) 0.25 mol</div>
+    </div>
+    <div class="feedback"><strong class="fb-status"></strong> Moles = mass/molar mass = 22/44 = 0.5 mol. ✅ Correct: B</div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="question-card">
+    <h3>Q4. (Biology) — Which organelle is responsible for photosynthesis?</h3>
+    <div class="options">
+      <div class="option" onclick="selectOption(3, 0, 2)">A) Mitochondria</div>
+      <div class="option" onclick="selectOption(3, 1, 2)">B) Nucleus</div>
+      <div class="option" onclick="selectOption(3, 2, 2)">C) Chloroplast</div>
+      <div class="option" onclick="selectOption(3, 3, 2)">D) Ribosome</div>
+    </div>
+    <div class="feedback"><strong class="fb-status"></strong> Chloroplasts contain chlorophyll which captures light energy for photosynthesis. ✅ Correct: C</div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="question-card">
+    <h3>Q5. (English) — Choose the correct sentence:</h3>
+    <div class="options">
+      <div class="option" onclick="selectOption(4, 0, 1)">A) Each of the boys have done their work.</div>
+      <div class="option" onclick="selectOption(4, 1, 1)">B) Each of the boys has done his work.</div>
+      <div class="option" onclick="selectOption(4, 2, 1)">C) Each of the boys are doing their work.</div>
+      <div class="option" onclick="selectOption(4, 3, 1)">D) Each of the boys do his work.</div>
+    </div>
+    <div class="feedback"><strong class="fb-status"></strong> 'Each' is singular → singular verb 'has' and singular pronoun 'his'. ✅ Correct: B</div>
+  </div>
+
+  <!-- Question 6 -->
+  <div class="question-card">
+    <h3>Q6. (Mathematics) — Find the value of x: log₂ x = 3</h3>
+    <div class="options">
+      <div class="option" onclick="selectOption(5, 0, 2)">A) 6</div>
+      <div class="option" onclick="selectOption(5, 1, 2)">B) 9</div>
+      <div class="option" onclick="selectOption(5, 2, 2)">C) 8</div>
+      <div class="option" onclick="selectOption(5, 3, 2)">D) 16</div>
+    </div>
+    <div class="feedback"><strong class="fb-status"></strong> log₂ x = 3 → x = 2³ = 8. ✅ Correct: C</div>
+  </div>
+
+  <!-- Question 7 -->
+  <div class="question-card">
+    <h3>Q7. (Physics) — A 2 kg object accelerates at 5 m/s². The applied force is:</h3>
+    <div class="options">
+      <div class="option" onclick="selectOption(6, 0, 1)">A) 5 N</div>
+      <div class="option" onclick="selectOption(6, 1, 1)">B) 10 N</div>
+      <div class="option" onclick="selectOption(6, 2, 1)">C) 20 N</div>
+      <div class="option" onclick="selectOption(6, 3, 1)">D) 2.5 N</div>
+    </div>
+    <div class="feedback"><strong class="fb-status"></strong> F = ma = 2 × 5 = 10 N. ✅ Correct: B</div>
+  </div>
+
+  <!-- Question 8 -->
+  <div class="question-card">
+    <h3>Q8. (Government) — The doctrine of separation of powers was propounded by:</h3>
+    <div class="options">
+      <div class="option" onclick="selectOption(7, 0, 1)">A) John Locke</div>
+      <div class="option" onclick="selectOption(7, 1, 1)">B) Baron de Montesquieu</div>
+      <div class="option" onclick="selectOption(7, 2, 1)">C) Karl Marx</div>
+      <div class="option" onclick="selectOption(7, 3, 1)">D) Aristotle</div>
+    </div>
+    <div class="feedback"><strong class="fb-status"></strong> Montesquieu, in 'The Spirit of the Laws' (1748), proposed the separation of powers. ✅ Correct: B</div>
+  </div>
+
+  <!-- Question 9 -->
+  <div class="question-card">
+    <h3>Q9. (Economics) — When demand exceeds supply, prices tend to:</h3>
+    <div class="options">
+      <div class="option" onclick="selectOption(8, 0, 1)">A) Fall</div>
+      <div class="option" onclick="selectOption(8, 1, 1)">B) Rise</div>
+      <div class="option" onclick="selectOption(8, 2, 1)">C) Remain stable</div>
+      <div class="option" onclick="selectOption(8, 3, 1)">D) Become zero</div>
+    </div>
+    <div class="feedback"><strong class="fb-status"></strong> Excess demand causes shortages, pushing prices upward. ✅ Correct: B</div>
+  </div>
+
+  <!-- Question 10 -->
+  <div class="question-card">
+    <h3>Q10. (Chemistry) — Which of these is an alkene?</h3>
+    <div class="options">
+      <div class="option" onclick="selectOption(9, 0, 1)">A) C₂H₆</div>
+      <div class="option" onclick="selectOption(9, 1, 1)">B) C₂H₄</div>
+      <div class="option" onclick="selectOption(9, 2, 1)">C) C₂H₂</div>
+      <div class="option" onclick="selectOption(9, 3, 1)">D) CH₄</div>
+    </div>
+    <div class="feedback"><strong class="fb-status"></strong> Alkenes have formula CₙH₂ₙ. C₂H₄ matches (n=2). ✅ Correct: B (Ethene)</div>
+  </div>
+
+  <div style="text-align:center;margin-top:30px;">
+    <button class="btn-primary" onclick="location.reload()"><i class="fas fa-redo"></i> Restart Quiz</button>
+    <a href="solutions.html" class="btn-secondary" style="background:#1f2937;color:#fff;border:none;">View Detailed Solutions</a>
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="subjects.html">Subjects</a></li><li><a href="solutions.html">Solutions</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="login.html">Login</a></li><li><a href="admin/login.html">Admin</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

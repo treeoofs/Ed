@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nigerian Languages | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.lang-card{background:#fff;border-radius:14px;padding:32px;margin-bottom:30px;box-shadow:var(--shadow);border-left:5px solid #16a34a;}
+.lang-card h2{color:#16a34a;margin-bottom:14px;font-family:'Lora',serif;}
+.essay-q{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px;border-radius:8px;margin:14px 0;color:#92400e;}
+.model-text{font-family:'Lora',serif;line-height:1.9;text-align:justify;}
+.model-text p{margin-bottom:12px;}
+.translation-box{background:#eff6ff;border-left:4px solid #0b5ed7;padding:14px;border-radius:8px;margin-top:14px;font-style:italic;color:#1e40af;}
+.toggle{background:var(--primary);color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:10px;}
+.body-hidden{display:none;}
+.body-hidden.show{display:block;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../languages/" class="active">Languages</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../essays/">Essays</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner" style="background:linear-gradient(135deg,#16a34a,#dc2626,#0b5ed7);">
+  <h1><i class="fas fa-globe-africa"></i> Nigerian Languages</h1>
+  <p>Yoruba, Igbo & Hausa — Essays, Comprehension, and Cultural Studies</p>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="lang-card">
+      <h2>🟢 Èdè Yorùbá (Yoruba)</h2>
+      <div class="essay-q"><strong>Ìbéèrè:</strong> Kọ́ àròkọ̀ kúkúrú lórí "Ìjẹ́pàtàkì Ẹ̀kọ́" (The Importance of Education).</div>
+      <button class="toggle" onclick="toggleAns(this)">Ṣe àfihàn àpẹẹrẹ</button>
+      <div class="body-hidden">
+        <h3 style="margin-top:14px;">📝 Àpẹẹrẹ Àròkọ̀</h3>
+        <div class="model-text">
+          <p><strong>Ìjẹ́pàtàkì Ẹ̀kọ́</strong></p>
+          <p>Ẹ̀kọ́ ni ọ̀nà àbáyọ kọ́ọ̀kan láti yẹ ojú ènìyàn dàgbà. Ó jẹ́ ohun pàtàkì jùlọ tí gbogbo ọmọ ènìyàn nílò láti gbé ìgbésí ayé tó dára. Láìsí ẹ̀kọ́, ìgbésí ayé yóò túka jẹ.</p>
+          <p>Ní àkọ́kọ́, ẹ̀kọ́ ń mú ìmọ̀ wá. Nípasẹ̀ ẹ̀kọ́, a ń kọ́ nípa ayé, nípa ènìyàn, àti nípa ara wa. Ó ń ràn wá lọ́wọ́ láti mọ̀ àwọn nǹkan tuntun, èyí tí yóò mú kí àyíká wa dára sí i.</p>
+          <p>Ní ẹ̀ẹ̀kejì, ẹ̀kọ́ ń pèsè iṣẹ́ rere. Ọmọ tí ó kàwé yóò rí iṣẹ́ tó dára ṣe, ó sì ní owó tó pò láti ṣe ìtọ́jú ara rẹ̀ àti ìdílé rẹ̀. Pẹ̀lú ẹ̀kọ́, ọmọ Nàìjíríà lè di Dókítà, agbẹjọ́rò, tàbí olùkọ́.</p>
+          <p>Ní ìparí, ẹ̀kọ́ ni kọ́kọ́rọ́ àṣeyọrí. Ní orílẹ̀-èdè wa, ó ṣe pàtàkì kí gbogbo ọmọ kàwé. Ìjọba gbọ́dọ̀ rí dájú pé ẹ̀kọ́ tó dára wà fún àwọn ọmọ Nàìjíríà gbogbo.</p>
+        </div>
+        <div class="translation-box">
+          <strong>English Translation:</strong> Education is the only way for a person to develop fully. It is the most essential thing every human needs to live a good life. Without education, life would fall apart. Education brings knowledge, provides good jobs, and is the key to success. The government must ensure quality education is available to all Nigerian children.
+        </div>
+      </div>
+    </div>
+
+    <div class="lang-card" style="border-left-color:#dc2626;">
+      <h2 style="color:#dc2626;">🔴 Asụsụ Igbo (Igbo)</h2>
+      <div class="essay-q"><strong>Ajụjụ:</strong> Dee edemede dị mkpirikpi banyere "Mkpa nke Ezi Omume" (The Importance of Good Character).</div>
+      <button class="toggle" onclick="toggleAns(this)">Gosipụta Atụnyere</button>
+      <div class="body-hidden">
+        <h3 style="margin-top:14px;">📝 Atụnyere Edemede</h3>
+        <div class="model-text">
+          <p><strong>Mkpa nke Ezi Omume</strong></p>
+          <p>Ezi omume bụ ihe kachasị mkpa nke onye ọ bụla nwere ike inweta. N'ala Igbo, anyị na-ekwu sị "Onye nwere ezi omume karịrị onye nwere akụ na ụba." Nke a gosiri na ezi omume dị mkpa karịa ego.</p>
+          <p>Onye nwere ezi omume na-asọpụrụ ndị ọzọ, ọ na-ekwu eziokwu, ọ naghị ezu ohi, ma ọ na-enyere ndị ọzọ aka. Ndị mmadụ niile na-eji obi ụtọ na-akpọrọ ya enyi.</p>
+          <p>Nne na nna na-akụzi ezi omume nye ụmụ ha site n'oge ha bụ obere ụmụaka. A na-akụzi ihe dịka ịsọpụrụ okenye, inye onyinye, na ịnabata ndị ọbịa.</p>
+          <p>N'ikpeazụ, ezi omume na-eweta ihu ọma na ngwụcha ọma. Onye nwere ezi omume na-enwe ndụ ọma, ma na-ahapụ aha ọma mgbe ọ nwụrụ.</p>
+        </div>
+        <div class="translation-box">
+          <strong>English Translation:</strong> Good character is the most important quality anyone can possess. We say in Igbo: "A person of good character is greater than a person of wealth." A person of good character respects others, speaks the truth, does not steal, and helps others. Parents must teach good character to children from infancy. In conclusion, good character brings favour and a good ending.
+        </div>
+      </div>
+    </div>
+
+    <div class="lang-card" style="border-left-color:#0b5ed7;">
+      <h2 style="color:#0b5ed7;">🔵 Harshen Hausa</h2>
+      <div class="essay-q"><strong>Tambaya:</strong> Rubuta wani gajeren rubutu kan "Mahimmancin Tsabta" (The Importance of Cleanliness).</div>
+      <button class="toggle" onclick="toggleAns(this)">Nuna Misali</button>
+      <div class="body-hidden">
+        <h3 style="margin-top:14px;">📝 Misalin Rubutu</h3>
+        <div class="model-text">
+          <p><strong>Mahimmancin Tsabta</strong></p>
+          <p>Tsabta wani muhimmin abu ne a rayuwar kowane mutum. Ma'aikatar lafiya tana cewa "Tsabta wani bangare ne na imani." Wannan magana tana nuna cewa tsabta tana da matuƙar muhimmanci.</p>
+          <p>Da farko, tsabta tana taimakawa wajen kiyaye lafiya. Lokacin da muka tsaftace jikin mu da tufafin mu, ƙwayoyin cuta ba za su iya kama mu cikin sauƙi ba. Wanke hannu kafin cin abinci yana hana cututtuka kamar zazzaɓi da gudawa.</p>
+          <p>Na biyu, tsabtar muhalli muhimmiyar ce. Idan muka tsaftace gidajen mu da unguwannin mu, ƙudaje da ƙwarƙwata ba za su iya zama ba. Wannan zai rage yaduwar cututtuka kamar zazzaɓin cizon sauro.</p>
+          <p>A ƙarshe, tsabta tana kawo girmamawa. Mutumin da yake da tsabta yana da sauƙin gani, kuma kowa yana son zama tare da shi. Don haka, ya kamata mu rungumi tsabta kullum.</p>
+        </div>
+        <div class="translation-box">
+          <strong>English Translation:</strong> Cleanliness is an important matter in everyone's life. The health ministry says, "Cleanliness is part of faith." First, cleanliness helps maintain health — when we wash our bodies and clothes, germs cannot easily infect us. Second, environmental cleanliness is vital — clean homes prevent flies and mosquitoes that spread diseases like malaria. Finally, cleanliness brings respect — a clean person is welcomed everywhere.
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:50px;">📚 Common Vocabulary</h2>
+    <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      <div style="background:#fff;padding:24px;border-radius:14px;border-left:4px solid #16a34a;">
+        <h3 style="color:#16a34a;">Yorùbá</h3>
+        <p><strong>Bàbá</strong> = Father<br><strong>Ìyá</strong> = Mother<br><strong>Ọmọ</strong> = Child<br><strong>Ilé</strong> = House<br><strong>Ọjọ́</strong> = Day<br><strong>Ìfẹ́</strong> = Love</p>
+      </div>
+      <div style="background:#fff;padding:24px;border-radius:14px;border-left:4px solid #dc2626;">
+        <h3 style="color:#dc2626;">Igbo</h3>
+        <p><strong>Nna</strong> = Father<br><strong>Nne</strong> = Mother<br><strong>Nwa</strong> = Child<br><strong>Ụlọ</strong> = House<br><strong>Ụbọchị</strong> = Day<br><strong>Ịhụnanya</strong> = Love</p>
+      </div>
+      <div style="background:#fff;padding:24px;border-radius:14px;border-left:4px solid #0b5ed7;">
+        <h3 style="color:#0b5ed7;">Hausa</h3>
+        <p><strong>Baba</strong> = Father<br><strong>Mama</strong> = Mother<br><strong>Yaro/Yarinya</strong> = Boy/Girl<br><strong>Gida</strong> = House<br><strong>Rana</strong> = Day<br><strong>Ƙauna</strong> = Love</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../subjects.html">Subjects</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+function toggleAns(btn){const b=btn.nextElementSibling;b.classList.toggle('show');btn.textContent=b.classList.contains('show')?'Ẹ tipa':'Ṣe àfihàn àpẹẹrẹ';}
+</script>
+</body>
+</html>

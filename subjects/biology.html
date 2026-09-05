@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biology | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html" class="active">Subjects</a></li>
+      <li><a href="../practice.html">Practice</a></li>
+      <li><a href="../solutions.html">Solutions</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-dna"></i> Biology</h1>
+  <p>Cell biology, genetics, ecology, human physiology — concept-based mastery</p>
+</section>
+
+<div class="subject-layout">
+  <aside class="sidebar">
+    <h4>Topics</h4>
+    <ul>
+      <li class="active" onclick="showTopic('cell')">1. Cell Biology</li>
+      <li onclick="showTopic('nutrition')">2. Nutrition & Digestion</li>
+      <li onclick="showTopic('respiration')">3. Respiration</li>
+      <li onclick="showTopic('photosynthesis')">4. Photosynthesis</li>
+      <li onclick="showTopic('genetics')">5. Genetics</li>
+      <li onclick="showTopic('ecology')">6. Ecology</li>
+      <li onclick="showTopic('reproduction')">7. Reproduction</li>
+    </ul>
+  </aside>
+
+  <div class="content-area">
+
+    <div id="cell" class="topic-section">
+      <h2>1. Cell Biology</h2>
+      <p>The cell is the basic unit of life. Cells can be plant or animal.</p>
+      <h3>Animal vs Plant Cell</h3>
+      <ul style="margin-left:20px;">
+        <li><strong>Animal cell:</strong> nucleus, cytoplasm, cell membrane, mitochondria, ribosomes</li>
+        <li><strong>Plant cell:</strong> all of the above PLUS cell wall, large vacuole, chloroplasts</li>
+      </ul>
+
+      <div class="example-box">
+        <strong>Q:</strong> State three differences between plant and animal cells.<br><br>
+        <strong>Step 1 —</strong> Plant cells have a cell wall; animal cells don't.<br>
+        <strong>Step 2 —</strong> Plant cells have chloroplasts; animal cells don't.<br>
+        <strong>Step 3 —</strong> Plant cells have a large central vacuole; animal cells have small or no vacuoles.<br>
+        <strong>✅ Three clear differences identified.</strong>
+      </div>
+    </div>
+
+    <div id="nutrition" class="topic-section" style="display:none">
+      <h2>2. Nutrition & Digestion</h2>
+      <p>Major food classes: carbohydrates, proteins, fats, vitamins, minerals, water, roughage.</p>
+      <h3>Enzymes & Digestion</h3>
+      <ul style="margin-left:20px;">
+        <li>Amylase: starch → maltose</li>
+        <li>Pepsin (in stomach): protein → peptides</li>
+        <li>Lipase: fat → fatty acids + glycerol</li>
+      </ul>
+    </div>
+
+    <div id="respiration" class="topic-section" style="display:none">
+      <h2>3. Respiration</h2>
+      <p>Aerobic respiration releases energy from glucose using oxygen.</p>
+      <div class="formula">C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ENERGY (ATP)</div>
+      <p>Anaerobic respiration occurs without oxygen: glucose → lactic acid (in muscles) or alcohol + CO₂ (in yeast).</p>
+    </div>
+
+    <div id="photosynthesis" class="topic-section" style="display:none">
+      <h2>4. Photosynthesis</h2>
+      <div class="formula">6CO₂ + 6H₂O →(sunlight, chlorophyll)→ C₆H₁₂O₆ + 6O₂</div>
+      <p>Factors affecting rate: light intensity, CO₂ concentration, temperature, chlorophyll.</p>
+    </div>
+
+    <div id="genetics" class="topic-section" style="display:none">
+      <h2>5. Genetics</h2>
+      <p>Mendel's laws explain inheritance.</p>
+
+      <div class="example-box">
+        <strong>Example (Monohybrid Cross):</strong> A pure tall plant (TT) crosses with a pure short plant (tt). Find F₁ and F₂ ratios.<br><br>
+        <strong>Step 1 —</strong> Parental: TT × tt → F₁ all Tt (tall, heterozygous)<br>
+        <strong>Step 2 —</strong> F₁ self-cross: Tt × Tt<br>
+        <strong>Step 3 —</strong> Punnett square: TT, Tt, Tt, tt<br>
+        <strong>Step 4 —</strong> Genotype ratio: 1 TT : 2 Tt : 1 tt<br>
+        <strong>Step 5 —</strong> Phenotype ratio: 3 Tall : 1 Short<br>
+        <strong>✅ F₂ Phenotype = 3:1</strong>
+      </div>
+    </div>
+
+    <div id="ecology" class="topic-section" style="display:none">
+      <h2>6. Ecology</h2>
+      <p><strong>Food chain:</strong> producers → primary consumers → secondary consumers → tertiary consumers.</p>
+      <p><strong>Example:</strong> Grass → grasshopper → frog → snake → hawk</p>
+      <p>Energy decreases as we move up trophic levels (10% rule).</p>
+    </div>
+
+    <div id="reproduction" class="topic-section" style="display:none">
+      <h2>7. Reproduction</h2>
+      <p>Asexual: one parent, identical offspring (e.g., binary fission, budding).<br>
+      Sexual: two parents, gamete fusion, genetic variation.</p>
+      <p>In humans: sperm (23 chromosomes) + ovum (23 chromosomes) → zygote (46 chromosomes).</p>
+    </div>
+
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../subjects.html">Subjects</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Sign In</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>addPDFButton('biology','Download biology PDF'));</script>
+</body>
+</html>

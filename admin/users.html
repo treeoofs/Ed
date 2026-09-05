@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Users | Admin</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="logo"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div>
+    <ul style="margin-top:14px;">
+      <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="users.html" class="active"><i class="fas fa-users"></i> Manage Users</a></li>
+      <li><a href="content.html"><i class="fas fa-book"></i> Content</a></li>
+      <li><a href="questions.html"><i class="fas fa-question-circle"></i> Question Bank</a></li>
+      <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+      <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+      <li><a href="#" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-header">
+      <div>
+        <h1><i class="fas fa-users"></i> Manage User Profiles</h1>
+        <p style="color:#6b7280;">View, edit, suspend, or delete student accounts.</p>
+      </div>
+      <button class="btn-primary" onclick="addUser()"><i class="fas fa-user-plus"></i> Add New User</button>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="label">Total Users</div><div class="value" id="totalCount">—</div></div>
+      <div class="stat-card"><div class="label">Active</div><div class="value" style="color:#16a34a;">—</div><div class="change">94% retention</div></div>
+      <div class="stat-card"><div class="label">Pending</div><div class="value" style="color:#f59e0b;">—</div><div class="change">Awaiting approval</div></div>
+      <div class="stat-card"><div class="label">Suspended</div><div class="value" style="color:#dc2626;">—</div><div class="change">Policy violations</div></div>
+    </div>
+
+    <div style="background:#fff;padding:24px;border-radius:14px;margin-bottom:20px;">
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+        <input type="text" placeholder="🔍 Search by name or email..." style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;" oninput="filterUsers(this.value)">
+        <select id="statusFilter" onchange="filterUsersByStatus(this.value)" style="padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;">
+          <option value="all">All Statuses</option>
+          <option value="active">Active</option>
+          <option value="pending">Pending</option>
+          <option value="suspended">Suspended</option>
+        </select>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Joined</th>
+          <th>Subjects</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody"></tbody>
+    </table>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+<script>
+function filterUsers(query) {
+  const rows = document.querySelectorAll('#userTableBody tr');
+  rows.forEach(r => {
+    const text = r.textContent.toLowerCase();
+    r.style.display = text.includes(query.toLowerCase()) ? '' : 'none';
+  });
+}
+function filterUsersByStatus(status) {
+  const rows = document.querySelectorAll('#userTableBody tr');
+  rows.forEach(r => {
+    if (status === 'all') { r.style.display = ''; return; }
+    const sp = r.querySelector('.status');
+    r.style.display = (sp && sp.classList.contains(status)) ? '' : 'none';
+  });
+}
+// Update top stats
+setTimeout(() => {
+  const users = JSON.parse(localStorage.getItem('examAceUsers') || '[]');
+  document.getElementById('totalCount').textContent = users.length;
+  const cards = document.querySelectorAll('.stat-card .value');
+  cards[1].textContent = users.filter(u => u.status === 'active').length;
+  cards[2].textContent = users.filter(u => u.status === 'pending').length;
+  cards[3].textContent = users.filter(u => u.status === 'suspended').length;
+}, 200);
+</script>
+</body>
+</html>

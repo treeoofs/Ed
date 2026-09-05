@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html" class="active">Subjects</a></li>
+      <li><a href="../practice.html">Practice</a></li>
+      <li><a href="../solutions.html">Solutions</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-flask"></i> Chemistry</h1>
+  <p>Atomic structure, bonding, organic chemistry, balancing & calculations</p>
+</section>
+
+<div class="subject-layout">
+  <aside class="sidebar">
+    <h4>Topics</h4>
+    <ul>
+      <li class="active" onclick="showTopic('atomic')">1. Atomic Structure</li>
+      <li onclick="showTopic('bonding')">2. Chemical Bonding</li>
+      <li onclick="showTopic('mole')">3. The Mole Concept</li>
+      <li onclick="showTopic('balance')">4. Balancing Equations</li>
+      <li onclick="showTopic('acids')">5. Acids, Bases & Salts</li>
+      <li onclick="showTopic('redox')">6. Redox Reactions</li>
+      <li onclick="showTopic('organic')">7. Organic Chemistry</li>
+    </ul>
+  </aside>
+
+  <div class="content-area">
+
+    <div id="atomic" class="topic-section">
+      <h2>1. Atomic Structure</h2>
+      <p>An atom consists of protons (+), neutrons (neutral) in the nucleus, and electrons (−) in shells.</p>
+      <div class="formula">Mass Number (A) = Protons + Neutrons
+Atomic Number (Z) = Protons = Electrons (in neutral atom)
+Electron Configuration: 2, 8, 8, 18, ...</div>
+
+      <div class="example-box">
+        <strong>Example:</strong> Write the electron configuration of Calcium (Z = 20).<br><br>
+        <strong>Step 1 —</strong> Total electrons = 20<br>
+        <strong>Step 2 —</strong> Fill shells: K=2, L=8, M=8, N=2<br>
+        <strong>✅ Configuration: 2, 8, 8, 2</strong>
+      </div>
+    </div>
+
+    <div id="bonding" class="topic-section" style="display:none">
+      <h2>2. Chemical Bonding</h2>
+      <p><strong>Ionic bond</strong> — transfer of electrons (metal + non-metal). Example: NaCl<br>
+      <strong>Covalent bond</strong> — sharing of electrons. Example: H₂O<br>
+      <strong>Metallic bond</strong> — sea of delocalised electrons.</p>
+
+      <div class="example-box">
+        <strong>Example:</strong> Explain bond in MgCl₂.<br><br>
+        <strong>Step 1 —</strong> Mg has 2 outer electrons; Cl has 7.<br>
+        <strong>Step 2 —</strong> Mg loses 2 electrons → Mg²⁺<br>
+        <strong>Step 3 —</strong> Each Cl gains 1 electron → 2Cl⁻<br>
+        <strong>✅ Ionic bond: Mg²⁺ + 2Cl⁻ → MgCl₂</strong>
+      </div>
+    </div>
+
+    <div id="mole" class="topic-section" style="display:none">
+      <h2>3. The Mole Concept</h2>
+      <div class="formula">1 mole = 6.02 × 10²³ particles (Avogadro's number)
+Moles = Mass / Molar Mass
+Moles = Volume / 22.4 (at STP, gases)</div>
+
+      <div class="example-box">
+        <strong>Example:</strong> How many moles in 80 g of NaOH? (Na = 23, O = 16, H = 1)<br><br>
+        <strong>Step 1 —</strong> Molar mass of NaOH = 23 + 16 + 1 = 40 g/mol<br>
+        <strong>Step 2 —</strong> Moles = 80 / 40 = 2 mol<br>
+        <strong>✅ 2 moles</strong>
+      </div>
+    </div>
+
+    <div id="balance" class="topic-section" style="display:none">
+      <h2>4. Balancing Chemical Equations</h2>
+      <p>Same number of each atom must appear on both sides of the equation.</p>
+
+      <div class="example-box">
+        <strong>Example:</strong> Balance H₂ + O₂ → H₂O<br><br>
+        <strong>Step 1 —</strong> Count atoms: LHS H=2, O=2; RHS H=2, O=1<br>
+        <strong>Step 2 —</strong> Balance O by placing 2 in front of H₂O: H₂ + O₂ → 2H₂O<br>
+        <strong>Step 3 —</strong> Now LHS H=2, RHS H=4. Place 2 in front of H₂:  2H₂ + O₂ → 2H₂O<br>
+        <strong>Step 4 —</strong> Final check: LHS H=4, O=2; RHS H=4, O=2 ✓<br>
+        <strong>✅ 2H₂ + O₂ → 2H₂O</strong>
+      </div>
+    </div>
+
+    <div id="acids" class="topic-section" style="display:none">
+      <h2>5. Acids, Bases & Salts</h2>
+      <p>Acid + Base → Salt + Water (neutralization)</p>
+      <div class="formula">pH = −log[H⁺]
+pH < 7 = acidic, pH = 7 neutral, pH > 7 basic</div>
+
+      <div class="example-box">
+        <strong>Example (Titration):</strong> 25 cm³ of 0.1 M HCl is neutralised by NaOH. If 20 cm³ of NaOH was used, find its concentration.<br><br>
+        <strong>Step 1 —</strong> Equation: HCl + NaOH → NaCl + H₂O (1:1 ratio)<br>
+        <strong>Step 2 —</strong> Moles of HCl = (25/1000) × 0.1 = 0.0025 mol<br>
+        <strong>Step 3 —</strong> Moles of NaOH = 0.0025 mol (1:1)<br>
+        <strong>Step 4 —</strong> Concentration = moles/volume = 0.0025 / (20/1000) = 0.125 M<br>
+        <strong>✅ [NaOH] = 0.125 M</strong>
+      </div>
+    </div>
+
+    <div id="redox" class="topic-section" style="display:none">
+      <h2>6. Redox Reactions</h2>
+      <p><strong>Oxidation</strong> = loss of electrons (OIL). <strong>Reduction</strong> = gain of electrons (RIG).</p>
+
+      <div class="example-box">
+        <strong>Example:</strong> In Zn + CuSO₄ → ZnSO₄ + Cu, identify oxidised and reduced species.<br><br>
+        <strong>Step 1 —</strong> Zn → Zn²⁺ + 2e⁻ (loses electrons → oxidised)<br>
+        <strong>Step 2 —</strong> Cu²⁺ + 2e⁻ → Cu (gains electrons → reduced)<br>
+        <strong>✅ Zn is oxidised; Cu²⁺ is reduced</strong>
+      </div>
+    </div>
+
+    <div id="organic" class="topic-section" style="display:none">
+      <h2>7. Organic Chemistry</h2>
+      <p>Compounds of carbon. Major homologous series:</p>
+      <ul style="margin-left:20px;">
+        <li>Alkanes: CₙH₂ₙ₊₂ (saturated, e.g. CH₄ methane)</li>
+        <li>Alkenes: CₙH₂ₙ (one double bond, e.g. C₂H₄ ethene)</li>
+        <li>Alkynes: CₙH₂ₙ₋₂ (one triple bond, e.g. C₂H₂ ethyne)</li>
+        <li>Alcohols: CₙH₂ₙ₊₁OH (e.g. C₂H₅OH ethanol)</li>
+      </ul>
+
+      <div class="example-box">
+        <strong>Example:</strong> Combustion of methane.<br><br>
+        <strong>Step 1 —</strong> Hydrocarbons burn to give CO₂ + H₂O<br>
+        <strong>Step 2 —</strong> CH₄ + O₂ → CO₂ + H₂O<br>
+        <strong>Step 3 —</strong> Balance: CH₄ + 2O₂ → CO₂ + 2H₂O<br>
+        <strong>✅ CH₄ + 2O₂ → CO₂ + 2H₂O</strong>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../subjects.html">Subjects</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Sign In</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>addPDFButton('chemistry','Download chemistry PDF'));</script>
+</body>
+</html>

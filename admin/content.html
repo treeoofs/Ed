@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Content | Admin</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="logo"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div>
+    <ul style="margin-top:14px;">
+      <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="users.html"><i class="fas fa-users"></i> Manage Users</a></li>
+      <li><a href="content.html" class="active"><i class="fas fa-book"></i> Content</a></li>
+      <li><a href="questions.html"><i class="fas fa-question-circle"></i> Question Bank</a></li>
+      <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+      <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+      <li><a href="#" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-header">
+      <div>
+        <h1><i class="fas fa-book"></i> Subject Content Management</h1>
+        <p style="color:#6b7280;">Add, edit, or remove subject material.</p>
+      </div>
+      <button class="btn-primary"><i class="fas fa-plus"></i> Add New Topic</button>
+    </div>
+
+    <table class="data-table">
+      <thead><tr><th>#</th><th>Subject</th><th>Topics</th><th>Questions</th><th>Last Updated</th><th>Status</th><th>Actions</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Mathematics</strong></td><td>8</td><td>1,240</td><td>2026-05-02</td><td><span class="status active">published</span></td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn view"><i class="fas fa-eye"></i></button></td></tr>
+        <tr><td>2</td><td><strong>Physics</strong></td><td>7</td><td>980</td><td>2026-05-01</td><td><span class="status active">published</span></td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn view"><i class="fas fa-eye"></i></button></td></tr>
+        <tr><td>3</td><td><strong>Chemistry</strong></td><td>7</td><td>875</td><td>2026-04-28</td><td><span class="status active">published</span></td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn view"><i class="fas fa-eye"></i></button></td></tr>
+        <tr><td>4</td><td><strong>Biology</strong></td><td>7</td><td>910</td><td>2026-04-25</td><td><span class="status active">published</span></td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn view"><i class="fas fa-eye"></i></button></td></tr>
+        <tr><td>5</td><td><strong>English Language</strong></td><td>6</td><td>720</td><td>2026-04-22</td><td><span class="status active">published</span></td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn view"><i class="fas fa-eye"></i></button></td></tr>
+        <tr><td>6</td><td><strong>Literature</strong></td><td>5</td><td>540</td><td>2026-04-20</td><td><span class="status active">published</span></td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn view"><i class="fas fa-eye"></i></button></td></tr>
+        <tr><td>7</td><td><strong>Economics</strong></td><td>8</td><td>820</td><td>2026-04-18</td><td><span class="status active">published</span></td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn view"><i class="fas fa-eye"></i></button></td></tr>
+        <tr><td>8</td><td><strong>Government</strong></td><td>6</td><td>610</td><td>2026-04-15</td><td><span class="status active">published</span></td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn view"><i class="fas fa-eye"></i></button></td></tr>
+        <tr><td>9</td><td><strong>Further Math</strong></td><td>6</td><td>480</td><td>2026-04-10</td><td><span class="status pending">draft</span></td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn view"><i class="fas fa-eye"></i></button></td></tr>
+        <tr><td>10</td><td><strong>Geography</strong></td><td>7</td><td>650</td><td>2026-04-08</td><td><span class="status active">published</span></td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn view"><i class="fas fa-eye"></i></button></td></tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

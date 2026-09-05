@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="logo"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div>
+    <ul style="margin-top:14px;">
+      <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="users.html"><i class="fas fa-users"></i> Manage Users</a></li>
+      <li><a href="content.html"><i class="fas fa-book"></i> Content</a></li>
+      <li><a href="questions.html"><i class="fas fa-question-circle"></i> Question Bank</a></li>
+      <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+      <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+      <li><a href="#" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-header">
+      <div>
+        <h1>Dashboard Overview</h1>
+        <p style="color:#6b7280;">Welcome back, Administrator. Here's what's happening today.</p>
+      </div>
+      <div>
+        <span style="background:#dcfce7;color:#166534;padding:6px 14px;border-radius:50px;font-weight:600;font-size:.9rem;">
+          <i class="fas fa-circle" style="font-size:.6rem;"></i> System Online
+        </span>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="label">Total Students</div>
+        <div class="value">12,847</div>
+        <div class="change"><i class="fas fa-arrow-up"></i> +18% this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Active Subjects</div>
+        <div class="value">26</div>
+        <div class="change">All operational</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Question Bank</div>
+        <div class="value">10,432</div>
+        <div class="change"><i class="fas fa-arrow-up"></i> +250 this week</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Avg. Pass Rate</div>
+        <div class="value">98%</div>
+        <div class="change"><i class="fas fa-arrow-up"></i> +2.1% YoY</div>
+      </div>
+    </div>
+
+    <div style="background:#fff;padding:24px;border-radius:14px;margin-bottom:24px;">
+      <h3 style="margin-bottom:18px;">📊 Recent Activity</h3>
+      <table class="data-table">
+        <thead><tr><th>Time</th><th>User</th><th>Activity</th><th>Subject</th></tr></thead>
+        <tbody>
+          <tr><td>2 min ago</td><td>Chinedu O.</td><td>Completed practice test</td><td>Mathematics</td></tr>
+          <tr><td>15 min ago</td><td>Ama S.</td><td>Viewed solution</td><td>Physics</td></tr>
+          <tr><td>1 hr ago</td><td>Tunde B.</td><td>Created account</td><td>—</td></tr>
+          <tr><td>2 hrs ago</td><td>Fatima S.</td><td>Completed essay</td><td>English</td></tr>
+          <tr><td>3 hrs ago</td><td>Kwame A.</td><td>Account suspended</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+      <a href="users.html" style="background:#fff;padding:24px;border-radius:14px;border:1px solid #e5e7eb;display:block;">
+        <i class="fas fa-users" style="font-size:2rem;color:#0b5ed7;margin-bottom:10px;"></i>
+        <h3>Manage Users</h3>
+        <p style="color:#6b7280;">View, edit, suspend or delete user accounts</p>
+      </a>
+      <a href="content.html" style="background:#fff;padding:24px;border-radius:14px;border:1px solid #e5e7eb;display:block;">
+        <i class="fas fa-book" style="font-size:2rem;color:#16a34a;margin-bottom:10px;"></i>
+        <h3>Edit Content</h3>
+        <p style="color:#6b7280;">Add or update subject material and lessons</p>
+      </a>
+      <a href="questions.html" style="background:#fff;padding:24px;border-radius:14px;border:1px solid #e5e7eb;display:block;">
+        <i class="fas fa-question-circle" style="font-size:2rem;color:#f59e0b;margin-bottom:10px;"></i>
+        <h3>Question Bank</h3>
+        <p style="color:#6b7280;">Manage practice questions & solutions</p>
+      </a>
+    </div>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

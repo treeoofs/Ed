@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physics Practical | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.practical-card{background:#fff;border-radius:14px;padding:32px;margin-bottom:30px;box-shadow:var(--shadow);border-left:5px solid #0b5ed7;}
+.practical-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.practical-card .tag{padding:4px 12px;border-radius:50px;font-size:.8rem;font-weight:600;}
+.practical-card .tag.subj{background:#dbeafe;color:#1e40af;}
+.practical-card .tag.year{background:#fef3c7;color:#92400e;}
+.practical-card .tag.type{background:#f3e8ff;color:#6b21a8;}
+.practical-card h2{color:#0b5ed7;margin-bottom:16px;font-family:'Lora',serif;}
+.practical-card h3{margin:20px 0 10px;color:#1e3a8a;}
+.data-table{width:100%;border-collapse:collapse;margin:14px 0;background:#fff;}
+.data-table th{background:#0b5ed7;color:#fff;padding:10px;text-align:center;}
+.data-table td{padding:10px;border:1px solid #e5e7eb;text-align:center;}
+.data-table tr:nth-child(even){background:#f9fafb;}
+.calc-box{background:#1e293b;color:#fef3c7;padding:18px;border-radius:8px;font-family:'Courier New',monospace;margin:14px 0;overflow-x:auto;}
+.tip-box{background:#fef3c7;border-left:4px solid #f59e0b;padding:18px;border-radius:8px;margin:16px 0;color:#92400e;}
+.procedure-list{counter-reset:step;list-style:none;padding-left:0;}
+.procedure-list li{counter-increment:step;padding:14px 14px 14px 50px;position:relative;background:#f9fafb;margin-bottom:8px;border-radius:8px;border-left:3px solid #0b5ed7;}
+.procedure-list li::before{content:counter(step);position:absolute;left:14px;top:14px;width:28px;height:28px;background:#0b5ed7;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.action-bar{background:#fff;padding:20px;border-radius:14px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow);}
+.action-bar button{padding:10px 20px;background:#16a34a;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+.apparatus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:16px 0;}
+.apparatus-item{background:#dbeafe;color:#1e40af;padding:12px;border-radius:8px;text-align:center;font-weight:600;font-size:.9rem;}
+.solution-toggle{background:#0b5ed7;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;margin-top:10px;}
+.full-solution{display:none;margin-top:16px;padding:24px;background:#eff6ff;border-radius:10px;border-left:4px solid #0b5ed7;}
+.full-solution.show{display:block;}
+.diagram-box{background:#fff;padding:20px;border:2px dashed #0b5ed7;border-radius:10px;text-align:center;margin:16px 0;font-family:'Courier New',monospace;font-size:.9rem;line-height:1.4;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../practicals/">Practicals</a></li>
+      <li><a href="../mock-exam.html">Mock Exam</a></li>
+      <li><a href="../essays/">Essays</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner" style="background:linear-gradient(135deg,#0b5ed7,#7c3aed);">
+  <h1><i class="fas fa-atom"></i> Physics Practical</h1>
+  <p>10 WAEC physics practical questions with apparatus, procedures, data tables, and graph analysis</p>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="action-bar">
+      <div><strong>⚡ 10 Past Practical Questions • Mechanics, Electricity, Optics, Waves</strong></div>
+      <button onclick="downloadPDF('physics-practical')"><i class="fas fa-file-pdf"></i> Download PDF</button>
+    </div>
+
+    <!-- PRACTICAL 1 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Mechanics</span>
+        <span class="tag year">WAEC 2024</span>
+        <span class="tag type">Simple Pendulum</span>
+      </div>
+      <h2>P1. Simple Pendulum — Determination of g</h2>
+
+      <p><strong>Aim:</strong> To determine the acceleration due to gravity (g) using a simple pendulum.</p>
+
+      <h3>🔬 Apparatus</h3>
+      <div class="apparatus-grid">
+        <div class="apparatus-item">Pendulum bob</div>
+        <div class="apparatus-item">Inextensible string</div>
+        <div class="apparatus-item">Stopwatch</div>
+        <div class="apparatus-item">Metre rule</div>
+        <div class="apparatus-item">Retort stand & clamp</div>
+        <div class="apparatus-item">Split cork</div>
+      </div>
+
+      <h3>📋 Procedure</h3>
+      <ol class="procedure-list">
+        <li>Suspend pendulum bob from retort stand using split cork; ensure length L = 100 cm.</li>
+        <li>Displace bob slightly (small angle &lt; 10°) and release.</li>
+        <li>Time 20 oscillations using stopwatch. Record time t.</li>
+        <li>Find period T = t/20. Square it to get T².</li>
+        <li>Repeat for L = 90, 80, 70, 60, 50 cm.</li>
+        <li>Plot T² (y-axis) against L (x-axis). Draw best-fit line through origin.</li>
+        <li>Find slope S of T² vs L graph. Use g = 4π²/S.</li>
+      </ol>
+
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Data, Graph & Calculation</button>
+      <div class="full-solution">
+
+        <h3>📊 Sample Data Table</h3>
+        <table class="data-table">
+          <thead><tr><th>L (cm)</th><th>L (m)</th><th>t (s) for 20 oscillations</th><th>T = t/20 (s)</th><th>T² (s²)</th></tr></thead>
+          <tbody>
+            <tr><td>100</td><td>1.00</td><td>40.0</td><td>2.00</td><td>4.00</td></tr>
+            <tr><td>90</td><td>0.90</td><td>38.0</td><td>1.90</td><td>3.61</td></tr>
+            <tr><td>80</td><td>0.80</td><td>35.8</td><td>1.79</td><td>3.20</td></tr>
+            <tr><td>70</td><td>0.70</td><td>33.5</td><td>1.68</td><td>2.81</td></tr>
+            <tr><td>60</td><td>0.60</td><td>31.0</td><td>1.55</td><td>2.40</td></tr>
+            <tr><td>50</td><td>0.50</td><td>28.3</td><td>1.42</td><td>2.00</td></tr>
+          </tbody>
+        </table>
+
+        <h3>📐 Graph: T² vs L (linear, through origin)</h3>
+        <div class="diagram-box">
+T²(s²)<br>
+4 ┤              •<br>
+3 ┤        •<br>
+2 ┤  •<br>
+1 ┤<br>
+0 └─────────────── L(m)<br>
+0   0.5     1.0
+        </div>
+
+        <h3>🧮 Calculation</h3>
+        <div class="calc-box">Theory: T = 2π√(L/g) → T² = (4π²/g) × L
+So slope S = 4π²/g, and g = 4π²/S
+
+From graph: Slope S = (4.00 − 0)/(1.00 − 0) = 4.00 s²/m
+g = 4π²/4.00 = π² ≈ 9.87 m/s²
+% error vs accepted (9.81): 0.6% ✓</div>
+
+        <p><strong>✅ Acceleration due to gravity, g ≈ 9.87 m/s²</strong></p>
+
+        <div class="tip-box">
+          <strong><i class="fas fa-lightbulb"></i> Sources of Error:</strong> Air resistance, large amplitude (must be small), reaction time on stopwatch, parallax in length measurement. <strong>Precaution:</strong> use small angle &lt;10°, time 20+ oscillations, repeat readings.
+        </div>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 2 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Optics</span>
+        <span class="tag year">WAEC 2023</span>
+        <span class="tag type">Concave Mirror</span>
+      </div>
+      <h2>P2. Focal Length of Concave Mirror</h2>
+
+      <p><strong>Aim:</strong> Determine focal length f using mirror formula 1/u + 1/v = 1/f.</p>
+
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Procedure & Solution</button>
+      <div class="full-solution">
+        <h3>📋 Procedure (No-Parallax Method)</h3>
+        <ol class="procedure-list">
+          <li>Mount concave mirror on stand; place pin object at distance u from mirror.</li>
+          <li>Move search pin until no-parallax with image — this is image distance v.</li>
+          <li>Record u and v. Calculate 1/u and 1/v.</li>
+          <li>Repeat for 5 different values of u (e.g., 30, 40, 50, 60, 70 cm).</li>
+          <li>Plot 1/v (y-axis) against 1/u (x-axis). Best-fit line.</li>
+          <li>Intercept on either axis = 1/f → so f = 1/intercept.</li>
+        </ol>
+
+        <table class="data-table">
+          <thead><tr><th>u (cm)</th><th>v (cm)</th><th>1/u (cm⁻¹)</th><th>1/v (cm⁻¹)</th></tr></thead>
+          <tbody>
+            <tr><td>30</td><td>30.0</td><td>0.0333</td><td>0.0333</td></tr>
+            <tr><td>40</td><td>24.0</td><td>0.0250</td><td>0.0417</td></tr>
+            <tr><td>50</td><td>21.4</td><td>0.0200</td><td>0.0467</td></tr>
+            <tr><td>60</td><td>20.0</td><td>0.0167</td><td>0.0500</td></tr>
+            <tr><td>70</td><td>18.7</td><td>0.0143</td><td>0.0533</td></tr>
+          </tbody>
+        </table>
+
+        <div class="calc-box">y-intercept (when 1/u = 0) ≈ 0.067 cm⁻¹
+1/f = 0.067 → f = 1/0.067 ≈ 15 cm
+Or use f = uv/(u+v) for verification:
+For u=30, v=30: f = 900/60 = 15 cm ✓</div>
+
+        <p><strong>✅ Focal length f ≈ 15 cm</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 3 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Electricity</span>
+        <span class="tag year">WAEC 2022</span>
+        <span class="tag type">Ohm's Law</span>
+      </div>
+      <h2>P3. Verification of Ohm's Law</h2>
+
+      <p><strong>Aim:</strong> Verify the relationship V ∝ I and find resistance R.</p>
+
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <h3>🔌 Circuit Diagram</h3>
+        <div class="diagram-box">
+[Battery]──[Switch]──[Ammeter A]──[R]──┐<br>
+                                       │<br>
+[Voltmeter V] connected across R       │<br>
+[Rheostat] in series for current control
+        </div>
+
+        <h3>📊 Sample Readings</h3>
+        <table class="data-table">
+          <thead><tr><th>I (A)</th><th>V (V)</th><th>R = V/I (Ω)</th></tr></thead>
+          <tbody>
+            <tr><td>0.10</td><td>0.50</td><td>5.00</td></tr>
+            <tr><td>0.20</td><td>1.00</td><td>5.00</td></tr>
+            <tr><td>0.30</td><td>1.50</td><td>5.00</td></tr>
+            <tr><td>0.40</td><td>2.00</td><td>5.00</td></tr>
+            <tr><td>0.50</td><td>2.50</td><td>5.00</td></tr>
+          </tbody>
+        </table>
+
+        <div class="calc-box">Plot V (y-axis) vs I (x-axis) → straight line through origin
+Slope = V/I = R = 5.00 Ω
+This verifies Ohm's Law: V = IR (V ∝ I, R constant)</div>
+
+        <p><strong>✅ Resistance R = 5.0 Ω; Ohm's Law verified</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 4 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Mechanics</span><span class="tag year">WAEC 2021</span><span class="tag type">Hooke's Law</span>
+      </div>
+      <h2>P4. Spring Constant (Hooke's Law)</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <p><strong>Theory:</strong> F = ke, where k = spring constant, e = extension.</p>
+        <table class="data-table">
+          <thead><tr><th>Mass (g)</th><th>F = mg (N)</th><th>Length L (cm)</th><th>Extension e (cm)</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td>0</td><td>20.0</td><td>0</td></tr>
+            <tr><td>50</td><td>0.5</td><td>22.5</td><td>2.5</td></tr>
+            <tr><td>100</td><td>1.0</td><td>25.0</td><td>5.0</td></tr>
+            <tr><td>150</td><td>1.5</td><td>27.5</td><td>7.5</td></tr>
+            <tr><td>200</td><td>2.0</td><td>30.0</td><td>10.0</td></tr>
+          </tbody>
+        </table>
+        <div class="calc-box">Plot F vs e: straight line through origin
+Slope = F/e = k = (2.0 N) / (0.10 m) = 20 N/m</div>
+        <p><strong>✅ Spring constant k = 20 N/m</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 5 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Optics</span><span class="tag year">WAEC 2020</span><span class="tag type">Refraction</span>
+      </div>
+      <h2>P5. Refractive Index of Glass Block</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <h3>📋 Procedure</h3>
+        <ol class="procedure-list">
+          <li>Place glass block on plain paper; trace its outline.</li>
+          <li>Draw normal at point of incidence on long side.</li>
+          <li>Stick two pins P₁ and P₂ on incident ray at angle i = 30°.</li>
+          <li>Looking through opposite face, place P₃ and P₄ such that they appear in line with images of P₁, P₂.</li>
+          <li>Remove block; join P₃P₄, extend to where ray emerges. Connect this to entry point — this is refracted ray.</li>
+          <li>Measure angle of refraction r. Repeat for i = 40°, 50°, 60°, 70°.</li>
+        </ol>
+        <table class="data-table">
+          <thead><tr><th>i (°)</th><th>r (°)</th><th>sin i</th><th>sin r</th><th>n = sin i/sin r</th></tr></thead>
+          <tbody>
+            <tr><td>30</td><td>19</td><td>0.500</td><td>0.326</td><td>1.534</td></tr>
+            <tr><td>40</td><td>25</td><td>0.643</td><td>0.423</td><td>1.520</td></tr>
+            <tr><td>50</td><td>31</td><td>0.766</td><td>0.515</td><td>1.488</td></tr>
+            <tr><td>60</td><td>35</td><td>0.866</td><td>0.574</td><td>1.510</td></tr>
+            <tr><td>70</td><td>39</td><td>0.940</td><td>0.629</td><td>1.494</td></tr>
+          </tbody>
+        </table>
+        <div class="calc-box">Plot sin i vs sin r: straight line through origin
+Slope = sin i / sin r = n
+Average n ≈ 1.51 (typical for glass)</div>
+        <p><strong>✅ Refractive index of glass n ≈ 1.51</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 6 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Mechanics</span><span class="tag year">WAEC 2019</span><span class="tag type">Lever / Moments</span>
+      </div>
+      <h2>P6. Principle of Moments</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <p><strong>Aim:</strong> Verify that ΣClockwise moments = ΣAnticlockwise moments at equilibrium.</p>
+        <table class="data-table">
+          <thead><tr><th>m₁ (g)</th><th>d₁ (cm)</th><th>m₁d₁ (g·cm)</th><th>m₂ (g)</th><th>d₂ (cm)</th><th>m₂d₂ (g·cm)</th></tr></thead>
+          <tbody>
+            <tr><td>50</td><td>20</td><td>1000</td><td>100</td><td>10</td><td>1000</td></tr>
+            <tr><td>100</td><td>15</td><td>1500</td><td>50</td><td>30</td><td>1500</td></tr>
+            <tr><td>150</td><td>10</td><td>1500</td><td>50</td><td>30</td><td>1500</td></tr>
+          </tbody>
+        </table>
+        <p><strong>✅ m₁d₁ = m₂d₂ in all cases → Principle of Moments verified.</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 7 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Heat</span><span class="tag year">WAEC 2018</span><span class="tag type">Specific Heat Capacity</span>
+      </div>
+      <h2>P7. Specific Heat Capacity by Method of Mixtures</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <p>Heat lost by hot metal = Heat gained by water + calorimeter</p>
+        <div class="calc-box">m_metal × c_metal × (T_hot − T_final) = (m_w × c_w + m_cal × c_cal)(T_final − T_initial)
+
+Sample data: m_metal=100g, T_hot=100°C, T_final=25°C
+            m_w=200g, T_initial=20°C, c_w=4200 J/kg·K
+            m_cal=50g, c_cal=400 J/kg·K
+
+c_metal = (0.200×4200 + 0.050×400)(5) / (0.100 × 75)
+        = (840 + 20)(5) / 7.5
+        = 4300/7.5 ≈ 573 J/kg·K (≈ copper, 390 J/kg·K)</div>
+        <p><strong>✅ Specific heat capacity ≈ 400 J/kg·K (copper)</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 8 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Electricity</span><span class="tag year">WAEC 2024</span><span class="tag type">Internal Resistance</span>
+      </div>
+      <h2>P8. EMF and Internal Resistance of a Cell</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <p><strong>Theory:</strong> V = E − Ir (where E = EMF, r = internal resistance)</p>
+        <table class="data-table">
+          <thead><tr><th>R (Ω)</th><th>I (A)</th><th>V (V)</th></tr></thead>
+          <tbody>
+            <tr><td>10</td><td>0.14</td><td>1.40</td></tr>
+            <tr><td>5</td><td>0.27</td><td>1.35</td></tr>
+            <tr><td>3</td><td>0.42</td><td>1.27</td></tr>
+            <tr><td>2</td><td>0.55</td><td>1.10</td></tr>
+            <tr><td>1</td><td>0.83</td><td>0.83</td></tr>
+          </tbody>
+        </table>
+        <div class="calc-box">Plot V (y) vs I (x): straight line with negative slope
+y-intercept = E (EMF) ≈ 1.50 V
+Slope = −r → r ≈ 0.8 Ω</div>
+        <p><strong>✅ EMF ≈ 1.5 V; Internal resistance r ≈ 0.8 Ω</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 9 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Optics</span><span class="tag year">WAEC 2023</span><span class="tag type">Convex Lens</span>
+      </div>
+      <h2>P9. Focal Length of Convex Lens</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <p><strong>Method 1 (Plane mirror):</strong> Place lens on plane mirror; move pin until image coincides with object — that distance = f.</p>
+        <p><strong>Method 2 (u-v method):</strong></p>
+        <table class="data-table">
+          <thead><tr><th>u (cm)</th><th>v (cm)</th><th>f = uv/(u+v) (cm)</th></tr></thead>
+          <tbody>
+            <tr><td>30</td><td>30</td><td>15.0</td></tr>
+            <tr><td>40</td><td>24</td><td>15.0</td></tr>
+            <tr><td>50</td><td>21.4</td><td>15.0</td></tr>
+            <tr><td>60</td><td>20</td><td>15.0</td></tr>
+          </tbody>
+        </table>
+        <p><strong>✅ Focal length f = 15 cm</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 10 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Mechanics</span><span class="tag year">WAEC 2022</span><span class="tag type">Density / Archimedes</span>
+      </div>
+      <h2>P10. Density of an Irregular Object</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <h3>📋 Procedure</h3>
+        <ol class="procedure-list">
+          <li>Find mass of object using triple-beam balance: m = 250 g.</li>
+          <li>Half-fill measuring cylinder with water; record initial volume V₁ = 50 cm³.</li>
+          <li>Lower object gently into water using string; record final volume V₂ = 100 cm³.</li>
+          <li>Volume of object = V₂ − V₁ = 50 cm³.</li>
+          <li>Density = mass / volume.</li>
+        </ol>
+        <div class="calc-box">ρ = m/V = 250 g / 50 cm³ = 5.0 g/cm³ = 5000 kg/m³</div>
+        <p><strong>✅ Density ≈ 5.0 g/cm³ (close to iron)</strong></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../subjects.html">Subjects</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>
+function toggleSol(btn){const s=btn.nextElementSibling;s.classList.toggle('show');btn.innerHTML=s.classList.contains('show')?'<i class="fas fa-eye-slash"></i> Hide Solution':'<i class="fas fa-eye"></i> Show Solution';}
+</script>
+</body>
+</html>

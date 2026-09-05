@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physics | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html" class="active">Subjects</a></li>
+      <li><a href="../practice.html">Practice</a></li>
+      <li><a href="../solutions.html">Solutions</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-atom"></i> Physics</h1>
+  <p>Mechanics, Waves, Electricity, Modern Physics — fully explained</p>
+</section>
+
+<div class="subject-layout">
+  <aside class="sidebar">
+    <h4>Topics</h4>
+    <ul>
+      <li class="active" onclick="showTopic('motion')">1. Motion & Kinematics</li>
+      <li onclick="showTopic('forces')">2. Forces & Newton's Laws</li>
+      <li onclick="showTopic('energy')">3. Work, Energy & Power</li>
+      <li onclick="showTopic('waves')">4. Waves & Sound</li>
+      <li onclick="showTopic('elec')">5. Electricity</li>
+      <li onclick="showTopic('heat')">6. Heat & Thermodynamics</li>
+      <li onclick="showTopic('modern')">7. Modern Physics</li>
+    </ul>
+  </aside>
+
+  <div class="content-area">
+
+    <div id="motion" class="topic-section">
+      <h2>1. Motion & Kinematics</h2>
+      <p>Kinematics describes how objects move using equations of motion.</p>
+      <div class="formula">v = u + at
+s = ut + ½at²
+v² = u² + 2as
+where u = initial velocity, v = final velocity, a = acceleration, t = time, s = displacement</div>
+
+      <div class="example-box">
+        <strong>Example:</strong> A car starts from rest and accelerates at 4 m/s² for 6 seconds. Find (a) final velocity, (b) distance covered.<br><br>
+        <strong>Step 1 —</strong> Identify given: u = 0, a = 4 m/s², t = 6 s<br>
+        <strong>Step 2 (a) —</strong> Use v = u + at → v = 0 + (4)(6) = 24 m/s<br>
+        <strong>Step 3 (b) —</strong> Use s = ut + ½at² → s = 0 + ½(4)(6²) = ½(4)(36) = 72 m<br>
+        <strong>✅ v = 24 m/s, s = 72 m</strong>
+      </div>
+    </div>
+
+    <div id="forces" class="topic-section" style="display:none">
+      <h2>2. Forces & Newton's Laws</h2>
+      <p><strong>1st Law:</strong> An object stays at rest or in uniform motion unless acted upon by a force.<br>
+      <strong>2nd Law:</strong> F = ma<br>
+      <strong>3rd Law:</strong> Action and reaction are equal and opposite.</p>
+      <div class="formula">F = ma   (Force = mass × acceleration)
+W = mg   (Weight = mass × gravity, g = 10 m/s²)</div>
+
+      <div class="example-box">
+        <strong>Example:</strong> A 5 kg object is pushed with a force of 20 N. Find its acceleration.<br><br>
+        <strong>Step 1 —</strong> Use Newton's 2nd Law: F = ma → a = F/m<br>
+        <strong>Step 2 —</strong> a = 20 / 5 = 4 m/s²<br>
+        <strong>✅ a = 4 m/s²</strong>
+      </div>
+    </div>
+
+    <div id="energy" class="topic-section" style="display:none">
+      <h2>3. Work, Energy & Power</h2>
+      <div class="formula">Work: W = F × d
+Kinetic Energy: KE = ½mv²
+Potential Energy: PE = mgh
+Power: P = W / t  or  P = Fv</div>
+
+      <div class="example-box">
+        <strong>Example:</strong> A 2 kg ball moves at 6 m/s. Find its KE.<br><br>
+        <strong>Step 1 —</strong> Formula: KE = ½mv²<br>
+        <strong>Step 2 —</strong> KE = ½(2)(6²) = ½(2)(36) = 36 J<br>
+        <strong>✅ KE = 36 Joules</strong>
+      </div>
+    </div>
+
+    <div id="waves" class="topic-section" style="display:none">
+      <h2>4. Waves & Sound</h2>
+      <div class="formula">v = f λ
+where v = wave speed, f = frequency, λ = wavelength</div>
+
+      <div class="example-box">
+        <strong>Example:</strong> A wave has frequency 50 Hz and wavelength 4 m. Find its speed.<br><br>
+        <strong>Step 1 —</strong> Use v = fλ<br>
+        <strong>Step 2 —</strong> v = 50 × 4 = 200 m/s<br>
+        <strong>✅ v = 200 m/s</strong>
+      </div>
+    </div>
+
+    <div id="elec" class="topic-section" style="display:none">
+      <h2>5. Electricity</h2>
+      <div class="formula">Ohm's Law: V = IR
+Power: P = VI = I²R = V²/R
+Q = It (Charge)</div>
+
+      <div class="example-box">
+        <strong>Example:</strong> A 12 V battery drives a 4 Ω resistor. Find current and power.<br><br>
+        <strong>Step 1 —</strong> Use Ohm's Law: I = V/R = 12 / 4 = 3 A<br>
+        <strong>Step 2 —</strong> Power: P = VI = 12 × 3 = 36 W<br>
+        <strong>✅ I = 3 A, P = 36 W</strong>
+      </div>
+    </div>
+
+    <div id="heat" class="topic-section" style="display:none">
+      <h2>6. Heat & Thermodynamics</h2>
+      <div class="formula">Q = mcΔθ   (specific heat capacity)
+Q = ml      (latent heat)</div>
+
+      <div class="example-box">
+        <strong>Example:</strong> Heat needed to raise 2 kg of water from 20°C to 80°C? (c = 4200 J/kg·K)<br><br>
+        <strong>Step 1 —</strong> ΔT = 80 − 20 = 60 K<br>
+        <strong>Step 2 —</strong> Q = mcΔT = 2 × 4200 × 60<br>
+        <strong>Step 3 —</strong> Q = 504,000 J = 504 kJ<br>
+        <strong>✅ Q = 504,000 J</strong>
+      </div>
+    </div>
+
+    <div id="modern" class="topic-section" style="display:none">
+      <h2>7. Modern Physics</h2>
+      <p>Photoelectric effect, atomic structure, radioactivity.</p>
+      <div class="formula">E = hf   (energy of photon)
+E = mc²  (mass-energy equivalence)
+Half-life: N = N₀ (½)^(t/T)</div>
+
+      <div class="example-box">
+        <strong>Example:</strong> A radioactive element has half-life 10 days. After 30 days, what fraction remains?<br><br>
+        <strong>Step 1 —</strong> Number of half-lives: n = 30/10 = 3<br>
+        <strong>Step 2 —</strong> Fraction remaining = (½)³ = 1/8<br>
+        <strong>✅ 1/8 of original remains</strong>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../subjects.html">Subjects</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Sign In</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>addPDFButton('physics','Download physics PDF'));</script>
+</body>
+</html>

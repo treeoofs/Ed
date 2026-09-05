@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Language | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html" class="active">Subjects</a></li>
+      <li><a href="../practice.html">Practice</a></li>
+      <li><a href="../solutions.html">Solutions</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner">
+  <h1><i class="fas fa-book-open"></i> English Language</h1>
+  <p>Comprehension, Essay Writing, Lexis & Structure, Oral English</p>
+</section>
+
+<div class="subject-layout">
+  <aside class="sidebar">
+    <h4>Topics</h4>
+    <ul>
+      <li class="active" onclick="showTopic('essay')">1. Essay Writing</li>
+      <li onclick="showTopic('comp')">2. Comprehension</li>
+      <li onclick="showTopic('lexis')">3. Lexis & Structure</li>
+      <li onclick="showTopic('oral')">4. Oral English</li>
+      <li onclick="showTopic('summary')">5. Summary Writing</li>
+      <li onclick="showTopic('letters')">6. Letter Writing</li>
+    </ul>
+  </aside>
+
+  <div class="content-area">
+
+    <div id="essay" class="topic-section">
+      <h2>1. Essay Writing</h2>
+      <p>Types: <strong>Narrative</strong>, <strong>Descriptive</strong>, <strong>Argumentative</strong>, <strong>Expository</strong>, <strong>Article</strong>.</p>
+      <h3>Structure</h3>
+      <ul style="margin-left:20px;">
+        <li>Introduction — hook, background, thesis</li>
+        <li>Body — 3-4 paragraphs, one idea each, with evidence</li>
+        <li>Conclusion — restate thesis, summarise, closing thought</li>
+      </ul>
+      <div class="example-box">
+        <strong>Tip:</strong> Use connectives — <em>However, Furthermore, In contrast, As a result, In conclusion</em> — to link ideas smoothly.
+      </div>
+    </div>
+
+    <div id="comp" class="topic-section" style="display:none">
+      <h2>2. Comprehension</h2>
+      <p>Strategy:</p>
+      <ol style="margin-left:20px;">
+        <li>Skim the passage for main idea.</li>
+        <li>Read questions carefully.</li>
+        <li>Re-read passage for details.</li>
+        <li>Answer in your own words where possible.</li>
+        <li>Use evidence from the text.</li>
+      </ol>
+    </div>
+
+    <div id="lexis" class="topic-section" style="display:none">
+      <h2>3. Lexis & Structure</h2>
+      <p>Topics: synonyms, antonyms, idioms, concord (subject-verb agreement), tense, prepositions.</p>
+      <div class="example-box">
+        <strong>Example:</strong> Choose the correct option:<br>
+        "Neither John nor his brothers ___ at home."<br>
+        (a) is &nbsp;(b) are &nbsp;(c) was<br><br>
+        <strong>Rule:</strong> When subjects are joined by 'neither...nor', verb agrees with the subject closest to it.<br>
+        "Brothers" (plural) is closest, so verb is plural.<br>
+        <strong>✅ Answer: (b) are</strong>
+      </div>
+    </div>
+
+    <div id="oral" class="topic-section" style="display:none">
+      <h2>4. Oral English</h2>
+      <p>Phonetics: vowels (/i:/, /ɪ/, /e/, /æ/, /ʌ/, /ɑ:/, /ɒ/, /ɔ:/, /ʊ/, /u:/, /ɜ:/, /ə/) and diphthongs (/eɪ/, /aɪ/, /ɔɪ/, /aʊ/, /əʊ/, /ɪə/, /eə/, /ʊə/).</p>
+      <div class="example-box">
+        <strong>Q:</strong> Which word has the same vowel sound as 'sheep'?<br>
+        (a) ship &nbsp;(b) seat &nbsp;(c) set<br>
+        'Sheep' has /i:/ (long ee). 'Seat' also has /i:/.<br>
+        <strong>✅ Answer: (b) seat</strong>
+      </div>
+    </div>
+
+    <div id="summary" class="topic-section" style="display:none">
+      <h2>5. Summary Writing</h2>
+      <p>Aim: convey the main idea in fewer words. Don't copy verbatim — paraphrase.</p>
+    </div>
+
+    <div id="letters" class="topic-section" style="display:none">
+      <h2>6. Letter Writing</h2>
+      <p>Three types: Formal (official), Semi-formal, Informal (friendly).</p>
+      <p>Formal letter format: Sender's address, date, receiver's address, salutation (Dear Sir/Madam), heading, body (3 paragraphs), close (Yours faithfully), signature, name in capitals.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../subjects.html">Subjects</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Sign In</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>addPDFButton('english','Download english PDF'));</script>
+</body>
+</html>

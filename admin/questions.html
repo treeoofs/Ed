@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question Bank | Admin</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="logo"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div>
+    <ul style="margin-top:14px;">
+      <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="users.html"><i class="fas fa-users"></i> Manage Users</a></li>
+      <li><a href="content.html"><i class="fas fa-book"></i> Content</a></li>
+      <li><a href="questions.html" class="active"><i class="fas fa-question-circle"></i> Question Bank</a></li>
+      <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+      <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+      <li><a href="#" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-header">
+      <div>
+        <h1><i class="fas fa-question-circle"></i> Question Bank</h1>
+        <p style="color:#6b7280;">Manage practice questions and step-by-step solutions.</p>
+      </div>
+      <button class="btn-primary"><i class="fas fa-plus"></i> Add Question</button>
+    </div>
+
+    <div style="background:#fff;padding:24px;border-radius:14px;">
+      <h3 style="margin-bottom:14px;">➕ Add New Question</h3>
+      <div class="form-group">
+        <label>Subject</label>
+        <select><option>Mathematics</option><option>Physics</option><option>Chemistry</option><option>Biology</option><option>English Language</option></select>
+      </div>
+      <div class="form-group"><label>Topic</label><input type="text" placeholder="e.g. Quadratic Equations"></div>
+      <div class="form-group"><label>Question</label><textarea rows="3" placeholder="Type the question here..."></textarea></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group"><label>Option A</label><input type="text"></div>
+        <div class="form-group"><label>Option B</label><input type="text"></div>
+        <div class="form-group"><label>Option C</label><input type="text"></div>
+        <div class="form-group"><label>Option D</label><input type="text"></div>
+      </div>
+      <div class="form-group"><label>Correct Answer</label><select><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+      <div class="form-group"><label>Step-by-Step Solution</label><textarea rows="5" placeholder="Step 1: ...&#10;Step 2: ...&#10;Step 3: ..."></textarea></div>
+      <button class="btn-primary"><i class="fas fa-save"></i> Save Question</button>
+    </div>
+
+    <h3 style="margin:30px 0 14px;">Recent Questions</h3>
+    <table class="data-table">
+      <thead><tr><th>ID</th><th>Subject</th><th>Question (preview)</th><th>Difficulty</th><th>Added</th><th>Actions</th></tr></thead>
+      <tbody>
+        <tr><td>#1024</td><td>Math</td><td>Solve 2x² − 5x − 3 = 0</td><td><span class="status active">Easy</span></td><td>2026-05-08</td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn delete"><i class="fas fa-trash"></i></button></td></tr>
+        <tr><td>#1023</td><td>Physics</td><td>Stone thrown up at 30 m/s — find max height</td><td><span class="status pending">Medium</span></td><td>2026-05-08</td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn delete"><i class="fas fa-trash"></i></button></td></tr>
+        <tr><td>#1022</td><td>Chemistry</td><td>% of N in NH₄NO₃</td><td><span class="status active">Easy</span></td><td>2026-05-07</td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn delete"><i class="fas fa-trash"></i></button></td></tr>
+        <tr><td>#1021</td><td>Biology</td><td>Tt × Tt — probability of short offspring</td><td><span class="status pending">Medium</span></td><td>2026-05-07</td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn delete"><i class="fas fa-trash"></i></button></td></tr>
+        <tr><td>#1020</td><td>Math</td><td>Differentiate y = (3x²+2)(x−5)</td><td><span class="status suspended">Hard</span></td><td>2026-05-06</td><td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn delete"><i class="fas fa-trash"></i></button></td></tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

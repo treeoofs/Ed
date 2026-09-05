@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry Practical | ExamAce</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.practical-card{background:#fff;border-radius:14px;padding:32px;margin-bottom:30px;box-shadow:var(--shadow);border-left:5px solid #16a34a;}
+.practical-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.practical-card .tag{padding:4px 12px;border-radius:50px;font-size:.8rem;font-weight:600;}
+.practical-card .tag.subj{background:#dcfce7;color:#166534;}
+.practical-card .tag.year{background:#fef3c7;color:#92400e;}
+.practical-card .tag.type{background:#f3e8ff;color:#6b21a8;}
+.practical-card h2{color:#16a34a;margin-bottom:16px;font-family:'Lora',serif;}
+.practical-card h3{margin:20px 0 10px;color:#1e3a8a;}
+.observation-table{width:100%;border-collapse:collapse;margin:14px 0;background:#fff;}
+.observation-table th{background:#16a34a;color:#fff;padding:10px;text-align:left;}
+.observation-table td{padding:10px;border:1px solid #e5e7eb;}
+.observation-table tr:nth-child(even){background:#f9fafb;}
+.calc-box{background:#1e293b;color:#fef3c7;padding:18px;border-radius:8px;font-family:'Courier New',monospace;margin:14px 0;overflow-x:auto;}
+.tip-box{background:#fef3c7;border-left:4px solid #f59e0b;padding:18px;border-radius:8px;margin:16px 0;color:#92400e;}
+.warning-box{background:#fee2e2;border-left:4px solid #dc2626;padding:18px;border-radius:8px;margin:16px 0;color:#991b1b;}
+.procedure-list{counter-reset:step;list-style:none;padding-left:0;}
+.procedure-list li{counter-increment:step;padding:14px 14px 14px 50px;position:relative;background:#f9fafb;margin-bottom:8px;border-radius:8px;border-left:3px solid #16a34a;}
+.procedure-list li::before{content:counter(step);position:absolute;left:14px;top:14px;width:28px;height:28px;background:#16a34a;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.action-bar{background:#fff;padding:20px;border-radius:14px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow);}
+.action-bar button{padding:10px 20px;background:#16a34a;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+.apparatus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:16px 0;}
+.apparatus-item{background:#dbeafe;color:#1e40af;padding:12px;border-radius:8px;text-align:center;font-weight:600;font-size:.9rem;}
+.solution-toggle{background:#16a34a;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;margin-top:10px;}
+.full-solution{display:none;margin-top:16px;padding:24px;background:#f0fdf4;border-radius:10px;border-left:4px solid #16a34a;}
+.full-solution.show{display:block;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../subjects.html">Subjects</a></li>
+      <li><a href="../past-questions.html">Past Q's</a></li>
+      <li><a href="../practicals/">Practicals</a></li>
+      <li><a href="../mock-exam.html">Mock Exam</a></li>
+      <li><a href="../essays/">Essays</a></li>
+      <li><a href="../login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section class="page-banner" style="background:linear-gradient(135deg,#16a34a,#0b5ed7);">
+  <h1><i class="fas fa-flask"></i> Chemistry Practical (Alternative B/C)</h1>
+  <p>10 WAEC chemistry practical questions with full procedures, observations, and calculations</p>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="action-bar">
+      <div><strong>🧪 10 Past Practical Questions • Quantitative & Qualitative Analysis</strong></div>
+      <button onclick="downloadPDF('chemistry-practical')"><i class="fas fa-file-pdf"></i> Download PDF</button>
+    </div>
+
+    <div class="warning-box">
+      <strong><i class="fas fa-shield-alt"></i> Lab Safety Reminder:</strong> Always wear safety goggles and lab coat. Never taste reagents. Add acid to water (not water to acid). Dispose of chemicals as instructed. Wash hands after every experiment.
+    </div>
+
+    <!-- PRACTICAL 1: TITRATION -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Volumetric Analysis</span>
+        <span class="tag year">WAEC 2024</span>
+        <span class="tag type">Quantitative</span>
+      </div>
+      <h2>P1. Acid-Base Titration</h2>
+
+      <p><strong>Question:</strong> A is a solution of HCl containing 7.30 g per dm³. B is 0.100 mol/dm³ of Na₂CO₃. Using methyl orange indicator, titrate B against A. Pipette 25.0 cm³ of B into a conical flask. Record your titre values and calculate the molar concentration of A.</p>
+
+      <h3>🔬 Apparatus Required</h3>
+      <div class="apparatus-grid">
+        <div class="apparatus-item">Burette (50 cm³)</div>
+        <div class="apparatus-item">Pipette (25 cm³)</div>
+        <div class="apparatus-item">Conical flask</div>
+        <div class="apparatus-item">Pipette filler</div>
+        <div class="apparatus-item">White tile</div>
+        <div class="apparatus-item">Methyl orange</div>
+        <div class="apparatus-item">Funnel</div>
+        <div class="apparatus-item">Wash bottle</div>
+      </div>
+
+      <h3>📋 Procedure</h3>
+      <ol class="procedure-list">
+        <li>Rinse the burette with solution A and fill it to the zero mark, ensuring no air bubbles below the tap.</li>
+        <li>Rinse the pipette with solution B; pipette exactly 25.0 cm³ of B into a clean conical flask.</li>
+        <li>Add 2-3 drops of methyl orange indicator. Solution turns yellow.</li>
+        <li>Place flask on white tile under burette. Run A in slowly, swirling continuously.</li>
+        <li>End point: solution turns from yellow → orange → just pink/red. Record final burette reading.</li>
+        <li>Repeat at least 3 times to obtain concordant titres (within 0.10 cm³ of each other).</li>
+      </ol>
+
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Calculations & Solution</button>
+      <div class="full-solution">
+
+        <h3>📊 Sample Burette Readings</h3>
+        <table class="observation-table">
+          <thead><tr><th>Titration</th><th>Rough</th><th>1st</th><th>2nd</th><th>3rd</th></tr></thead>
+          <tbody>
+            <tr><td>Final burette reading (cm³)</td><td>25.20</td><td>24.90</td><td>24.85</td><td>24.95</td></tr>
+            <tr><td>Initial burette reading (cm³)</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.10</td></tr>
+            <tr><td><strong>Volume of A used (cm³)</strong></td><td>25.20</td><td>24.90</td><td>24.85</td><td>24.85</td></tr>
+          </tbody>
+        </table>
+
+        <p><strong>Average titre:</strong> (24.90 + 24.85 + 24.85)/3 = <strong>24.87 cm³</strong></p>
+
+        <h3>🧮 Calculations</h3>
+
+        <p><strong>Step 1:</strong> Write balanced equation:</p>
+        <div class="calc-box">2HCl + Na₂CO₃ → 2NaCl + H₂O + CO₂   (mole ratio 2 : 1)</div>
+
+        <p><strong>Step 2:</strong> Calculate moles of Na₂CO₃ in 25.0 cm³ of B:</p>
+        <div class="calc-box">n(Na₂CO₃) = C × V = 0.100 × (25.0/1000) = 2.50 × 10⁻³ mol</div>
+
+        <p><strong>Step 3:</strong> Use mole ratio to find moles of HCl:</p>
+        <div class="calc-box">n(HCl) = 2 × n(Na₂CO₃) = 2 × 2.50 × 10⁻³ = 5.00 × 10⁻³ mol</div>
+
+        <p><strong>Step 4:</strong> Calculate concentration of HCl (solution A):</p>
+        <div class="calc-box">C(A) = n / V = (5.00 × 10⁻³) / (24.87/1000)
+     = 0.201 mol/dm³</div>
+
+        <p><strong>Step 5:</strong> Verify with given data: A contains 7.30 g/dm³</p>
+        <div class="calc-box">Theoretical: C = 7.30/36.5 = 0.200 mol/dm³ ✓
+% error = |0.201 − 0.200|/0.200 × 100 = 0.5% (excellent)</div>
+
+        <p><strong>✅ Final Answer: Molar concentration of A ≈ 0.20 mol/dm³</strong></p>
+
+        <div class="tip-box">
+          <strong><i class="fas fa-lightbulb"></i> Examiner Tip:</strong> Show the burette readings table, calculate the average from <em>concordant</em> titres only (ignore rough), state the equation clearly, and always show units throughout.
+        </div>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 2: QUALITATIVE ANALYSIS -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Qualitative Analysis</span>
+        <span class="tag year">WAEC 2023</span>
+        <span class="tag type">Inorganic</span>
+      </div>
+      <h2>P2. Identification of Salt C</h2>
+
+      <p><strong>Question:</strong> C is a salt. Carry out the following tests on C and record your observations and inferences.</p>
+
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Tests, Observations & Inferences</button>
+      <div class="full-solution">
+        <h3>📋 Test Results Table (C is FeSO₄·7H₂O — Iron(II) sulphate heptahydrate)</h3>
+        <table class="observation-table">
+          <thead><tr><th>Test</th><th>Observation</th><th>Inference</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>(a) Heat C in a dry test tube</td>
+              <td>Green crystals turn white, then brown; colourless droplets condense at cooler part of tube</td>
+              <td>Hydrated salt; Fe²⁺ → Fe³⁺ on heating; H₂O liberated</td>
+            </tr>
+            <tr>
+              <td>(b) Dissolve C in water; add NaOH(aq) dropwise then in excess</td>
+              <td>Dirty green gelatinous precipitate; insoluble in excess; turns brown on standing in air</td>
+              <td>Fe(OH)₂ formed; oxidised to Fe(OH)₃ on exposure to air → confirms Fe²⁺</td>
+            </tr>
+            <tr>
+              <td>(c) To fresh solution of C, add NH₃(aq) dropwise then excess</td>
+              <td>Dirty green precipitate; insoluble in excess</td>
+              <td>Confirms Fe²⁺ (Fe(OH)₂ insoluble in excess NH₃)</td>
+            </tr>
+            <tr>
+              <td>(d) Acidify with dilute HCl, then add BaCl₂(aq)</td>
+              <td>White precipitate, insoluble in dilute HCl</td>
+              <td>SO₄²⁻ confirmed (BaSO₄ formed)</td>
+            </tr>
+            <tr>
+              <td>(e) Add K₃[Fe(CN)₆] (potassium hexacyanoferrate(III)) to C solution</td>
+              <td>Deep blue precipitate (Turnbull's blue)</td>
+              <td>Confirms Fe²⁺</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>🧪 Conclusion</h3>
+        <p><strong>Salt C = FeSO₄·7H₂O (Iron(II) sulphate heptahydrate, Green Vitriol)</strong></p>
+
+        <h3>⚖️ Key Equations</h3>
+        <div class="calc-box">Fe²⁺(aq) + 2OH⁻(aq) → Fe(OH)₂(s)  ↓ dirty green
+4Fe(OH)₂(s) + O₂(g) + 2H₂O → 4Fe(OH)₃(s)  ↓ brown
+Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s)  ↓ white</div>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 3: ORGANIC -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Organic Analysis</span>
+        <span class="tag year">WAEC 2022</span>
+        <span class="tag type">Functional Groups</span>
+      </div>
+      <h2>P3. Identification of Organic Compound D</h2>
+
+      <p><strong>Question:</strong> D is an organic compound. Test for the functional group(s) present.</p>
+
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Tests & Inferences</button>
+      <div class="full-solution">
+        <h3>📋 Tests for D = Ethanol (CH₃CH₂OH)</h3>
+        <table class="observation-table">
+          <thead><tr><th>Test</th><th>Observation</th><th>Inference</th></tr></thead>
+          <tbody>
+            <tr><td>(a) Add 2cm³ to small piece of sodium</td><td>Effervescence; colourless gas burns with pop sound</td><td>H₂ liberated → −OH or −COOH group present</td></tr>
+            <tr><td>(b) Add NaHCO₃</td><td>No effervescence</td><td>−COOH absent → must be alcohol</td></tr>
+            <tr><td>(c) Warm with acidified K₂Cr₂O₇</td><td>Orange → Green colour change</td><td>Primary alcohol oxidised to aldehyde then carboxylic acid</td></tr>
+            <tr><td>(d) Iodoform test (I₂ + NaOH)</td><td>Yellow precipitate of CHI₃ formed</td><td>Contains CH₃CH(OH)— or CH₃CO— group → confirms ethanol</td></tr>
+            <tr><td>(e) Add ethanoic acid + conc H₂SO₄, warm</td><td>Sweet fruity smell</td><td>Ester (ethyl ethanoate) formed → −OH confirmed</td></tr>
+          </tbody>
+        </table>
+        <p><strong>✅ D = Ethanol (CH₃CH₂OH) — primary alcohol</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 4 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Volumetric</span><span class="tag year">WAEC 2021</span><span class="tag type">Redox Titration</span>
+      </div>
+      <h2>P4. KMnO₄ vs FeSO₄ Titration</h2>
+      <p><strong>Question:</strong> Titrate 0.020 mol/dm³ KMnO₄ against 25.0 cm³ of acidified FeSO₄ solution. Calculate the concentration of FeSO₄.</p>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <p><strong>Equation (ionic):</strong></p>
+        <div class="calc-box">MnO₄⁻ + 8H⁺ + 5Fe²⁺ → Mn²⁺ + 4H₂O + 5Fe³⁺  (1:5 ratio)</div>
+        <p><strong>End point:</strong> First permanent pink colour (no indicator needed — KMnO₄ is self-indicating).</p>
+        <p><strong>Sample average titre:</strong> 20.00 cm³</p>
+        <p><strong>Calculation:</strong></p>
+        <div class="calc-box">n(KMnO₄) = 0.020 × (20.00/1000) = 4.00 × 10⁻⁴ mol
+n(Fe²⁺) = 5 × n(KMnO₄) = 5 × 4.00 × 10⁻⁴ = 2.00 × 10⁻³ mol
+[Fe²⁺] = (2.00 × 10⁻³) / (25.0/1000) = 0.080 mol/dm³</div>
+        <p><strong>✅ [FeSO₄] = 0.08 mol/dm³</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 5 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Qualitative</span><span class="tag year">WAEC 2020</span><span class="tag type">Anion Test</span>
+      </div>
+      <h2>P5. Test for Anions in Salt E</h2>
+      <p><strong>Question:</strong> E gave the following results — identify the anion present.</p>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <table class="observation-table">
+          <thead><tr><th>Test</th><th>Observation</th><th>Inference</th></tr></thead>
+          <tbody>
+            <tr><td>Add dilute HCl, warm</td><td>Brisk effervescence; colourless gas turns lime water milky</td><td>CO₂ liberated → CO₃²⁻ present</td></tr>
+            <tr><td>Add AgNO₃ to solution</td><td>No precipitate</td><td>Cl⁻, Br⁻, I⁻ absent</td></tr>
+            <tr><td>Add BaCl₂ + dilute HCl</td><td>No precipitate</td><td>SO₄²⁻ absent</td></tr>
+            <tr><td>Flame test</td><td>Brick-red flame</td><td>Ca²⁺ confirmed</td></tr>
+          </tbody>
+        </table>
+        <p><strong>✅ E = CaCO₃ (Calcium carbonate)</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 6 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Volumetric</span><span class="tag year">WAEC 2019</span><span class="tag type">Acid-Base</span>
+      </div>
+      <h2>P6. NaOH vs H₂SO₄ Titration</h2>
+      <p><strong>Question:</strong> 25.0 cm³ of 0.10 M NaOH neutralized 22.5 cm³ of H₂SO₄. Find the concentration of H₂SO₄.</p>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <div class="calc-box">2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O  (2:1 ratio)
+n(NaOH) = 0.10 × 25.0/1000 = 2.50 × 10⁻³ mol
+n(H₂SO₄) = ½ × n(NaOH) = 1.25 × 10⁻³ mol
+[H₂SO₄] = (1.25 × 10⁻³) / (22.5/1000) = 0.0556 mol/dm³</div>
+        <p><strong>✅ [H₂SO₄] ≈ 0.056 mol/dm³</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 7 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Qualitative</span><span class="tag year">WAEC 2018</span><span class="tag type">Cation Test</span>
+      </div>
+      <h2>P7. Identification of Cation in Solution F</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <table class="observation-table">
+          <thead><tr><th>Test</th><th>Observation</th><th>Inference</th></tr></thead>
+          <tbody>
+            <tr><td>Add NaOH dropwise</td><td>White precipitate</td><td>Mg²⁺, Al³⁺, Zn²⁺, Pb²⁺, Ca²⁺ possible</td></tr>
+            <tr><td>NaOH in excess</td><td>Precipitate dissolves</td><td>Al³⁺, Zn²⁺, Pb²⁺ (amphoteric)</td></tr>
+            <tr><td>Add NH₃ dropwise</td><td>White precipitate</td><td>Al³⁺ or Zn²⁺</td></tr>
+            <tr><td>NH₃ in excess</td><td>Precipitate dissolves to colourless solution</td><td>Zn²⁺ confirmed (forms [Zn(NH₃)₄]²⁺)</td></tr>
+          </tbody>
+        </table>
+        <p><strong>✅ F contains Zn²⁺</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 8 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Quantitative</span><span class="tag year">WAEC 2024</span><span class="tag type">Solubility</span>
+      </div>
+      <h2>P8. Solubility Determination</h2>
+      <p><strong>Question:</strong> 5.0 g of salt G dissolves in 25 g of water at 30°C. Calculate solubility in g per 100 g of water.</p>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <div class="calc-box">Solubility = (mass of solute / mass of water) × 100
+            = (5.0 / 25) × 100
+            = 20 g per 100 g of water</div>
+        <p><strong>✅ Solubility of G at 30°C = 20 g/100 g water</strong></p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 9 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Gas Test</span><span class="tag year">WAEC 2023</span><span class="tag type">Gas Identification</span>
+      </div>
+      <h2>P9. Identification of Gases</h2>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <table class="observation-table">
+          <thead><tr><th>Gas</th><th>Test</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>Hydrogen (H₂)</td><td>Lighted splint</td><td>Pop sound</td></tr>
+            <tr><td>Oxygen (O₂)</td><td>Glowing splint</td><td>Rekindles to flame</td></tr>
+            <tr><td>Carbon dioxide (CO₂)</td><td>Lime water</td><td>Turns milky</td></tr>
+            <tr><td>Ammonia (NH₃)</td><td>Damp red litmus</td><td>Turns blue</td></tr>
+            <tr><td>Chlorine (Cl₂)</td><td>Damp blue litmus</td><td>Bleached white</td></tr>
+            <tr><td>SO₂</td><td>Acidified K₂Cr₂O₇</td><td>Orange → green</td></tr>
+            <tr><td>HCl</td><td>NH₃ near mouth of tube</td><td>White fumes (NH₄Cl)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PRACTICAL 10 -->
+    <div class="practical-card">
+      <div class="meta">
+        <span class="tag subj">Empirical Formula</span><span class="tag year">WAEC 2022</span><span class="tag type">Calculation</span>
+      </div>
+      <h2>P10. Determination of Empirical Formula</h2>
+      <p><strong>Question:</strong> A compound contains 40% C, 6.7% H, 53.3% O. Find empirical formula. (C=12, H=1, O=16)</p>
+      <button class="solution-toggle" onclick="toggleSol(this)"><i class="fas fa-eye"></i> Show Solution</button>
+      <div class="full-solution">
+        <div class="calc-box">Element  | %    | ÷ atomic mass | Mole ratio | ÷ smallest
+C        | 40   | 40/12 = 3.33   | 3.33      | 3.33/3.33 = 1
+H        | 6.7  | 6.7/1 = 6.7    | 6.7       | 6.7/3.33 ≈ 2
+O        | 53.3 | 53.3/16 = 3.33 | 3.33      | 3.33/3.33 = 1</div>
+        <p><strong>✅ Empirical formula = CH₂O (e.g. formaldehyde or glucose unit)</strong></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div><div class="logo light"><i class="fas fa-graduation-cap"></i> Exam<strong>Ace</strong></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../subjects.html">Subjects</a></li></ul></div>
+    <div><h4>Account</h4><ul><li><a href="../login.html">Login</a></li></ul></div>
+    <div><h4>Connect</h4><div class="social"><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+  </div>
+  <div class="footer-bottom">© 2026 ExamAce Education.</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pdf-export.js"></script>
+<script>
+function toggleSol(btn){const s=btn.nextElementSibling;s.classList.toggle('show');btn.innerHTML=s.classList.contains('show')?'<i class="fas fa-eye-slash"></i> Hide Solution':'<i class="fas fa-eye"></i> Show Solution';}
+</script>
+</body>
+</html>

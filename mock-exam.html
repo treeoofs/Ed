@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timed Mock Exam | ExamAce</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.exam-setup{max-width:600px;margin:60px auto;background:#fff;padding:40px;border-radius:14px;box-shadow:var(--shadow-lg);}
+.exam-setup h2{margin-bottom:14px;text-align:center;}
+.exam-setup p.sub{text-align:center;color:var(--muted);margin-bottom:30px;}
+.timer-display{position:sticky;top:64px;background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;z-index:90;font-weight:700;}
+.timer-display.warning{background:linear-gradient(135deg,#f59e0b,#d97706);}
+.timer-display.normal{background:linear-gradient(135deg,#0b5ed7,#1d4ed8);}
+.timer-display .clock{font-size:1.8rem;font-family:'Courier New',monospace;}
+.timer-display .progress-info{display:flex;gap:30px;align-items:center;}
+.exam-container{max-width:900px;margin:30px auto;padding:0 24px;}
+.mock-question{background:#fff;border-radius:14px;padding:28px;margin-bottom:20px;box-shadow:var(--shadow);border-left:5px solid var(--primary);}
+.mock-question h3{margin-bottom:16px;font-family:'Lora',serif;}
+.options{display:flex;flex-direction:column;gap:10px;list-style:none;}
+.options li{padding:12px 18px;background:#f9fafb;border:2px solid var(--border);border-radius:8px;cursor:pointer;transition:.2s;}
+.options li:hover{background:#eef4ff;border-color:var(--primary);}
+.options li.selected{background:#dbeafe;border-color:var(--primary);font-weight:600;}
+.exam-controls{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid var(--border);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;z-index:80;box-shadow:0 -4px 12px rgba(0,0,0,.05);}
+.exam-controls button{padding:12px 24px;border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:1rem;}
+.btn-prev{background:#f3f4f6;color:#1f2937;}
+.btn-next{background:var(--primary);color:#fff;}
+.btn-submit{background:#dc2626;color:#fff;}
+.question-nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;background:#fff;padding:20px;border-radius:14px;margin-bottom:20px;}
+.qnav-btn{width:40px;height:40px;border-radius:8px;border:2px solid var(--border);background:#fff;cursor:pointer;font-weight:600;}
+.qnav-btn.answered{background:#dcfce7;border-color:#16a34a;color:#16a34a;}
+.qnav-btn.current{background:var(--primary);color:#fff;border-color:var(--primary);}
+.qnav-btn.flagged{background:#fef3c7;border-color:#f59e0b;color:#92400e;}
+.results-screen{max-width:800px;margin:60px auto;background:#fff;padding:40px;border-radius:14px;box-shadow:var(--shadow-lg);text-align:center;}
+.score-circle{width:200px;height:200px;border-radius:50%;background:conic-gradient(var(--success) 0deg, #e5e7eb 0deg);display:flex;align-items:center;justify-content:center;margin:30px auto;position:relative;}
+.score-circle::before{content:'';position:absolute;width:160px;height:160px;background:#fff;border-radius:50%;}
+.score-circle .score-num{position:relative;z-index:2;font-size:3rem;font-weight:800;}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;margin:30px 0;}
+.review-stat{background:#f9fafb;padding:20px;border-radius:10px;}
+.review-stat .v{font-size:2rem;font-weight:800;color:var(--primary);}
+.review-stat .l{font-size:.85rem;color:var(--muted);}
+.flag-btn{background:#fef3c7;color:#92400e;border:1px solid #f59e0b;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:600;margin-top:10px;}
+.flag-btn.flagged{background:#f59e0b;color:#fff;}
+.exam-end-buffer{padding-bottom:100px;}
+@keyframes pulse-warn{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+.timer-display.warning .clock{animation:pulse-warn 1s infinite;}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><span>Exam<strong>Ace</strong></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="subjects.html">Subjects</a></li>
+      <li><a href="past-questions.html">Past Q's</a></li>
+      <li><a href="mock-exam.html">Mock Exam</a></li>
+      <li><a href="practicals/">Practicals</a></li>
+      <li><a href="essays/">Essays</a></li>
+      <li><a href="ai-tutor/">AI Tutor</a></li>
+      <li><a href="premium/">💎 Premium</a></li>
+      <li><a href="login.html" class="btn-login">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<!-- Setup Screen -->
+<div id="setupScreen" class="exam-end-buffer">
+  <section class="page-banner">
+    <h1><i class="fas fa-stopwatch"></i> Timed Mock Examination</h1>
+    <p>Simulate the real WAEC exam experience with timer, auto-submission, and full scoring</p>
+  </section>
+
+  <div class="exam-setup">
+    <h2>📝 Choose Your Mock Exam</h2>
+    <p class="sub">Each exam matches WAEC format and timing</p>
+
+    <div class="form-group">
+      <label>Select Subject</label>
+      <select id="examSubject">
+        <option value="math">Mathematics (40 minutes)</option>
+        <option value="mixed">Mixed Subjects — All Rounder (30 minutes)</option>
+        <option value="physics">Physics (40 minutes)</option>
+        <option value="chemistry">Chemistry (40 minutes)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Number of Questions</label>
+      <select id="examLength">
+        <option value="10">10 questions (Quick Practice)</option>
+        <option value="20" selected>20 questions (Standard)</option>
+        <option value="30">30 questions (Full Mock)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Time per Question (auto-calculated)</label>
+      <select id="examTimePerQ">
+        <option value="60">1 minute per question</option>
+        <option value="90" selected>1.5 minutes per question (recommended)</option>
+        <option value="120">2 minutes per question</option>
+      </select>
+    </div>
+
+    <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:14px;border-radius:8px;margin:20px 0;font-size:.9rem;color:#92400e;">
+      <strong><i class="fas fa-exclamation-triangle"></i> Important Rules:</strong>
+      <ul style="margin:8px 0 0 20px;">
+        <li>Timer cannot be paused once started</li>
+        <li>Auto-submits when time expires</li>
+        <li>Use ⚑ flag button to mark questions for review</li>
+        <li>You can navigate freely between questions</li>
+      </ul>
+    </div>
+
+    <button class="btn-primary btn-full" style="padding:16px;font-size:1.1rem;" onclick="startExam()">
+      <i class="fas fa-play"></i> Start Mock Exam
+    </button>
+  </div>
+</div>
+
+<!-- Exam Screen -->
+<div id="examScreen" style="display:none;">
+  <div class="timer-display normal" id="timerDisplay">
+    <div class="progress-info">
+      <span><i class="fas fa-list-ol"></i> Question <strong id="currentQNum">1</strong> of <strong id="totalQNum">20</strong></span>
+      <span><i class="fas fa-check-circle"></i> Answered: <strong id="answeredCount">0</strong></span>
+    </div>
+    <div><i class="fas fa-clock"></i> <span class="clock" id="clockDisplay">00:00</span></div>
+  </div>
+
+  <div class="exam-container exam-end-buffer">
+    <div class="question-nav" id="questionNav"></div>
+    <div id="questionArea"></div>
+  </div>
+
+  <div class="exam-controls">
+    <button class="btn-prev" onclick="prevQuestion()"><i class="fas fa-arrow-left"></i> Previous</button>
+    <div>
+      <button class="flag-btn" id="flagBtn" onclick="toggleFlag()"><i class="fas fa-flag"></i> Flag for Review</button>
+      <button class="btn-submit" onclick="confirmSubmit()"><i class="fas fa-paper-plane"></i> Submit Exam</button>
+    </div>
+    <button class="btn-next" onclick="nextQuestion()">Next <i class="fas fa-arrow-right"></i></button>
+  </div>
+</div>
+
+<!-- Results Screen -->
+<div id="resultsScreen" style="display:none;">
+  <div class="results-screen">
+    <h1 style="color:var(--primary);">📊 Exam Results</h1>
+    <div class="score-circle" id="scoreCircle">
+      <div class="score-num" id="finalScore">0%</div>
+    </div>
+    <h2 id="resultMessage">Well done!</h2>
+
+    <div class="review-grid">
+      <div class="review-stat"><div class="v" id="correctCount">0</div><div class="l">Correct</div></div>
+      <div class="review-stat"><div class="v" id="incorrectCount">0</div><div class="l">Incorrect</div></div>
+      <div class="review-stat"><div class="v" id="skippedCount">0</div><div class="l">Skipped</div></div>
+      <div class="review-stat"><div class="v" id="timeUsed">0:00</div><div class="l">Time Used</div></div>
+    </div>
+
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn-primary" onclick="reviewAnswers()"><i class="fas fa-eye"></i> Review Answers</button>
+      <button class="btn-primary" style="background:#16a34a;" onclick="downloadPDF('mock-exam')"><i class="fas fa-file-pdf"></i> Download PDF Report</button>
+      <button class="btn-primary" style="background:#6b7280;" onclick="location.reload()"><i class="fas fa-redo"></i> Retake Exam</button>
+    </div>
+  </div>
+  <div id="reviewArea" style="display:none;" class="exam-container"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/pdf-export.js"></script>
+<script src="js/mock-exam.js"></script>
+</body>
+</html>
